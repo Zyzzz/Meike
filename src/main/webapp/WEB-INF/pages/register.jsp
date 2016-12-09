@@ -32,7 +32,20 @@ $(document).ready(function(){
         }
     );
 });
-</script>
+	function insertManager() {
+			var password = document.getElementById("password").value;
+			var repassword = document.getElementById("repsword").value;
+		if(password == ''){
+			alert('密码不能为空');
+			return false;
+		}
+		if(password != repassword) {
+			alert("两次密码不同，请重新输入");
+			return false;
+		}
+			return true;
+		}
+	</script>
 </head>
 <body>
 <nav class="navbar navbar-default" role="navigation">
@@ -176,19 +189,19 @@ $(document).ready(function(){
     <!-- //banner -->
 	<div class="courses_box1">
 	   <div class="container">
-	   	  <form class="login" method="post" action="/user_register">
+	   	  <form class="login" method="post" action="/user_register" onsubmit="return insertManager();">
                 <p class="lead">Register New Account</p>
 			  <div class="form-group">
 				  <input type="text" autocomplete="off" class="required form-control" placeholder="Email *" name="email" value="">
 			  </div>
                 <div class="form-group">
-                    <input type="password" class="required form-control" placeholder="Password *" name="password" value="">
+                    <input type="password" class="required form-control" placeholder="Password *" name="password"  id="password" value="">
                 </div>
                 <div class="form-group">
-                    <input type="password" class="required form-control" placeholder="Conform Password *" name="Conform Password" value="">
+                    <input type="password" class="required form-control" placeholder="Conform Password *" name="repsword" id="repsword" value="">
                 </div>
                 <div class="form-group">
-                    <input type="submit" class="btn btn-primary btn-lg1 btn-block" name="submit" value="Register">
+                    <input type="submit" class="btn btn-primary btn-lg1 btn-block" name="submit" value="Register" >
                 </div>
                 <p>Already have an account? <a href="login.jsp">Sign In</a></p>
             </form>

@@ -1,6 +1,8 @@
 package com.imudges.controller;
 
 import com.imudges.model.StudentEntity;
+import com.imudges.repository.StudentRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -11,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class UserController {
      private StudentEntity studentEntity;
+     @Autowired
+     private StudentRepository studentRepository;
      @RequestMapping(value = "/login", method = RequestMethod.GET)
      public String ToLogin(){
           return "login";
@@ -23,7 +27,10 @@ public class UserController {
 
      @RequestMapping(value = "/user_register", method = RequestMethod.POST)
      public String Register(String email,String password){
-
+          studentEntity=new StudentEntity();
+          studentEntity.setEmail(email);
+          studentEntity.setPassword(password);
+          studentRepository.saveAndFlush(studentEntity);
           return "login";
      }
 }

@@ -39,7 +39,7 @@ public class StudentEntity {
     }
 
     @Basic
-    @Column(name = "nickname", nullable = false, length = 30)
+    @Column(name = "nickname", nullable = true, length = 30)
     public String getNickname() {
         return nickname;
     }
@@ -49,7 +49,7 @@ public class StudentEntity {
     }
 
     @Basic
-    @Column(name = "age", nullable = false)
+    @Column(name = "age", nullable = true)
     public int getAge() {
         return age;
     }
@@ -59,7 +59,7 @@ public class StudentEntity {
     }
 
     @Basic
-    @Column(name = "phone", nullable = false, length = 20)
+    @Column(name = "phone", nullable = true, length = 20)
     public String getPhone() {
         return phone;
     }
@@ -69,7 +69,7 @@ public class StudentEntity {
     }
 
     @Basic
-    @Column(name = "address", nullable = false, length = 100)
+    @Column(name = "address", nullable = true, length = 100)
     public String getAddress() {
         return address;
     }
@@ -89,7 +89,7 @@ public class StudentEntity {
     }
 
     @Basic
-    @Column(name = "information", nullable = false, length = 100)
+    @Column(name = "information", nullable = true, length = 100)
     public String getInformation() {
         return information;
     }
