@@ -16,7 +16,7 @@ public class StudentEntity {
     private String email;
     private String information;
     private String password;
-
+    private String cookie;
     @Id
     @Column(name = "id", nullable = false)
     public int getId() {
@@ -25,6 +25,17 @@ public class StudentEntity {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+
+    @Basic
+    @Column(name = "cookie", nullable = true, length = 255)
+    public String getCookie() {
+        return cookie;
+    }
+
+    public void setCookie(String cookie) {
+        this.cookie = cookie;
     }
 
     @Basic
