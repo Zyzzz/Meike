@@ -15,12 +15,12 @@ public class UserController {
      private StudentEntity studentEntity;
      @Autowired
      private StudentRepository studentRepository;
-     @RequestMapping(value = "/login", method = RequestMethod.GET)
+     @RequestMapping(value = "/login.html", method = RequestMethod.GET)
      public String ToLogin(){
           return "login";
      }
 
-     @RequestMapping(value = "/register", method = RequestMethod.GET)
+     @RequestMapping(value = "/register.html", method = RequestMethod.GET)
      public String ToRegistern(){
           return "register";
      }
@@ -33,4 +33,9 @@ public class UserController {
           studentRepository.saveAndFlush(studentEntity);
           return "login";
      }
+
+    @RequestMapping(value = "/userLogin", method = RequestMethod.POST)
+    public String userLogin(String email,String password){
+       return "";
+    }
 }
