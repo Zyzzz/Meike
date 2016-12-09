@@ -16,6 +16,7 @@ public class UserController {
 
      @RequestMapping(value = "/register", method = RequestMethod.GET)
      public String ToRegistern(){
+
           return "register";
      }
 
