@@ -178,23 +178,14 @@ $(document).ready(function(){
 	   <div class="container">
 	   	  <form class="login" method="post" action="/user_register">
                 <p class="lead">Register New Account</p>
-                <div class="form-group">
-                    <input type="text" autocomplete="off" class="required form-control" placeholder="Name *" name="Name" value="">
-                </div>
-                <div class="form-group">
-                    <input type="text" autocomplete="off" class="required form-control" placeholder="Username *" name="username" value="">
-                </div>
+			  <div class="form-group">
+				  <input type="text" autocomplete="off" class="required form-control" placeholder="Email *" name="email" value="">
+			  </div>
                 <div class="form-group">
                     <input type="password" class="required form-control" placeholder="Password *" name="password" value="">
                 </div>
                 <div class="form-group">
                     <input type="password" class="required form-control" placeholder="Conform Password *" name="Conform Password" value="">
-                </div>
-                <div class="form-group">
-                    <input type="text" autocomplete="off" class="required form-control" placeholder="Email *" name="email" value="">
-                </div>
-                <div class="form-group">
-                    <input type="text" autocomplete="off" class="required form-control" placeholder="Conform Email *" name="conform email" value="">
                 </div>
                 <div class="form-group">
                     <input type="submit" class="btn btn-primary btn-lg1 btn-block" name="submit" value="Register">
