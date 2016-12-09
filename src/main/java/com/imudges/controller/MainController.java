@@ -12,6 +12,6 @@ public class MainController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index() {
-        return "/WEB-INF/pages/index.jsp";
+        return "index";
     }
 }
