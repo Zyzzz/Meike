@@ -176,7 +176,7 @@ $(document).ready(function(){
     <!-- //banner -->
 	<div class="courses_box1">
 	   <div class="container">
-	   	  <form class="login">
+	   	  <form class="login" method="post" action="/user_register">
                 <p class="lead">Register New Account</p>
                 <div class="form-group">
                     <input type="text" autocomplete="off" class="required form-control" placeholder="Name *" name="Name" value="">
