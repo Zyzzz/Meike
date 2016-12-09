@@ -188,7 +188,7 @@ $(document).ready(function(){
 		    	<input type="checkbox" name="remember" value="true"> Remember Me
 		    	<input type="submit" class="btn btn-primary btn-lg1 btn-block" name="submit" value="Log In">
 		    </div>
-	        <p>Don not have an account? <a href="register.jsp" title="Sign Up">Sign Up</a></p>
+	        <p>Don not have an account? <a href="register.html" title="Sign Up">Sign Up</a></p>
 		 </form>
 	   </div>
 	</div>
