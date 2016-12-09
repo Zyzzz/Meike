@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * Created by cyy on 2016/12/9.
@@ -34,8 +35,10 @@ public class UserController {
           return "login";
      }
 
+    @ResponseBody
     @RequestMapping(value = "/userLogin", method = RequestMethod.POST)
-    public String userLogin(String email,String password){
-       return "";
+    public StudentEntity userLogin(String email,String password){
+        StudentEntity studentEntity = new StudentEntity();
+       return studentEntity;
     }
 }
