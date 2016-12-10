@@ -12,9 +12,12 @@
 
     <!-- 静态资源(js、image等)的访问 -->
     <mvc:default-servlet-handler/>
-    <mvc:resources location="WEB-INF/image/" mapping="images/**"/>
+    <mvc:resources location="WEB-INF/images/" mapping="images/**"/>
     <mvc:resources location="WEB-INF/js/" mapping="js/**"/>
     <mvc:resources location="WEB-INF/css/" mapping="css/**"/>
+    <mvc:resources location="WEB-INF/javascripts/" mapping="javascripts/**"/>
+    <mvc:resources location="WEB-INF/lib/" mapping="lib/**"/>
+    <mvc:resources location="WEB-INF/stylesheets/" mapping="stylesheets/**"/>
     <!-- 开启注解 -->
     <mvc:annotation-driven/>
 
