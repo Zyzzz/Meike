@@ -62,6 +62,7 @@ public class UserController {
         else {
             String cookie = SHA256Test.SHA256Encrypt(email+new Date().toString());
             studentEntity.setCookie(cookie);
+
             studentRepository.saveAndFlush(studentEntity);
             studentEntity.setStatus(0);
         }
