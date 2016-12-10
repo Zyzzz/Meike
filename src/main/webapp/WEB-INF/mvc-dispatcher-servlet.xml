@@ -23,7 +23,7 @@
     <bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
         <property name="prefix" value="/WEB-INF/pages/"/>
-        <property name="suffix" value=".htlm"/>
+        <property name="suffix" value=".html"/>
     </bean>
 
     <!-- 表示JPA Repository所在的包 -->

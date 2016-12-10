@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Login</title>
+<title>Register</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Learn Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
@@ -32,7 +32,20 @@ $(document).ready(function(){
         }
     );
 });
-</script>
+	function insertManager() {
+			var password = document.getElementById("password").value;
+			var repassword = document.getElementById("repsword").value;
+		if(password == ''){
+			alert('密码不能为空');
+			return false;
+		}
+		if(password != repassword) {
+			alert("两次密码不同，请重新输入");
+			return false;
+		}
+			return true;
+		}
+	</script>
 </head>
 <body>
 <nav class="navbar navbar-default" role="navigation">
@@ -44,13 +57,13 @@ $(document).ready(function(){
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 	        </button>
-	         <a class="navbar-brand" href="index.jsp">Learn</a>
+	         <a class="navbar-brand" href="index.html">Learn</a>
 	    </div>
 	    <!--/.navbar-header-->
 	    <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" style="height: 1px;">
 	        <ul class="nav navbar-nav">
 		        <li class="dropdown">
-		            <a href="/login.html"><i class="fa fa-user"></i><span>Login</span></a>
+		            <a href="login.html"><i class="fa fa-user"></i><span>Login</span></a>
 		        </li>
 		        <li class="dropdown">
 		        	<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list"></i><span>Courses</span></a>
@@ -105,7 +118,7 @@ $(document).ready(function(){
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
         <ul class="nav navbar-nav nav_1">
-            <li><a href="index.jsp">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
     		<li class="dropdown mega-dropdown active">
 			    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admissions<span class="caret"></span></a>				
@@ -161,14 +174,14 @@ $(document).ready(function(){
 <!-- banner -->
   <div class="courses_banner">
   	<div class="container">
-  		<h3>Login</h3>
+  		<h3>Register</h3>
   		<p class="description">
              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lorem quam, adipiscing condimentum tristique vel, eleifend sed turpis. Pellentesque cursus arcu id magna euismod in elementum purus molestie.
         </p>
         <div class="breadcrumb1">
             <ul>
-                <li class="icon6"><a href="index.jsp">Home</a></li>
-                <li class="current-page">Login</li>
+                <li class="icon6"><a href="index.html">Home</a></li>
+                <li class="current-page">Register</li>
             </ul>
         </div>
   	</div>
@@ -176,20 +189,22 @@ $(document).ready(function(){
     <!-- //banner -->
 	<div class="courses_box1">
 	   <div class="container">
-	   	  <form class="login" method="post" action="/userLogin">
-	    	<p class="lead">Welcome Back!</p>
-		    <div class="form-group">
-			    <input  autocomplete="off" type="text" name="email" class="required form-control" placeholder="Username">
-		    </div>
-		    <div class="form-group">
-			    <input autocomplete="off" type="password" class="password required form-control" placeholder="Password" name="password">
-		    </div>
-		    <div class="form-group">
-		    	<input type="checkbox" name="remember" value="true"> Remember Me
-		    	<input type="submit" class="btn btn-primary btn-lg1 btn-block" name="submit" value="Log In">
-		    </div>
-	        <p>Don not have an account? <a href="register.html" title="Sign Up">Sign Up</a></p>
-		 </form>
+	   	  <form class="login" method="post" action="/user_register" onsubmit="return insertManager();">
+                <p class="lead">Register New Account</p>
+			  <div class="form-group">
+				  <input type="text" autocomplete="off" class="required form-control" placeholder="Email *" name="email" value="">
+			  </div>
+                <div class="form-group">
+                    <input type="password" class="required form-control" placeholder="Password *" name="password"  id="password" value="">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="required form-control" placeholder="Conform Password *" name="repsword" id="repsword" value="">
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary btn-lg1 btn-block" name="submit" value="Register" >
+                </div>
+                <p>Already have an account? <a href="login.html">Sign In</a></p>
+            </form>
 	   </div>
 	</div>
     <div class="footer">
