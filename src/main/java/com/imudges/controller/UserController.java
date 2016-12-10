@@ -2,11 +2,14 @@ package com.imudges.controller;
 
 import com.imudges.model.StudentEntity;
 import com.imudges.repository.StudentRepository;
+import com.imudges.utils.SHA256Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.Date;
 
 /**
  * Created by cyy on 2016/12/9.
@@ -57,6 +60,9 @@ public class UserController {
             studentEntity.setStatus(101);
         }
         else {
+            String cookie = SHA256Test.SHA256Encrypt(email+new Date().toString());
+            studentEntity.setCookie(cookie);
+            studentRepository.saveAndFlush(studentEntity);
             studentEntity.setStatus(0);
         }
        return studentEntity;
