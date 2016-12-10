@@ -30,7 +30,7 @@ public class UserController {
      }
 
     @ResponseBody
-     @RequestMapping(value = "/user_register", method = RequestMethod.POST)
+     @RequestMapping(value = "/user_register")
      public StudentEntity Register(String email,String password){
         studentEntity = studentRepository.findByEmail(email);
         if(studentEntity==null) {
@@ -48,7 +48,7 @@ public class UserController {
      }
 
     @ResponseBody
-    @RequestMapping(value = "/userLogin", method = RequestMethod.POST)
+    @RequestMapping(value = "/userLogin")
     public StudentEntity userLogin(String email,String password){
         studentEntity = studentRepository.findByEmail(email);
         if(studentEntity==null){
