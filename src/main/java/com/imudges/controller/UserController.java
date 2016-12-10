@@ -26,13 +26,22 @@ public class UserController {
           return "register";
      }
 
+    @ResponseBody
      @RequestMapping(value = "/user_register", method = RequestMethod.POST)
-     public String Register(String email,String password){
-          studentEntity=new StudentEntity();
-          studentEntity.setEmail(email);
-          studentEntity.setPassword(password);
-          studentRepository.saveAndFlush(studentEntity);
-          return "login";
+     public StudentEntity Register(String email,String password){
+        studentEntity = studentRepository.findByEmail(email);
+        if(studentEntity==null) {
+            studentEntity = new StudentEntity();
+            studentEntity.setEmail(email);
+            studentEntity.setPassword(password);
+            studentRepository.saveAndFlush(studentEntity);
+            studentEntity.setStatus(0);
+        }
+        else {
+            studentEntity = new StudentEntity();
+            studentEntity.setStatus(102);
+        }
+        return studentEntity;
      }
 
     @ResponseBody
