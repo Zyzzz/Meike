@@ -20,7 +20,6 @@ public class CandoviewEntity {
     private double rank;
     private String email;
     private String password;
-
     @Id
     @Column(name = "cid", nullable = false)
     public int getCid() {

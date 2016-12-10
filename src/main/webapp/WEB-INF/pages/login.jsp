@@ -50,7 +50,7 @@ $(document).ready(function(){
 	    <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" style="height: 1px;">
 	        <ul class="nav navbar-nav">
 		        <li class="dropdown">
-		            <a href="login.jsp"><i class="fa fa-user"></i><span>Login</span></a>
+		            <a href="/login.html"><i class="fa fa-user"></i><span>Login</span></a>
 		        </li>
 		        <li class="dropdown">
 		        	<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list"></i><span>Courses</span></a>
@@ -176,13 +176,13 @@ $(document).ready(function(){
     <!-- //banner -->
 	<div class="courses_box1">
 	   <div class="container">
-	   	  <form class="login">
+	   	  <form class="login" method="post" action="/userLogin">
 	    	<p class="lead">Welcome Back!</p>
 		    <div class="form-group">
-			    <input autocomplete="off" type="text" name="log_username" class="required form-control" placeholder="Username">
+			    <input  autocomplete="off" type="text" name="email" class="required form-control" placeholder="Username">
 		    </div>
 		    <div class="form-group">
-			    <input autocomplete="off" type="password" class="password required form-control" placeholder="Password" name="log_password">
+			    <input autocomplete="off" type="password" class="password required form-control" placeholder="Password" name="password">
 		    </div>
 		    <div class="form-group">
 		    	<input type="checkbox" name="remember" value="true"> Remember Me

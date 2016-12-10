@@ -25,6 +25,7 @@
         <property name="prefix" value="/WEB-INF/pages/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
+
     <!-- 表示JPA Repository所在的包 -->
     <jpa:repositories base-package="com.imudges.repository"/>
 

@@ -38,7 +38,18 @@ public class UserController {
     @ResponseBody
     @RequestMapping(value = "/userLogin", method = RequestMethod.POST)
     public StudentEntity userLogin(String email,String password){
-        StudentEntity studentEntity = new StudentEntity();
+        studentEntity = studentRepository.findByEmail(email);
+        if(studentEntity==null){
+            studentEntity = new StudentEntity();
+            studentEntity.setStatus(100);
+        }
+        else if(!studentEntity.getPassword().equals(password)){
+            studentEntity = new StudentEntity();
+            studentEntity.setStatus(101);
+        }
+        else {
+            studentEntity.setStatus(0);
+        }
        return studentEntity;
     }
 }
