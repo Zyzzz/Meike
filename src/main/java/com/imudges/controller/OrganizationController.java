@@ -20,6 +20,7 @@ public class OrganizationController {
     public String OrganizationLogin(){
         return "O_sign-in";
 
+
     }
 
     @RequestMapping(value = "/Ologin", method = RequestMethod.GET)
