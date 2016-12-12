@@ -3,7 +3,9 @@ package com.imudges.controller;
 import com.imudges.model.BaseEntity;
 import com.imudges.model.StudentEntity;
 import com.imudges.repository.StudentRepository;
+import com.imudges.utils.MailSender;
 import com.imudges.utils.SHA256Test;
+import com.imudges.utils.VerifyCodeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,12 +15,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 
+
+
 /**
  * Created by cyy on 2016/12/9.
  */
 @Controller
 public class UserController {
      private StudentEntity studentEntity;
+
      @Autowired
      private StudentRepository studentRepository;
      @RequestMapping(value = "/login.html", method = RequestMethod.GET)
@@ -73,7 +78,7 @@ public class UserController {
 
     @ResponseBody
     @RequestMapping(value = "/email_activate")
-    public BaseEntity SendEmail(String cookie,HttpServletRequest request){
+    public BaseEntity ActivateEmail(String cookie,HttpServletRequest request){
         studentEntity=studentRepository.findByCookie(cookie);
         String subject = "";
         StringBuffer url = new StringBuffer();
@@ -108,4 +113,51 @@ public class UserController {
         baseEntity.setStatus(0);
         return baseEntity;
     }
+
+    @RequestMapping(value = "/activateEmail.jhtml")
+    public String activateEmail(String cookie,HttpServletRequest request) {
+        // 激活之前查询
+        studentEntity=studentRepository.findByCookie(cookie);
+
+        if ("1".equals(String.valueOf(studentEntity.getNowstatus()))) {
+            // 已激活
+
+        } else {
+            // 未激活
+            studentEntity.setNowstatus("1");
+            // 激活之后查询
+           /* user = userManager.find(params.getLong("id"));
+            request.getSession().setAttribute("sessionUser", user);
+            model.addAttribute("mode", params.getString("mode"));
+            model.addAttribute("flag", true);*/
+        }
+        return "site/modules/account/activateSuccess";
+    }
+
+    @RequestMapping(value = "/sendEmail")
+    @ResponseBody
+    public BaseEntity sendEmail(HttpServletRequest request,String cookie) {
+
+        studentEntity=studentRepository.findByCookie(cookie);
+        StringBuilder builder = new StringBuilder();
+        StringBuffer url = new StringBuffer();
+        String subject = "";
+        // type = forget 密码重置
+        String verifyCode = VerifyCodeUtils.generateVerifyCode(4);
+        request.getSession().setAttribute("resetCertCode", verifyCode);
+        url.append("<font color='red'>" + verifyCode + "</font>");
+        // 正文
+        builder.append("<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" /></head><body>");
+        builder.append("要使用新的密码, 请将已下字符输入验证框中，完成重置密码的操作!");
+        builder.append("<br/><br/>");
+        builder.append("<div>" + url + "</div>");
+        builder.append("</body></html>");
+        subject = "密码重置 - xxxx";
+
+        MailSender.mailSimple(studentEntity.getEmail(), subject, builder.toString());
+        BaseEntity baseEntity = new BaseEntity();
+        baseEntity.setStatus(0);
+        return baseEntity;
+    }
+
 }
