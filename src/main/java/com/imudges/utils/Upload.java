@@ -7,7 +7,6 @@ import com.qiniu.storage.Configuration;
 import com.qiniu.storage.UploadManager;
 import com.qiniu.util.Auth;
 import com.qiniu.util.StringMap;
-
 import java.io.File;
 import java.io.IOException;
 
