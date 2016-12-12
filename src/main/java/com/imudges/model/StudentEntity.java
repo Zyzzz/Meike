@@ -17,6 +17,7 @@ public class StudentEntity extends BaseEntity{
     private String information;
     private String password;
     private String cookie;
+    private String nowstatus;
     @Id
     @Column(name = "id", nullable = false)
     public int getId() {
@@ -36,6 +37,16 @@ public class StudentEntity extends BaseEntity{
 
     public void setCookie(String cookie) {
         this.cookie = cookie;
+    }
+
+    @Basic
+    @Column(name = "nowstatus", nullable = true, length = 255)
+    public String getNowstatus() {
+        return nowstatus;
+    }
+
+    public void setNowstatus(String nowstatus) {
+        this.nowstatus = nowstatus;
     }
 
     @Basic
@@ -123,7 +134,7 @@ public class StudentEntity extends BaseEntity{
         if (email != null ? !email.equals(that.email) : that.email != null) return false;
         if (information != null ? !information.equals(that.information) : that.information != null) return false;
         if (password != null ? !password.equals(that.password) : that.password != null) return false;
-
+        if (nowstatus != null ? !nowstatus.equals(that.nowstatus) : that.nowstatus != null) return false;
         return true;
     }
 
@@ -137,6 +148,7 @@ public class StudentEntity extends BaseEntity{
         result = 31 * result + (email != null ? email.hashCode() : 0);
         result = 31 * result + (information != null ? information.hashCode() : 0);
         result = 31 * result + (password != null ? password.hashCode() : 0);
+        result = 31 * result + (nowstatus != null ? nowstatus.hashCode() : 0);
         return result;
     }
 }
