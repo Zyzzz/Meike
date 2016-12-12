@@ -66,6 +66,13 @@ public class UserController {
             studentRepository.saveAndFlush(studentEntity);
             studentEntity.setStatus(0);
         }
-       return studentEntity;
+        return studentEntity;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/find_password")
+    public String FindPassword(String email){
+
+        return "login";
     }
 }
