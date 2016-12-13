@@ -34,13 +34,14 @@ public class MailSender {
         mailSender.setHost(propertiesLoader.getProperty("mail.smtp.host"));
         mailSender.setUsername(propertiesLoader.getProperty("mail.smtp.username"));
         mailSender.setPassword(propertiesLoader.getProperty("mail.smtp.password"));
+        mailSender.setPort(Integer.parseInt(propertiesLoader.getProperty("mail.smtp.port")));
         //配置文件，用于实例化java.mail.session
         Properties pro = System.getProperties();
 
         //登录SMTP服务器,需要获得授权，网易163邮箱新近注册的邮箱均不能授权。
         //测试 sohu 的邮箱可以获得授权
         pro.put("mail.smtp.auth", "true");
-        pro.put("mail.smtp.socketFactory.port", "25");
+
         pro.put("mail.smtp.socketFactory.fallback", "false");
 
         //通过文件获取信息
