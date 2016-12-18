@@ -10,4 +10,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface OrganizationRepository  extends JpaRepository<OrganizationEntity,Integer> {
     public OrganizationEntity findByEmail(String email);
+    public OrganizationEntity findByCookie(String cookie);
 }
