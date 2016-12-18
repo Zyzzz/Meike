@@ -18,6 +18,7 @@ public class StudentEntity extends BaseEntity{
     private String password;
     private String cookie;
     private String nowstatus;
+    private String securityCode;
     @Id
     @Column(name = "id", nullable = false)
     public int getId() {
@@ -39,6 +40,18 @@ public class StudentEntity extends BaseEntity{
         this.cookie = cookie;
     }
 
+
+
+
+    @Basic
+    @Column(name = "securityCode", nullable = true, length = 255)
+    public String getSecurityCode() {
+        return securityCode;
+    }
+
+    public void setSecurityCode(String securityCode) {
+        this.securityCode = securityCode;
+    }
     @Basic
     @Column(name = "nowstatus", nullable = true, length = 255)
     public String getNowstatus() {

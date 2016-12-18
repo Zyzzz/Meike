@@ -150,6 +150,8 @@ public class UserController {
         String subject = "";
         // type = forget 密码重置
         String verifyCode = VerifyCodeUtils.generateVerifyCode(4);
+        studentEntity.setSecurityCode(verifyCode);
+        studentRepository.saveAndFlush(studentEntity);
         request.getSession().setAttribute("resetCertCode", verifyCode);
         url.append("<font color='red'>" + verifyCode + "</font>");
         // 正文
@@ -163,6 +165,20 @@ public class UserController {
         MailSender.mailSimple(studentEntity.getEmail(), subject, builder.toString());
         BaseEntity baseEntity = new BaseEntity();
         baseEntity.setStatus(0);
+        return baseEntity;
+    }
+
+    @RequestMapping(value = "/ChangePasw")
+    @ResponseBody
+    public BaseEntity ChangePasw(String verifyCode,String cookie,String newpassword){
+        studentEntity=studentRepository.findByCookie(cookie);
+        BaseEntity baseEntity = new BaseEntity();
+        if(studentEntity.getSecurityCode().equals(verifyCode)){
+            baseEntity.setStatus(0);
+            studentEntity.setPassword(newpassword);
+        }else {
+            baseEntity.setStatus(107);
+        }
         return baseEntity;
     }
 
