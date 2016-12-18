@@ -19,8 +19,6 @@ public class OrganizationController {
     @RequestMapping(value = "/Osignin", method = RequestMethod.GET)
     public String OrganizationLogin(){
         return "O_sign-in";
-
-
     }
 
     @RequestMapping(value = "/Ologin", method = RequestMethod.GET)
