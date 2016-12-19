@@ -4,6 +4,7 @@ import com.imudges.model.BaseEntity;
 import com.imudges.model.OrganizationEntity;
 import com.imudges.model.TeacherEntity;
 import com.imudges.repository.OrganizationRepository;
+import com.imudges.repository.TeacherRepository;
 import com.imudges.utils.MailSender;
 import com.imudges.utils.VerifyCodeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,9 +20,13 @@ import javax.servlet.http.HttpServletRequest;
  */
 @Controller
 public class OrganizationController {
+    private TeacherEntity teacherEntity;
     private  OrganizationEntity organizationEntity;
     @Autowired
-    OrganizationRepository organizationRepository;
+    private OrganizationRepository organizationRepository;
+    @Autowired
+    private TeacherRepository teacherRepository;
+
 
 
     @RequestMapping(value = "/Osignin", method = RequestMethod.GET)
@@ -94,9 +99,11 @@ public class OrganizationController {
     @RequestMapping(value = "/Change_Password")
     public BaseEntity ChangePasw(String verifyCode,String cookie,String newpassword){
         BaseEntity baseEntity=new BaseEntity();
+        organizationEntity=organizationRepository.findByCookie(cookie);
         if(organizationEntity.getSecurityCode().equals(verifyCode)){
             baseEntity.setStatus(0);
             organizationEntity.setPassword(newpassword);
+            organizationRepository.saveAndFlush(organizationEntity);
         }else {
             baseEntity.setStatus(107);
         }
@@ -105,9 +112,22 @@ public class OrganizationController {
 
     @ResponseBody
     @RequestMapping(value = "/Add_teacher")
-    public TeacherEntity AddTeacher(){
-        TeacherEntity teacherEntity=new TeacherEntity();
+    public TeacherEntity AddTeacher(String cookie,String name,String phone){
+        teacherEntity=new TeacherEntity();
+        organizationEntity=organizationRepository.findByCookie(cookie);
+        teacherEntity.setName(name);
+        teacherEntity.setOrganizatioid(organizationEntity.getId());
+        teacherEntity.setName(phone);
+        teacherEntity.setStatus(0);
+        teacherRepository.saveAndFlush(teacherEntity);
         return teacherEntity;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/Delete_teacher")
+    public BaseEntity DeleteTeacher(String index){
+        BaseEntity baseEntity=new BaseEntity();
+        return baseEntity;
     }
 
 }

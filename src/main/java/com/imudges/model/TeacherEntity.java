@@ -7,7 +7,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "teacher", schema = "newmeike", catalog = "")
-public class TeacherEntity {
+public class TeacherEntity extends BaseEntity{
     private int id;
     private String name;
     private int organizatioid;
