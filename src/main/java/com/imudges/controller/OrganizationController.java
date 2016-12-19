@@ -1,6 +1,8 @@
 package com.imudges.controller;
 
+import com.imudges.model.BaseEntity;
 import com.imudges.model.OrganizationEntity;
+import com.imudges.model.TeacherEntity;
 import com.imudges.repository.OrganizationRepository;
 import com.imudges.utils.MailSender;
 import com.imudges.utils.VerifyCodeUtils;
@@ -11,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * Created by cyy on 2016/12/10.
@@ -46,7 +47,7 @@ public class OrganizationController {
     }
 
     @ResponseBody
-    @RequestMapping(value = "/Setting_message", method = RequestMethod.GET)
+    @RequestMapping(value = "/Setting_message")
     public OrganizationEntity Setting_message(String cookie,String name,String information,String address){
         organizationEntity=organizationRepository.findByCookie(cookie);
         if(name==null) name=organizationEntity.getName();
@@ -90,7 +91,7 @@ public class OrganizationController {
     }
 
     @ResponseBody
-    @RequestMapping(value = "/Change_Password", method = RequestMethod.GET)
+    @RequestMapping(value = "/Change_Password")
     public BaseEntity ChangePasw(String verifyCode,String cookie,String newpassword){
         BaseEntity baseEntity=new BaseEntity();
         if(organizationEntity.getSecurityCode().equals(verifyCode)){
@@ -100,6 +101,13 @@ public class OrganizationController {
             baseEntity.setStatus(107);
         }
         return baseEntity;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/Add_teacher")
+    public TeacherEntity AddTeacher(){
+        TeacherEntity teacherEntity=new TeacherEntity();
+        return teacherEntity;
     }
 
 }
