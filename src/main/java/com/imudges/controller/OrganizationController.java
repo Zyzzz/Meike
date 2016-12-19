@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * Created by cyy on 2016/12/10.
@@ -20,8 +21,8 @@ public class OrganizationController {
     public String OrganizationLogin(){
         return "O_sign-in";
     }
-
-    @RequestMapping(value = "/Ologin", method = RequestMethod.GET)
+    @ResponseBody
+    @RequestMapping(value = "/Ologin")
     public OrganizationEntity Ologin(String email,String password){
         OrganizationEntity organizationEntity = organizationRepository.findByEmail(email);
         if(organizationEntity==null) {
