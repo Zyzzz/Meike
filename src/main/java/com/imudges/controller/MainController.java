@@ -15,4 +15,9 @@ public class MainController {
         return "index";
     }
 
+    @RequestMapping(value = "/O_index", method = RequestMethod.GET)
+    public String O_index() {
+        return "O_index";
+    }
+
 }

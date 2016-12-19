@@ -16,6 +16,7 @@ public class OrganizationEntity extends BaseEntity{
     private String email;
     private String password;
     private String cookie;
+    private String securityCode;
     @Id
     @Column(name = "id", nullable = false)
     public int getId() {
@@ -43,6 +44,16 @@ public class OrganizationEntity extends BaseEntity{
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Basic
+    @Column(name = "securityCode", nullable = true, length = 255)
+    public String getSecurityCode() {
+        return securityCode;
+    }
+
+    public void setSecurityCode(String securityCode) {
+        this.securityCode = securityCode;
     }
 
     @Basic
