@@ -31,11 +31,11 @@ public class CourseController {
         CourseInformationEntity courseInformationEntity = new CourseInformationEntity();
         List<CourseInformationEntity> courseInformationEntities = new ArrayList<>();
         CourseListEntity courseListEntity = new CourseListEntity();
-        for(int i=0;i<courseEntities.size();i++){
-            for(int j=0;j<pictureEntities.size();j++){
-                if(courseEntities.get(i).getId()==pictureEntities.get(j).getOtherid()){
-                    courseInformationEntity.setCourseEntity(courseEntities.get(i));
-                    courseInformationEntity.setPictureEntity(pictureEntities.get(j));
+        for(CourseEntity courseEntity:courseEntities){
+            for(PictureEntity pictureEntity :pictureEntities){
+                if(courseEntity.getId()==pictureEntity.getOtherid()){
+                    courseInformationEntity.setCourseEntity(courseEntity);
+                    courseInformationEntity.setPictureEntity(pictureEntity);
                     courseInformationEntities.add(courseInformationEntity);
                 }
             }
