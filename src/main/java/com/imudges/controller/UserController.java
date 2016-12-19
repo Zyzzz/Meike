@@ -91,11 +91,10 @@ public class UserController {
         }
         String contextPath = request.getContextPath();
         String rUrl = String.valueOf(request.getRequestURL());
-        url.append(rUrl.substring(0, rUrl.indexOf(contextPath)));
-        url.append(contextPath + "/account");
-        // 邮箱激活
-        // url.append("/activateEmail.jhtml?email=" + user.getEmail() +
-        // "&id=" + uid + "&mode=activate");
+        url.append(rUrl.substring(0, rUrl.indexOf("/email_activate")));
+        //url.append(contextPath + "/account");
+
+         url.append("/activateEmail?"+"cookie=" + studentEntity.getCookie() );
         //url.append("/activateEmail.jhtml?id=" + uid + "&mode=activate");
         // 正文
         builder.append("<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" </head><body>");
@@ -107,31 +106,38 @@ public class UserController {
         builder.append("</body></html>");
         subject = "邮箱地址激活 - xxxx";
 
-        //MailSender.mailSimple(user.getEmail(), subject, builder.toString(),
-         //       false, null);
+        MailSender.mailSimple(studentEntity.getEmail(), subject, builder.toString());
         BaseEntity baseEntity = new BaseEntity();
         baseEntity.setStatus(0);
         return baseEntity;
     }
 
-    @RequestMapping(value = "/activateEmail.jhtml")
-    public String activateEmail(String cookie,HttpServletRequest request) {
+
+    @RequestMapping(value = "/activateEmail")
+    @ResponseBody
+    public BaseEntity activateEmail(String cookie) {
         // 激活之前查询
-        studentEntity=studentRepository.findByCookie(cookie);
+        studentEntity = studentRepository.findByCookie(cookie);
 
         if ("1".equals(String.valueOf(studentEntity.getNowstatus()))) {
-            // 已激活
+            BaseEntity baseEntity = new BaseEntity();
+            baseEntity.setStatus(106);
+            return baseEntity;
 
         } else {
             // 未激活
             studentEntity.setNowstatus("1");
+            studentRepository.saveAndFlush(studentEntity);
+            BaseEntity baseEntity = new BaseEntity();
+            baseEntity.setStatus(0);
+            return baseEntity;
             // 激活之后查询
            /* user = userManager.find(params.getLong("id"));
             request.getSession().setAttribute("sessionUser", user);
             model.addAttribute("mode", params.getString("mode"));
             model.addAttribute("flag", true);*/
         }
-        return "site/modules/account/activateSuccess";
+        //return "site/modules/account/activateSuccess";
     }
 
     @RequestMapping(value = "/sendEmail")
@@ -144,6 +150,8 @@ public class UserController {
         String subject = "";
         // type = forget 密码重置
         String verifyCode = VerifyCodeUtils.generateVerifyCode(4);
+        studentEntity.setSecurityCode(verifyCode);
+        studentRepository.saveAndFlush(studentEntity);
         request.getSession().setAttribute("resetCertCode", verifyCode);
         url.append("<font color='red'>" + verifyCode + "</font>");
         // 正文
@@ -157,6 +165,20 @@ public class UserController {
         MailSender.mailSimple(studentEntity.getEmail(), subject, builder.toString());
         BaseEntity baseEntity = new BaseEntity();
         baseEntity.setStatus(0);
+        return baseEntity;
+    }
+
+    @RequestMapping(value = "/ChangePasw")
+    @ResponseBody
+    public BaseEntity ChangePasw(String verifyCode,String cookie,String newpassword){
+        studentEntity=studentRepository.findByCookie(cookie);
+        BaseEntity baseEntity = new BaseEntity();
+        if(studentEntity.getSecurityCode().equals(verifyCode)){
+            baseEntity.setStatus(0);
+            studentEntity.setPassword(newpassword);
+        }else {
+            baseEntity.setStatus(107);
+        }
         return baseEntity;
     }
 
