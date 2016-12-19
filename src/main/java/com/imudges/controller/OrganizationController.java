@@ -1,6 +1,5 @@
 package com.imudges.controller;
 
-import com.imudges.model.BaseEntity;
 import com.imudges.model.OrganizationEntity;
 import com.imudges.repository.OrganizationRepository;
 import com.imudges.utils.MailSender;
@@ -12,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * Created by cyy on 2016/12/10.
@@ -27,9 +27,8 @@ public class OrganizationController {
     public String OrganizationLogin(){
         return "O_sign-in";
     }
-
     @ResponseBody
-    @RequestMapping(value = "/Ologin", method = RequestMethod.GET)
+    @RequestMapping(value = "/Ologin")
     public OrganizationEntity Ologin(String email,String password){
         OrganizationEntity organizationEntity = organizationRepository.findByEmail(email);
         if(organizationEntity==null) {

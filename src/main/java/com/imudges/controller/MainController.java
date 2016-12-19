@@ -19,4 +19,5 @@ public class MainController {
     public String O_index() {
         return "O_index";
     }
+
 }
