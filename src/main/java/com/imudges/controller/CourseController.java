@@ -53,5 +53,4 @@ public class CourseController {
     public List getLessonsByCourseId(int CourseId){
         return landcViewRepository.findBycid(CourseId);
     }
-
 }
