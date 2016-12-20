@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * Created by cyy on 2016/12/10.
@@ -109,6 +110,13 @@ public class OrganizationController {
         }
         return baseEntity;
     }
+    @ResponseBody
+    @RequestMapping(value = "/show_teacher")
+    public List<TeacherEntity> ShowTeacher(){
+        List<TeacherEntity> teacherEntityList=teacherRepository.findAll();
+        return teacherEntityList;
+    }
+
 
     @ResponseBody
     @RequestMapping(value = "/Add_teacher")
@@ -123,11 +131,13 @@ public class OrganizationController {
         return teacherEntity;
     }
 
-    @ResponseBody
+    /*@ResponseBody
     @RequestMapping(value = "/Delete_teacher")
-    public BaseEntity DeleteTeacher(String index){
+    public BaseEntity DeleteTeacher(int id){
         BaseEntity baseEntity=new BaseEntity();
+        teacherRepository.delete(id);
+        baseEntity.setStatus(0);
         return baseEntity;
-    }
+    }*/
 
 }
