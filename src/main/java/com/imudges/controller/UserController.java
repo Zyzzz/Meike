@@ -182,4 +182,15 @@ public class UserController {
         return baseEntity;
     }
 
+    @RequestMapping(value = "/ModfityStudent")
+    @ResponseBody
+    public StudentEntity ModfityStudent(String cookie,int age, String phone,String address,String information){
+        studentEntity=studentRepository.findByCookie(cookie);
+        studentEntity.setAddress(address);
+        studentEntity.setAge(age);
+        studentEntity.setInformation(information);
+        studentEntity.setPhone(phone);
+        studentRepository.saveAndFlush(studentEntity);
+        return studentEntity;
+    }
 }

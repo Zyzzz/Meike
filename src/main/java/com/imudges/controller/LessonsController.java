@@ -8,4 +8,12 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class LessonsController {
 
+
+//    @ResponseBody
+//    @RequestMapping(value = "/getLessonsByLid")
+//    public  getLessonsByLid(int lid){
+//
+//    }
+
+
 }
