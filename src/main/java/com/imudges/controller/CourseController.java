@@ -5,6 +5,7 @@ import com.imudges.model.CourseInformationEntity;
 import com.imudges.model.CourseListEntity;
 import com.imudges.model.PictureEntity;
 import com.imudges.repository.CourseRepository;
+import com.imudges.repository.LandcViewRepository;
 import com.imudges.repository.PictureRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,8 +22,10 @@ import java.util.List;
 public class CourseController {
     @Autowired
     CourseRepository courseRepository;
+    @Autowired
     PictureRepository pictureRepository;
-
+    @Autowired
+    LandcViewRepository landcViewRepository;
     @ResponseBody
     @RequestMapping(value = "/getAllCourse")
     public CourseListEntity getAllCourse(){
@@ -43,6 +46,12 @@ public class CourseController {
         courseListEntity.setStatus(0);
         courseListEntity.setCourseInformationEntities(courseInformationEntities);
         return courseListEntity;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/getLessonsByCourseId")
+    public List getLessonsByCourseId(int CourseId){
+        return landcViewRepository.findBycid(CourseId);
     }
 
 }
