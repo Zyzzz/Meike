@@ -46,7 +46,6 @@ public class AdminController {
         else {
             String cookie = SHA256Test.SHA256Encrypt(email+new Date().toString());
             adminEntity.setCookie(cookie);
-
             adminRepository.saveAndFlush(adminEntity);
             adminEntity.setStatus(0);
         }
@@ -91,12 +90,16 @@ public class AdminController {
     @ResponseBody
     @RequestMapping(value = "/A_deleteOrganization")
     public BaseEntity A_deleteOrganization(int id){
-
-        organizationRepository.delete(id);
-        organizationRepository.flush();
         BaseEntity baseEntity = new BaseEntity();
-        baseEntity.setStatus(0);
-        return baseEntity;
+        try {
+            organizationRepository.delete(id);
+            organizationRepository.flush();
+            baseEntity.setStatus(0);
+            return baseEntity;
+        }catch (Exception e){
+            baseEntity.setStatus(204);
+            return baseEntity;
+        }
     }
 
     @ResponseBody
