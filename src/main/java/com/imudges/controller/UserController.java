@@ -176,6 +176,7 @@ public class UserController {
         if(studentEntity.getSecurityCode().equals(verifyCode)){
             baseEntity.setStatus(0);
             studentEntity.setPassword(newpassword);
+            studentRepository.saveAndFlush(studentEntity);
         }else {
             baseEntity.setStatus(107);
         }
