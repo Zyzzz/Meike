@@ -1,6 +1,7 @@
 package com.imudges.controller;
 
 import com.imudges.model.AdminEntity;
+import com.imudges.model.BaseEntity;
 import com.imudges.model.OrganizationEntity;
 import com.imudges.model.OrganizationList;
 import com.imudges.repository.AdminRepository;
@@ -12,9 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 /**
  * Created by Administrator on 2017/1/14.
@@ -91,12 +90,13 @@ public class AdminController {
      */
     @ResponseBody
     @RequestMapping(value = "/A_deleteOrganization")
-    public AdminEntity A_deleteOrganization(int id){
+    public BaseEntity A_deleteOrganization(int id){
 
         organizationRepository.delete(id);
         organizationRepository.flush();
-
-        return adminEntity;
+        BaseEntity baseEntity = new BaseEntity();
+        baseEntity.setStatus(0);
+        return baseEntity;
     }
 
     @ResponseBody
@@ -105,7 +105,7 @@ public class AdminController {
 
         OrganizationList organizationList=new OrganizationList();
         organizationList.setOrganizationEntityList(organizationRepository.findAll());
-
+        organizationList.setStatus(0);
         return organizationList;
     }
 }
