@@ -45,6 +45,21 @@ public class UserController {
         return "Per_information";
     }
 
+    @RequestMapping(value = "/courses.html", method = RequestMethod.GET)
+    public String Course(){
+        return "courses";
+    }
+
+    @RequestMapping(value = "/course_detail.html", method = RequestMethod.GET)
+    public String CourseDetail(){
+        return "course_detail";
+    }
+
+    @RequestMapping(value = "/Forget_psw.html", method = RequestMethod.GET)
+    public String Forget_psw(){
+        return "forgetpsw";
+    }
+
     @ResponseBody
      @RequestMapping(value = "/user_register")
      public StudentEntity Register(String email,String password){

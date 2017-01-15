@@ -57,18 +57,21 @@ $(document).ready(function(){
 	    </div>
 	    <!--/.navbar-header-->
 	    <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" style="height: 1px;">
+
+
 	        <ul class="nav navbar-nav">
 		        <li class="dropdown" id="Login">
 		            <a href="login.html"><i class="fa fa-user"></i><span>Login</span></a>
 		        </li>
+
+
 		        <li class="dropdown">
-		        	<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list"></i><span>Courses</span></a>
-		        	  <ul class="dropdown-menu">
-			            <li><a href="courses.html">Courses Categories</a></li>
-			            <li><a href="courses.html">Courses list</a></li>
-			            <li><a href="course_detail.html">Courses detail</a></li>
-		              </ul>
-		        </li>
+
+					<a href="courses.html"><i class="fa fa-list"></i><span>Courses</span></a>
+
+				</li>
+
+
 		        <li class="dropdown">
 		            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-calendar"></i><span>Events</span></a>
 		             <ul class="dropdown-menu">
@@ -100,7 +103,7 @@ $(document).ready(function(){
 					<a href="Per_information.html"><i class="fa fa-user"></i><span  id="user_name_text"></span></a>
 				</li>
 				<li class="dropdown" id="logout" style="display: none;">
-					<a href="login.html"><i class="fa fa-user"></i><span>Log &nbsp;out</span></a>
+					<a href="login.html" onclick="Log_out_clear_cookie()"><i class="fa fa-user"></i><span>Log &nbsp;out</span></a>
 				</li>
 		    </ul>
 	    </div>
@@ -705,6 +708,7 @@ $(document).ready(function(){
 	function getCookie(cname)
 	{
 		var name = cname + "=";
+		console.log(document.cookie);
 		var ca = document.cookie.split(';');
 		for(var i=0; i<ca.length; i++)
 		{
@@ -714,30 +718,66 @@ $(document).ready(function(){
 		return "";
 	}
 
+
+	function Log_out_clear_cookie() {
+
+		document.cookie="cookie=;";
+		document.cookie="nickname=;";
+
+		console.log(document.cookie);
+	}
+	
 	window.onload=function () {
 		var document_cookie=document.cookie;
+
+		console.log("document_cookie:"+document.cookie);
 
 		var nickname=getCookie("nickname");
 
 		console.log("nickname:"+nickname);
 
+		var cookie=getCookie("cookie");
 
-		var login=document.getElementById("Login");
-		login.style.opacity="0";
-		login.style.display="none";
+		if((nickname!=null&&cookie!=null)&&(cookie!=""||nickname!="")){
+			alert("none");
+			var login=document.getElementById("Login");
+			login.style.opacity="0";
+			login.style.display="none";
 
-		// 显示用户昵称
+			// 显示用户昵称
 
-		var user=document.getElementById("user_name");
-		user.style.display="block";
+			var user=document.getElementById("user_name");
+			user.style.display="block";
 
-		var username=document.getElementById("user_name_text");
-		username.innerText=nickname;
-		username.style.display="block";
+			var username=document.getElementById("user_name_text");
+			username.innerText=nickname;
+			username.style.display="block";
 
-		// 显示注销
-		var log_out=document.getElementById("logout");
-		log_out.style.display="block";
+			// 显示注销
+			var log_out=document.getElementById("logout");
+			log_out.style.display="block";
+		}else{
+			alert("login"+"display");
+			var login=document.getElementById("Login");
+			login.style.opacity="1";
+			login.style.display="display";
+
+			// 显示用户昵称
+
+			var user=document.getElementById("user_name");
+			user.style.display="none";
+
+			var username=document.getElementById("user_name_text");
+			username.innerText=nickname;
+			username.style.display="none";
+
+			// 显示注销
+			var log_out=document.getElementById("logout");
+			log_out.style.display="none";
+		}
+
+
+
 	}
 
 
