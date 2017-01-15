@@ -214,4 +214,12 @@ public class UserController {
         baseEntity.setStatus(0);
         return baseEntity;
     }
+
+    @RequestMapping(value = "/CollectCourse")
+    @ResponseBody
+    public BaseEntity CollectCourse(){
+        BaseEntity baseEntity=new BaseEntity();
+        baseEntity.setStatus(0);
+        return baseEntity;
+    }
 }
