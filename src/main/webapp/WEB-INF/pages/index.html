@@ -8,10 +8,15 @@
 <meta name="keywords" content="Learn Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+	<!--&lt;!&ndash;引入公共的变量&ndash;&gt;-->
+	<!--<script type="text/javascript" src="js/All_var.js"></script>-->
+
 <link href="css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css' />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<!--<script src="https://use.fontawesome.com/00661d92e1.js"></script>-->
 <!-- Custom Theme files -->
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <link rel="stylesheet" href="css/jquery.countdown.css" />
@@ -23,16 +28,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <script>
 $(document).ready(function(){
-    $(".dropdown").hover(            
+    $(".dropdown").hover(
         function() {
             $('.dropdown-menu', this).stop( true, true ).slideDown("fast");
-            $(this).toggleClass('open');        
+            $(this).toggleClass('open');
         },
         function() {
             $('.dropdown-menu', this).stop( true, true ).slideUp("fast");
-            $(this).toggleClass('open');       
+            $(this).toggleClass('open');
         }
     );
+
+
 });
 </script>
 </head>
@@ -51,7 +58,7 @@ $(document).ready(function(){
 	    <!--/.navbar-header-->
 	    <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" style="height: 1px;">
 	        <ul class="nav navbar-nav">
-		        <li class="dropdown">
+		        <li class="dropdown" id="Login">
 		            <a href="login.html"><i class="fa fa-user"></i><span>Login</span></a>
 		        </li>
 		        <li class="dropdown">
@@ -86,6 +93,15 @@ $(document).ready(function(){
                        </form>
 			        </ul>
 		        </li>
+
+
+				<!--//登陆之后显示-->
+				<li class="dropdown" id="user_name"  style="display: none;">
+					<a href="Per_information.html"><i class="fa fa-user"></i><span  id="user_name_text"></span></a>
+				</li>
+				<li class="dropdown" id="logout" style="display: none;">
+					<a href="login.html"><i class="fa fa-user"></i><span>Log &nbsp;out</span></a>
+				</li>
 		    </ul>
 	    </div>
 	    <div class="clearfix"> </div>
@@ -685,5 +701,46 @@ $(document).ready(function(){
     </div>
 <script src="js/jquery.countdown.js"></script>
 <script src="js/script.js"></script>
+<script type="text/javascript">
+	function getCookie(cname)
+	{
+		var name = cname + "=";
+		var ca = document.cookie.split(';');
+		for(var i=0; i<ca.length; i++)
+		{
+			var c = ca[i].trim();
+			if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+		}
+		return "";
+	}
+
+	window.onload=function () {
+		var document_cookie=document.cookie;
+
+		var nickname=getCookie("nickname");
+
+		console.log("nickname:"+nickname);
+
+
+		var login=document.getElementById("Login");
+		login.style.opacity="0";
+		login.style.display="none";
+
+		// 显示用户昵称
+
+		var user=document.getElementById("user_name");
+		user.style.display="block";
+
+		var username=document.getElementById("user_name_text");
+		username.innerText=nickname;
+		username.style.display="block";
+
+		// 显示注销
+		var log_out=document.getElementById("logout");
+		log_out.style.display="block";
+	}
+
+
+</script>
 </body>
 </html>	

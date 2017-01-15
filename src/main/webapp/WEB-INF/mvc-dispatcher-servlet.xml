@@ -17,7 +17,7 @@
     <mvc:resources location="WEB-INF/css/" mapping="css/**"/>
     <mvc:resources location="WEB-INF/javascripts/" mapping="javascripts/**"/>
     <mvc:resources location="WEB-INF/lib/" mapping="lib/**"/>
-    <mvc:resources location="WEB-INF/fonts/" mapping="font/**"/>
+    <mvc:resources location="WEB-INF/fonts/" mapping="fonts/**"/>
     <mvc:resources location="WEB-INF/stylesheets/" mapping="stylesheets/**"/>
     <!-- 开启注解 -->
     <mvc:annotation-driven/>
