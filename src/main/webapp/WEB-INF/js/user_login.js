@@ -18,14 +18,25 @@ $(document).ready(function (){
            },
            success:function(json){
 
-               alert(JSON.stringify(json));
+               console.log(JSON.stringify(json));
 
+               window.json_all=JSON.stringify(json);
+               alert("window.json_all"+window.json_all);
                var status=json.status;
                if(status=='0'){
                    // window.location.href = "admin/index.action";    //跳转到后台主页
-                    alert("success");
+
+
+
+                   document.cookie= "nickname" +"="+json.nickname+";";
+
+                   document.cookie="cookie"+"="+json.cookie+";";
+
+
                    window.opener=null;
                    window.open('index.html','_self');
+
+                   console.log(document.cookie);
 
                }else{
                    var error=document.getElementsByClassName("error");
