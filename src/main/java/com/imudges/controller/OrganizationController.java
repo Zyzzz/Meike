@@ -1,10 +1,7 @@
 package com.imudges.controller;
 
 import com.imudges.model.*;
-import com.imudges.repository.CourseRepository;
-import com.imudges.repository.LessonsRepository;
-import com.imudges.repository.OrganizationRepository;
-import com.imudges.repository.TeacherRepository;
+import com.imudges.repository.*;
 import com.imudges.utils.MailSender;
 import com.imudges.utils.VerifyCodeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +20,8 @@ import java.util.List;
 public class OrganizationController {
     private TeacherEntity teacherEntity;
     private  OrganizationEntity organizationEntity;
+    @Autowired
+    private VideoRepository videoRepository;
     @Autowired
     private OrganizationRepository organizationRepository;
     @Autowired
@@ -170,8 +169,16 @@ public class OrganizationController {
         return baseEntity;
     }
 
-
-
+    @ResponseBody
+    @RequestMapping(value = "/deleteLessons")
+    public BaseEntity deleteLessons(int lid){
+        BaseEntity baseEntity = new BaseEntity();
+        LessonsEntity lessonsEntitie = lessonsRepository.findOne(lid);
+        videoRepository.delete(lessonsEntitie.getVideoId());
+        lessonsRepository.delete(lessonsEntitie);
+        baseEntity.setStatus(0);
+        return baseEntity;
+    }
 
 
 
