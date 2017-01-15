@@ -1,0 +1,6 @@
+/*定义登录界面输错样式*/
+.error{
+    color: red;
+    font-size: 14px;
+    display: none;
+}
