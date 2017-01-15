@@ -18,7 +18,10 @@ public class LessonsController {
     @ResponseBody
     @RequestMapping(value = "/getLessonsByLid")
     public LessonsinformationEntity getLessonsByLid(int lid){
-       return lessonsinformationRepository.findOne(lid);
+        LessonsinformationEntity lessonsinformationEntity = new LessonsinformationEntity();
+        lessonsinformationEntity = lessonsinformationRepository.findOne(lid);
+        lessonsinformationEntity.setStatus(0);
+        return lessonsinformationEntity;
     }
 
 
