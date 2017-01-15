@@ -1,9 +1,6 @@
 package com.imudges.controller;
 
-import com.imudges.model.CourseEntity;
-import com.imudges.model.CourseInformationEntity;
-import com.imudges.model.CourseListEntity;
-import com.imudges.model.PictureEntity;
+import com.imudges.model.*;
 import com.imudges.repository.CourseRepository;
 import com.imudges.repository.LandcViewRepository;
 import com.imudges.repository.PictureRepository;
@@ -50,7 +47,10 @@ public class CourseController {
 
     @ResponseBody
     @RequestMapping(value = "/getLessonsByCourseId")
-    public List getLessonsByCourseId(int CourseId){
-        return landcViewRepository.findBycid(CourseId);
+    public LessonsList getLessonsByCourseId(int CourseId){
+        LessonsList lessonsList = new LessonsList();
+        lessonsList.setLandcviewEntities(landcViewRepository.findBycid(CourseId));
+        lessonsList.setStatus(0);
+        return lessonsList;
     }
 }
