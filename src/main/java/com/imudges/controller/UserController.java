@@ -55,6 +55,11 @@ public class UserController {
         return "Course_detail";
     }
 
+    @RequestMapping(value = "/Forget_psw.html", method = RequestMethod.GET)
+    public String Forget_psw(){
+        return "forgetpsw";
+    }
+
     @ResponseBody
      @RequestMapping(value = "/user_register")
      public StudentEntity Register(String email,String password){
