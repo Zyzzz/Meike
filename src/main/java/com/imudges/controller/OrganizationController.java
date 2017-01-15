@@ -1,10 +1,8 @@
 package com.imudges.controller;
 
-import com.imudges.model.BaseEntity;
-import com.imudges.model.CourseEntity;
-import com.imudges.model.OrganizationEntity;
-import com.imudges.model.TeacherEntity;
+import com.imudges.model.*;
 import com.imudges.repository.CourseRepository;
+import com.imudges.repository.LessonsRepository;
 import com.imudges.repository.OrganizationRepository;
 import com.imudges.repository.TeacherRepository;
 import com.imudges.utils.MailSender;
@@ -31,7 +29,8 @@ public class OrganizationController {
     private TeacherRepository teacherRepository;
     @Autowired
     private CourseRepository courseRepository;
-
+    @Autowired
+    private LessonsRepository lessonsRepository;
 
     @RequestMapping(value = "/Osignin", method = RequestMethod.GET)
     public String OrganizationLogin(){
@@ -157,5 +156,21 @@ public class OrganizationController {
         baseEntity.setStatus(0);
         return baseEntity;
     }
+
+    @ResponseBody
+    @RequestMapping(value = "/deleteCourse")
+    public BaseEntity deleteCourse(int cid){
+        BaseEntity baseEntity = new BaseEntity();
+        List<LessonsEntity> lessonsEntities = lessonsRepository.findBycourseId(cid);
+        for(LessonsEntity lessonsEntity : lessonsEntities){
+            lessonsRepository.delete(lessonsEntity.getId());
+        }
+        courseRepository.delete(cid);
+        baseEntity.setStatus(0);
+        return baseEntity;
+    }
+
+
+
 
 }
