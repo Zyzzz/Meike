@@ -95,6 +95,7 @@ public class UserController {
         //url.append(contextPath + "/account");
 
          url.append("/activateEmail?"+"cookie=" + studentEntity.getCookie() );
+
         //url.append("/activateEmail.jhtml?id=" + uid + "&mode=activate");
         // 正文
         builder.append("<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" </head><body>");
