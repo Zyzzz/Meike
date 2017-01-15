@@ -28,12 +28,13 @@ public class CourseController {
     public CourseListEntity getAllCourse(){
         List<CourseEntity> courseEntities = courseRepository.findAll();
         List<PictureEntity> pictureEntities  = pictureRepository.findByPattern(1);
-        CourseInformationEntity courseInformationEntity = new CourseInformationEntity();
+
         List<CourseInformationEntity> courseInformationEntities = new ArrayList<>();
         CourseListEntity courseListEntity = new CourseListEntity();
         for(CourseEntity courseEntity:courseEntities){
             for(PictureEntity pictureEntity :pictureEntities){
                 if(courseEntity.getId()==pictureEntity.getOtherid()){
+                    CourseInformationEntity courseInformationEntity = new CourseInformationEntity();
                     courseInformationEntity.setCourseEntity(courseEntity);
                     courseInformationEntity.setPictureEntity(pictureEntity);
                     courseInformationEntities.add(courseInformationEntity);
