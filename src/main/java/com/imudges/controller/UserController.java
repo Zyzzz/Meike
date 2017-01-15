@@ -45,14 +45,14 @@ public class UserController {
         return "Per_information";
     }
 
-    @RequestMapping(value = "/Course.html", method = RequestMethod.GET)
+    @RequestMapping(value = "/courses.html", method = RequestMethod.GET)
     public String Course(){
-        return "Course";
+        return "courses";
     }
 
-    @RequestMapping(value = "/Course_detail.html", method = RequestMethod.GET)
+    @RequestMapping(value = "/course_detail.html", method = RequestMethod.GET)
     public String CourseDetail(){
-        return "Course_detail";
+        return "course_detail";
     }
 
     @RequestMapping(value = "/Forget_psw.html", method = RequestMethod.GET)
