@@ -40,6 +40,11 @@ public class UserController {
           return "register";
      }
 
+    @RequestMapping(value = "/Per_information.html", method = RequestMethod.GET)
+    public String ToPer_information(){
+        return "Per_information";
+    }
+
     @ResponseBody
      @RequestMapping(value = "/user_register")
      public StudentEntity Register(String email,String password){
