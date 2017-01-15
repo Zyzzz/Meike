@@ -27,6 +27,7 @@ public class CourseController {
     @RequestMapping(value = "/getAllCourse")
     public CourseListEntity getAllCourse(){
         List<CourseEntity> courseEntities = courseRepository.findAll();
+
         List<PictureEntity> pictureEntities  = pictureRepository.findByPattern(1);
 
         List<CourseInformationEntity> courseInformationEntities = new ArrayList<>();
