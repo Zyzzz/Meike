@@ -5,6 +5,7 @@ import com.imudges.model.BaseEntity;
 import com.imudges.model.OrganizationEntity;
 import com.imudges.model.OrganizationList;
 import com.imudges.repository.AdminRepository;
+import com.imudges.repository.CourseRepository;
 import com.imudges.repository.OrganizationRepository;
 import com.imudges.utils.SHA256Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,9 @@ public class AdminController {
     @Autowired
     OrganizationRepository organizationRepository;
 
+    /*
+     *
+     */
     @RequestMapping(value = "/Asignin", method = RequestMethod.GET)
     public String AdminLogin(){
         return "A_sign-in";
@@ -111,4 +115,6 @@ public class AdminController {
         organizationList.setStatus(0);
         return organizationList;
     }
+
+
 }
