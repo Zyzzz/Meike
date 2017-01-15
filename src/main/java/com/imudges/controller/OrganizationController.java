@@ -1,8 +1,10 @@
 package com.imudges.controller;
 
 import com.imudges.model.BaseEntity;
+import com.imudges.model.CourseEntity;
 import com.imudges.model.OrganizationEntity;
 import com.imudges.model.TeacherEntity;
+import com.imudges.repository.CourseRepository;
 import com.imudges.repository.OrganizationRepository;
 import com.imudges.repository.TeacherRepository;
 import com.imudges.utils.MailSender;
@@ -27,7 +29,8 @@ public class OrganizationController {
     private OrganizationRepository organizationRepository;
     @Autowired
     private TeacherRepository teacherRepository;
-
+    @Autowired
+    private CourseRepository courseRepository;
 
 
     @RequestMapping(value = "/Osignin", method = RequestMethod.GET)
@@ -131,13 +134,28 @@ public class OrganizationController {
         return teacherEntity;
     }
 
-    /*@ResponseBody
+    @ResponseBody
     @RequestMapping(value = "/Delete_teacher")
     public BaseEntity DeleteTeacher(int id){
         BaseEntity baseEntity=new BaseEntity();
         teacherRepository.delete(id);
         baseEntity.setStatus(0);
         return baseEntity;
-    }*/
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/addCourse")
+    public BaseEntity addCourse(String cookie,String cname,String type,int lessonNumber){
+        BaseEntity baseEntity = new BaseEntity();
+        CourseEntity courseEntity = new CourseEntity();
+        OrganizationEntity organizationEntity = organizationRepository.findByCookie(cookie);
+        courseEntity.setLessonNumber(lessonNumber);
+        courseEntity.setType(type);
+        courseEntity.setOrganizationid(organizationEntity.getId());
+        courseEntity.setName(cname);
+        courseRepository.saveAndFlush(courseEntity);
+        baseEntity.setStatus(0);
+        return baseEntity;
+    }
 
 }
