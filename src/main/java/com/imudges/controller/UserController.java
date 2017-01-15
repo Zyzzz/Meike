@@ -1,7 +1,9 @@
 package com.imudges.controller;
 
 import com.imudges.model.BaseEntity;
+import com.imudges.model.EvaluateEntity;
 import com.imudges.model.StudentEntity;
+import com.imudges.repository.EvaluateRepository;
 import com.imudges.repository.StudentRepository;
 import com.imudges.utils.MailSender;
 import com.imudges.utils.SHA256Test;
@@ -13,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import java.sql.Timestamp;
 import java.util.Date;
-
 
 
 /**
@@ -26,6 +28,8 @@ public class UserController {
 
      @Autowired
      private StudentRepository studentRepository;
+    @Autowired
+    EvaluateRepository evaluateRepository;
      @RequestMapping(value = "/login.html", method = RequestMethod.GET)
      public String ToLogin(){
           return "login";
@@ -194,5 +198,20 @@ public class UserController {
         studentEntity.setPhone(phone);
         studentRepository.saveAndFlush(studentEntity);
         return studentEntity;
+    }
+
+    @RequestMapping(value = "/AddComments")
+    @ResponseBody
+    public BaseEntity AddComments(String comments,int lessonID){
+        BaseEntity baseEntity=new BaseEntity();
+        Timestamp d = new Timestamp(System.currentTimeMillis());
+        EvaluateEntity evaluateEntity=new EvaluateEntity();
+        evaluateEntity.setContent(comments);
+        evaluateEntity.setLessonid(lessonID);
+        //evaluateEntity.setStudentid();
+        evaluateEntity.setTimes(d);
+        evaluateRepository.saveAndFlush(evaluateEntity);
+        baseEntity.setStatus(0);
+        return baseEntity;
     }
 }
