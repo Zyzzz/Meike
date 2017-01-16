@@ -62,6 +62,7 @@ $(document).ready(function (){
             var courseEntity = json.courseEntity;
             var pictureEntity = json.pictureEntity;
 
+
             $(".col-md-9").prepend('<img src="'+pictureEntity.url+'" class="img-responsive" alt=""/> <h3>'+courseEntity.name+'</h3>')
 
         }
