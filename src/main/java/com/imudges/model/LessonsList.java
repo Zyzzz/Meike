@@ -33,4 +33,5 @@ public class LessonsList extends BaseEntity{
     public void setPictureEntity(PictureEntity pictureEntity) {
         this.pictureEntity = pictureEntity;
     }
+
 }

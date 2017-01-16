@@ -1,10 +1,7 @@
 package com.imudges.controller;
 
 import com.imudges.model.*;
-import com.imudges.repository.CourseRepository;
-import com.imudges.repository.EvaluateViewRepository;
-import com.imudges.repository.LandcViewRepository;
-import com.imudges.repository.PictureRepository;
+import com.imudges.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,6 +24,8 @@ public class CourseController {
     LandcViewRepository landcViewRepository;
     @Autowired
     EvaluateViewRepository evaluateViewRepository;
+    @Autowired
+    TeacherRepository teacherRepository;
 
     @RequestMapping(value = "/lessons_detail.html", method = RequestMethod.GET)
     public String GoLesson(){
