@@ -57,4 +57,11 @@ public class CourseController {
         lessonsList.setStatus(0);
         return lessonsList;
     }
+
+    @ResponseBody
+    @RequestMapping(value = "/getAllComments")
+    public CommentList getAllComments(int lessonID){
+        CommentList commentList=new CommentList();
+        return commentList;
+    }
 }

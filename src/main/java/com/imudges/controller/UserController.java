@@ -1,7 +1,6 @@
 package com.imudges.controller;
 
 import com.imudges.model.BaseEntity;
-import com.imudges.model.EvaluateEntity;
 import com.imudges.model.FavoriteEntity;
 import com.imudges.model.StudentEntity;
 import com.imudges.repository.EvaluateRepository;
