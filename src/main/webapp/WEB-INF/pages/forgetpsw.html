@@ -15,7 +15,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="js/jquery.min.js" type="text/javascript"></script>
 	<script src="js/user_login.js" type="text/javascript"></script>
-	<script src="js/user_forgetpsw.js" type="text/javascript"></script>
 <script src="js/bootstrap.min.js"></script>
 <!-- Custom Theme files -->
 <link href="css/style.css" rel='stylesheet' type='text/css' />
@@ -186,22 +185,18 @@ $(document).ready(function(){
 	<div class="courses_box1">
 	   <div class="container">
 	   	  <form class="login" id="user_login_ajax" >
-	    	<p class="lead">Welcome Back!</p>
+	    	<p class="lead">Forget Password!</p>
 		    <div class="form-group">
 				<span class="error">*邮箱错误</span>
 			    <input  autocomplete="off" type="text" name="email" class="required form-control" placeholder="Email">
 		    </div>
 		    <div class="form-group">
-				<span class="error" >*密码错误</span>
-			    <input  autocomplete="off" type="password" class="password required form-control" placeholder="Password" name="password">
+				<span class="error" >*验证码错误</span>
+			    <input  autocomplete="off" type="text" class="password required form-control" placeholder="Captcha" name="Captcha">
 		    </div>
 		    <div class="form-group">
-				<a href="#" data-toggle="modal" data-target="#myModal" style="cursor: hand;">
-					Forget Password
-				</a>
 		    	<input type="button" id="submit" class="btn btn-primary btn-lg1 btn-block" name="submit" value="Log In">
 		    </div>
-	        <p>Don not have an account? <a href="register.html" title="Sign Up">Sign Up</a></p>
 		 </form>
 	   </div>
 	</div>
@@ -281,36 +276,6 @@ $(document).ready(function(){
 	        </div>
     	</div>
     </div>
-	<!-- Modal忘记密码摸态框-->
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-					<h4 class="modal-title" id="myModalLabel">Please verify your mailbox</h4>
-				</div>
-				<div class="modal-body">
-				<form class="form-inline" role="form" id="user_forget_ajax" >
-					<div class="form-group">
-						<label for="inputEmail" class="sr-only">Email</label>
-						<input id="inputEmail" autocomplete="off"  name="email" class="required form-control"placeholder="Email">
-					</div>
 
-					<button  class="btn btn-default" id="sendEmail">Send captcha</button>
-					<!--<div class="form-group">-->
-						<!--<span class="error" >*验证码错误</span>-->
-						<!--<input  autocomplete="off" type="password" class="password required form-control" placeholder="Captcha" name="Captcha">-->
-					<!--</div>-->
-				</form>
-				</div>
-
-				<div class="modal-footer">
-
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary" id="captcha submit" name="submit" value="Log In">Submit</button>
-				</div>
-			</div>
-		</div>
-		</div>
 </body>
 </html>	
