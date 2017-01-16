@@ -72,8 +72,8 @@ $(document).ready(function (){
                         +'</div> <div class="name_col"><a href="lessons_detail.html?lid='+courses[i].lid+'">'
                         +courses[i].lname
                         +'</a></div> <div class="duration_col">'
-                        +""
-                        +'</div> </li>')
+                        +courses[i].time
+                        +' Minute</div> </li>')
                 }
         }
     });

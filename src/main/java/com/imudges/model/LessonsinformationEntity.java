@@ -1,16 +1,13 @@
 package com.imudges.model;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Created by Administrator on 2017/1/16.
  */
 @Entity
 @Table(name = "lessonsinformation", schema = "newmeike", catalog = "")
-public class LessonsinformationEntity {
+public class LessonsinformationEntity extends BaseEntity{
     private Integer time;
     private int lid;
     private String url;
@@ -38,7 +35,7 @@ public class LessonsinformationEntity {
         this.time = time;
     }
 
-    @Basic
+    @Id
     @Column(name = "lid", nullable = false)
     public int getLid() {
         return lid;

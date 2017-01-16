@@ -1,9 +1,6 @@
 package com.imudges.model;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Created by Administrator on 2017/1/16.
@@ -70,7 +67,7 @@ public class LandvviewEntity {
         this.videoId = videoId;
     }
 
-    @Basic
+    @Id
     @Column(name = "lid", nullable = false)
     public int getLid() {
         return lid;
