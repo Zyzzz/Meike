@@ -173,6 +173,7 @@ public class UserController {
     @ResponseBody
     public BaseEntity sendEmail(HttpServletRequest request,String email) {
 
+        System.out.println(email);
         studentEntity=studentRepository.findByEmail(email);
         StringBuilder builder = new StringBuilder();
         StringBuffer url = new StringBuffer();
