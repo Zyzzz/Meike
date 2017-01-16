@@ -60,7 +60,6 @@ public class CourseController {
     public LessonsList getLessonsByCourseId(int CourseId){
         LessonsList lessonsList = new LessonsList();
         lessonsList.setLandcviewEntities(landcViewRepository.findBycid(CourseId));
-        lessonsList.setCourseEntity(courseRepository.findOne(CourseId));
         lessonsList.setPictureEntity(pictureRepository.findByPatternAndOtherid(1,CourseId));
         lessonsList.setStatus(0);
         return lessonsList;

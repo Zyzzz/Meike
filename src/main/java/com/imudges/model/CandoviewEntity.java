@@ -20,6 +20,17 @@ public class CandoviewEntity {
     private double rank;
     private String email;
     private String password;
+    private String description;
+
+    @Basic
+    @Column(name = "description", nullable = false, length = 255)
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
     @Id
     @Column(name = "cid", nullable = false)
     public int getCid() {

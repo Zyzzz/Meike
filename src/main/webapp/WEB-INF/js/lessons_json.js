@@ -59,12 +59,12 @@ $(document).ready(function (){
             console.log(JSON.stringify(json));
             // console.log(json);
             var courses=json.landcviewEntities;
-            var courseEntity = json.courseEntity;
             var pictureEntity = json.pictureEntity;
 
             console.log("length:"+courses.length+"lname:"+courses[0].lname);
 
-            $(".col-md-9").prepend('<img src="'+pictureEntity.url+'" class="img-responsive" alt=""/> <h3>'+courseEntity.name+'</h3>')
+            $(".col-md-9").prepend('<img src="'+pictureEntity.url+'" class="img-responsive" alt=""/> <h3>'+courses[0].cname+'</h3>' +
+                '<p>' + courses[0].description+'</p>')
 
            for(var i=0;i<courses.length;i++){
                     $(".table-list").append('<li class="clearfix"> <div class="id_col">'

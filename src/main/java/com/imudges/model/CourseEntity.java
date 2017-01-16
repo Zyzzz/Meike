@@ -13,6 +13,17 @@ public class CourseEntity {
     private String type;
     private int lessonNumber;
     private int organizationid;
+    private String description;
+
+    @Basic
+    @Column(name = "description", nullable = false, length = 255)
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     @Id
     @Column(name = "id", nullable = false)
