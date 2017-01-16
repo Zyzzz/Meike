@@ -3,7 +3,7 @@
  */
 
 $(document).ready(function (){
-        alert("courses_json_request");
+        //alert("courses_json_request");
         $.ajax({
 
             url:"/getAllCourse",
@@ -16,7 +16,7 @@ $(document).ready(function (){
                 alert("Connection error");
             },
             success:function(json){
-                alert("success");
+                //alert("success");
                 console.log(JSON.stringify(json));
                 // console.log(json);
                 var courses=json.courseInformationEntities;

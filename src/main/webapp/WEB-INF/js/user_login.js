@@ -4,7 +4,7 @@
 
 $(document).ready(function (){
    $("#submit").click(function(){
-       alert("user_ajax");
+      // alert("user_ajax");
        $.ajax({
            // url:'http://localhost:8080/userLogin',
            url:"/userLogin",
@@ -30,7 +30,7 @@ $(document).ready(function (){
 
                    document.cookie= "nickname" +"="+json.nickname+";";
 
-                   document.cookie="cookie"+"="+json.cookie+";";
+                   document.cookie="meikeusercookie"+"="+json.cookie+";";
 
 
                    window.opener=null;
@@ -43,21 +43,14 @@ $(document).ready(function (){
                    if(status=="100"){
                        window.opener=null;
                        window.open('login.html','_self');
-
                        error[0].style.display="block";
-
                    }else{
                        if(status=="101"){
-
                            window.opener=null;
                            window.open('login.html','_self');
-
                            error[1].style.display="block";
-
                        }
                    }
-
-
                }
 
            }

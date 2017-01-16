@@ -41,7 +41,7 @@ function hooyesQueryString(queryStringName)
 
 
 $(document).ready(function (){
-    alert(hooyesQueryString("cid"));
+    //alert(hooyesQueryString("cid"));
     $.ajax({
 
         url:"/getLessonsByCourseId",
@@ -55,7 +55,7 @@ $(document).ready(function (){
             alert("Connection error");
         },
         success:function(json){
-            alert("success");
+           // alert("success");
             console.log(JSON.stringify(json));
             // console.log(json);
             var courses=json.landcviewEntities;

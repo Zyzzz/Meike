@@ -171,9 +171,9 @@ public class UserController {
 
     @RequestMapping(value = "/sendEmail")
     @ResponseBody
-    public BaseEntity sendEmail(HttpServletRequest request,String cookie) {
+    public BaseEntity sendEmail(HttpServletRequest request,String email) {
 
-        studentEntity=studentRepository.findByCookie(cookie);
+        studentEntity=studentRepository.findByEmail(email);
         StringBuilder builder = new StringBuilder();
         StringBuffer url = new StringBuffer();
         String subject = "";
@@ -191,7 +191,7 @@ public class UserController {
         builder.append("</body></html>");
         subject = "密码重置 - xxxx";
 
-        MailSender.mailSimple(studentEntity.getEmail(), subject, builder.toString());
+        MailSender.mailSimple(email, subject, builder.toString());
         BaseEntity baseEntity = new BaseEntity();
         baseEntity.setStatus(0);
         return baseEntity;
@@ -241,11 +241,11 @@ public class UserController {
 
     @RequestMapping(value = "/CollectCourse")
     @ResponseBody
-    public BaseEntity CollectCourse(int courseID,int studentID){
+    public BaseEntity CollectCourse(int courseID,String cookie){
         FavoriteEntity favoriteEntity=new FavoriteEntity();
         BaseEntity baseEntity=new BaseEntity();
         favoriteEntity.setCourseid(courseID);
-        favoriteEntity.setStudentid(studentID);
+        favoriteEntity.setStudentid(studentRepository.findByCookie(cookie).getId());
         favoriteRepository.saveAndFlush(favoriteEntity);
         baseEntity.setStatus(0);
         return baseEntity;

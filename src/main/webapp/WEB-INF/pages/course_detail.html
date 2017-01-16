@@ -10,6 +10,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css' />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/Collect_course.js"></script>
 	<script type="text/javascript" src="js/lessons_json.js"></script>
 	<!--//加载评论-->
 	<script type="text/javascript" src="js/course_detail.js"></script>
@@ -179,51 +180,12 @@ $(document).ready(function(){
 	<div class="courses_box1">
 	   <div class="container">
 	   	  <div class="col-md-3">
-			<div class="courses_box1-left">
-                <form>
-                 <div class="select-block1">
-                    <select>
-                        <option value="">Discipline</option>
-                        <option value="">Discipline</option>
-                        <option value="">Discipline</option>
-                        <option value="">Discipline</option>
-                        <option value="">Discipline</option>
-                    </select>
-                 </div>
-                <!-- select-block -->
-                 <div class="select-block1">
-                    <select>
-                        <option value="">Duration</option>
-                        <option value="">Duration</option>
-                        <option value="">Duration</option>
-                        <option value="">Duration</option>
-                        <option value="">Duration</option>
-                    </select>
-                </div>
-                <!-- select-block -->
-                <div class="select-block1">
-                    <select>
-                        <option value="">Level</option>
-                        <option value="">Level</option>
-                        <option value="">Level</option>
-                        <option value="">Level</option>
-                        <option value="">Level</option>
-                    </select>
-                </div>
-                <!-- select-block -->
-                <div class="select-block1">
-                    <select>
-                        <option value="">Location</option>
-                        <option value="">Location</option>
-                        <option value="">Location</option>
-                        <option value="">Location</option>
-                        <option value="">Location</option>
-                    </select>
-                </div>
-                <!-- select-block -->
-                <input type="submit" value="search" class="course-submit">		                            
-            </form>
-	       </div>
+			<!--<div class="courses_box1-left">-->
+                <!--&lt;!&ndash;<form>&ndash;&gt;-->
+                <!--&lt;!&ndash;&lt;!&ndash; select-block &ndash;&gt;&ndash;&gt;-->
+                <!--&lt;!&ndash;<input type="submit" value="search" class="course-submit">		                            &ndash;&gt;-->
+            	<!--&lt;!&ndash;</form>&ndash;&gt;-->
+	       <!--</div>-->
 	       <div class="personBox">
               <div class="personBox_1">
                  <div class="person_image">
@@ -242,28 +204,7 @@ $(document).ready(function(){
              </div>
           </div>
           <div class="social-widget">
-          	<h2>Connect with us</h2>
-          	  <ul class="courses_social">
-				<li class="facebook-icon">
-					<div>
-						<a href="#" class="fa fa-facebook"></a>
-						<p>2154</p>
-					</div>        							
-				</li>
-				<li class="twitter-icon">
-					<div>
-						<a href="#" class="fa fa-twitter"></a>
-						<p>1425</p>
-					</div>        							
-				</li>
-				<li class="gplus-icon">
-					<div>
-						<a href="#" class="fa fa-google-plus"></a>
-						<p>2150</p>
-					</div>        							
-				</li>
-				<div class="clearfix"> </div>
-			 </ul>
+          	<button onclick="collect();">Collect</button>
            </div>
            <section class="slider">
             	<h3>Testimonial</h3>
