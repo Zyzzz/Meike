@@ -1,9 +1,12 @@
 package com.imudges.model;
 
-import javax.persistence.*;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
- * Created by Administrator on 2016/12/9.
+ * Created by Administrator on 2017/1/16.
  */
 @Entity
 @Table(name = "landcview", schema = "newmeike", catalog = "")
@@ -13,13 +16,14 @@ public class LandcviewEntity {
     private Integer teacherid;
     private int courseId;
     private Integer videoId;
+    private Integer time;
     private int cid;
     private String type;
     private String cname;
     private int lessonNumber;
     private int organizationid;
 
-    @Id
+    @Basic
     @Column(name = "lid", nullable = false)
     public int getLid() {
         return lid;
@@ -67,6 +71,16 @@ public class LandcviewEntity {
 
     public void setVideoId(Integer videoId) {
         this.videoId = videoId;
+    }
+
+    @Basic
+    @Column(name = "time", nullable = true)
+    public Integer getTime() {
+        return time;
+    }
+
+    public void setTime(Integer time) {
+        this.time = time;
     }
 
     @Basic
@@ -134,6 +148,7 @@ public class LandcviewEntity {
         if (lname != null ? !lname.equals(that.lname) : that.lname != null) return false;
         if (teacherid != null ? !teacherid.equals(that.teacherid) : that.teacherid != null) return false;
         if (videoId != null ? !videoId.equals(that.videoId) : that.videoId != null) return false;
+        if (time != null ? !time.equals(that.time) : that.time != null) return false;
         if (type != null ? !type.equals(that.type) : that.type != null) return false;
         if (cname != null ? !cname.equals(that.cname) : that.cname != null) return false;
 
@@ -147,6 +162,7 @@ public class LandcviewEntity {
         result = 31 * result + (teacherid != null ? teacherid.hashCode() : 0);
         result = 31 * result + courseId;
         result = 31 * result + (videoId != null ? videoId.hashCode() : 0);
+        result = 31 * result + (time != null ? time.hashCode() : 0);
         result = 31 * result + cid;
         result = 31 * result + (type != null ? type.hashCode() : 0);
         result = 31 * result + (cname != null ? cname.hashCode() : 0);

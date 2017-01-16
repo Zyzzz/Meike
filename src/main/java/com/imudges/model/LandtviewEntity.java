@@ -1,13 +1,17 @@
 package com.imudges.model;
 
-import javax.persistence.*;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
- * Created by Administrator on 2016/12/9.
+ * Created by Administrator on 2017/1/16.
  */
 @Entity
 @Table(name = "landtview", schema = "newmeike", catalog = "")
 public class LandtviewEntity {
+    private Integer time;
     private int lid;
     private String lname;
     private Integer teacherid;
@@ -18,7 +22,17 @@ public class LandtviewEntity {
     private int organizatioid;
     private String phone;
 
-    @Id
+    @Basic
+    @Column(name = "time", nullable = true)
+    public Integer getTime() {
+        return time;
+    }
+
+    public void setTime(Integer time) {
+        this.time = time;
+    }
+
+    @Basic
     @Column(name = "lid", nullable = false)
     public int getLid() {
         return lid;
@@ -119,6 +133,7 @@ public class LandtviewEntity {
         if (courseId != that.courseId) return false;
         if (tid != that.tid) return false;
         if (organizatioid != that.organizatioid) return false;
+        if (time != null ? !time.equals(that.time) : that.time != null) return false;
         if (lname != null ? !lname.equals(that.lname) : that.lname != null) return false;
         if (teacherid != null ? !teacherid.equals(that.teacherid) : that.teacherid != null) return false;
         if (videoId != null ? !videoId.equals(that.videoId) : that.videoId != null) return false;
@@ -130,7 +145,8 @@ public class LandtviewEntity {
 
     @Override
     public int hashCode() {
-        int result = lid;
+        int result = time != null ? time.hashCode() : 0;
+        result = 31 * result + lid;
         result = 31 * result + (lname != null ? lname.hashCode() : 0);
         result = 31 * result + (teacherid != null ? teacherid.hashCode() : 0);
         result = 31 * result + courseId;

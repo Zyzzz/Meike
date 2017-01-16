@@ -1,13 +1,17 @@
 package com.imudges.model;
 
-import javax.persistence.*;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
- * Created by Administrator on 2016/12/9.
+ * Created by Administrator on 2017/1/16.
  */
 @Entity
 @Table(name = "landvview", schema = "newmeike", catalog = "")
 public class LandvviewEntity {
+    private Integer time;
     private String name;
     private Integer teacherid;
     private int courseId;
@@ -15,6 +19,16 @@ public class LandvviewEntity {
     private int lid;
     private int vid;
     private String url;
+
+    @Basic
+    @Column(name = "time", nullable = true)
+    public Integer getTime() {
+        return time;
+    }
+
+    public void setTime(Integer time) {
+        this.time = time;
+    }
 
     @Basic
     @Column(name = "name", nullable = false, length = 255)
@@ -56,7 +70,7 @@ public class LandvviewEntity {
         this.videoId = videoId;
     }
 
-    @Id
+    @Basic
     @Column(name = "lid", nullable = false)
     public int getLid() {
         return lid;
@@ -96,6 +110,7 @@ public class LandvviewEntity {
         if (courseId != that.courseId) return false;
         if (lid != that.lid) return false;
         if (vid != that.vid) return false;
+        if (time != null ? !time.equals(that.time) : that.time != null) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
         if (teacherid != null ? !teacherid.equals(that.teacherid) : that.teacherid != null) return false;
         if (videoId != null ? !videoId.equals(that.videoId) : that.videoId != null) return false;
@@ -106,7 +121,8 @@ public class LandvviewEntity {
 
     @Override
     public int hashCode() {
-        int result = name != null ? name.hashCode() : 0;
+        int result = time != null ? time.hashCode() : 0;
+        result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (teacherid != null ? teacherid.hashCode() : 0);
         result = 31 * result + courseId;
         result = 31 * result + (videoId != null ? videoId.hashCode() : 0);

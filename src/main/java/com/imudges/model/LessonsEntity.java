@@ -3,7 +3,7 @@ package com.imudges.model;
 import javax.persistence.*;
 
 /**
- * Created by Administrator on 2016/12/9.
+ * Created by Administrator on 2017/1/16.
  */
 @Entity
 @Table(name = "lessons", schema = "newmeike", catalog = "")
@@ -13,6 +13,7 @@ public class LessonsEntity {
     private Integer teacherid;
     private int courseId;
     private Integer videoId;
+    private Integer time;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -64,6 +65,16 @@ public class LessonsEntity {
         this.videoId = videoId;
     }
 
+    @Basic
+    @Column(name = "time", nullable = true)
+    public Integer getTime() {
+        return time;
+    }
+
+    public void setTime(Integer time) {
+        this.time = time;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -76,6 +87,7 @@ public class LessonsEntity {
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
         if (teacherid != null ? !teacherid.equals(that.teacherid) : that.teacherid != null) return false;
         if (videoId != null ? !videoId.equals(that.videoId) : that.videoId != null) return false;
+        if (time != null ? !time.equals(that.time) : that.time != null) return false;
 
         return true;
     }
@@ -87,6 +99,7 @@ public class LessonsEntity {
         result = 31 * result + (teacherid != null ? teacherid.hashCode() : 0);
         result = 31 * result + courseId;
         result = 31 * result + (videoId != null ? videoId.hashCode() : 0);
+        result = 31 * result + (time != null ? time.hashCode() : 0);
         return result;
     }
 }

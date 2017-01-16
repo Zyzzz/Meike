@@ -1,13 +1,17 @@
 package com.imudges.model;
 
-import javax.persistence.*;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
- * Created by Administrator on 2017/1/14.
+ * Created by Administrator on 2017/1/16.
  */
 @Entity
 @Table(name = "lessonsinformation", schema = "newmeike", catalog = "")
-public class LessonsinformationEntity extends BaseEntity{
+public class LessonsinformationEntity {
+    private Integer time;
     private int lid;
     private String url;
     private String tname;
@@ -24,7 +28,17 @@ public class LessonsinformationEntity extends BaseEntity{
     private int courseId;
     private int vid;
 
-    @Id
+    @Basic
+    @Column(name = "time", nullable = true)
+    public Integer getTime() {
+        return time;
+    }
+
+    public void setTime(Integer time) {
+        this.time = time;
+    }
+
+    @Basic
     @Column(name = "lid", nullable = false)
     public int getLid() {
         return lid;
@@ -189,6 +203,7 @@ public class LessonsinformationEntity extends BaseEntity{
         if (organizationid != that.organizationid) return false;
         if (courseId != that.courseId) return false;
         if (vid != that.vid) return false;
+        if (time != null ? !time.equals(that.time) : that.time != null) return false;
         if (url != null ? !url.equals(that.url) : that.url != null) return false;
         if (tname != null ? !tname.equals(that.tname) : that.tname != null) return false;
         if (phone != null ? !phone.equals(that.phone) : that.phone != null) return false;
@@ -202,7 +217,8 @@ public class LessonsinformationEntity extends BaseEntity{
 
     @Override
     public int hashCode() {
-        int result = lid;
+        int result = time != null ? time.hashCode() : 0;
+        result = 31 * result + lid;
         result = 31 * result + (url != null ? url.hashCode() : 0);
         result = 31 * result + (tname != null ? tname.hashCode() : 0);
         result = 31 * result + organizatioid;
