@@ -2,11 +2,13 @@ package com.imudges.controller;
 
 import com.imudges.model.*;
 import com.imudges.repository.CourseRepository;
+import com.imudges.repository.EvaluateViewRepository;
 import com.imudges.repository.LandcViewRepository;
 import com.imudges.repository.PictureRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
@@ -23,6 +25,13 @@ public class CourseController {
     PictureRepository pictureRepository;
     @Autowired
     LandcViewRepository landcViewRepository;
+    @Autowired
+    EvaluateViewRepository evaluateViewRepository;
+
+    @RequestMapping(value = "/lessons_detail.html", method = RequestMethod.GET)
+    public String GoLesson(){
+        return "lessons_detail";
+    }
     @ResponseBody
     @RequestMapping(value = "/getAllCourse")
     public CourseListEntity getAllCourse(){
@@ -60,8 +69,10 @@ public class CourseController {
 
     @ResponseBody
     @RequestMapping(value = "/getAllComments")
-    public CommentList getAllComments(int lessonID){
+    public CommentList getAllComments(int cid){
         CommentList commentList=new CommentList();
+        commentList.setEvaluateviewEntities(evaluateViewRepository.findBycid(cid));
+        commentList.setStatus(0);
         return commentList;
     }
 }

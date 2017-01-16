@@ -6,13 +6,13 @@ import java.util.List;
  * Created by cyy on 2017/1/16.
  */
 public class CommentList extends BaseEntity {
-    private List<EandsviewEntity> eandsviewEntities;
+    private List<EvaluateviewEntity> evaluateviewEntities;
 
-    public List<EandsviewEntity> getEandsviewEntities() {
-        return eandsviewEntities;
+    public List<EvaluateviewEntity> getEvaluateviewEntities() {
+        return evaluateviewEntities;
     }
 
-    public void setEandsviewEntities(List<EandsviewEntity> eandsviewEntities) {
-        this.eandsviewEntities = eandsviewEntities;
+    public void setEvaluateviewEntities(List<EvaluateviewEntity> evaluateviewEntities) {
+        this.evaluateviewEntities = evaluateviewEntities;
     }
 }

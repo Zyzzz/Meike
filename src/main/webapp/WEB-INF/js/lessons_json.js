@@ -58,13 +58,23 @@ $(document).ready(function (){
             alert("success");
             console.log(JSON.stringify(json));
             // console.log(json);
-            var lessons=json.landcviewEntities;
+            var courses=json.landcviewEntities;
             var courseEntity = json.courseEntity;
             var pictureEntity = json.pictureEntity;
 
+            console.log("length:"+courses.length+"lname:"+courses[0].lname);
 
             $(".col-md-9").prepend('<img src="'+pictureEntity.url+'" class="img-responsive" alt=""/> <h3>'+courseEntity.name+'</h3>')
 
+           for(var i=0;i<courses.length;i++){
+                    $(".table-list").append('<li class="clearfix"> <div class="id_col">'
+                        +(i+1)
+                        +'</div> <div class="name_col"><a href="lessons_detail.html?lid='+courses[i].lid+'">'
+                        +courses[i].lname
+                        +'</a></div> <div class="duration_col">'
+                        +""
+                        +'</div> </li>')
+                }
         }
     });
 
