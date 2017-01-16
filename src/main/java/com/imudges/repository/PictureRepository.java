@@ -10,4 +10,5 @@ import java.util.List;
  */
 public interface PictureRepository  extends JpaRepository<PictureEntity,Integer> {
     public List<PictureEntity> findByPattern(int pattern);
+    public PictureEntity findByPatternAndOtherid(int pattern,int otherid);
 }
