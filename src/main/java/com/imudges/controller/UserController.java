@@ -244,10 +244,16 @@ public class UserController {
     public BaseEntity CollectCourse(int courseID,String cookie){
         FavoriteEntity favoriteEntity=new FavoriteEntity();
         BaseEntity baseEntity=new BaseEntity();
-        favoriteEntity.setCourseid(courseID);
-        favoriteEntity.setStudentid(studentRepository.findByCookie(cookie).getId());
-        favoriteRepository.saveAndFlush(favoriteEntity);
-        baseEntity.setStatus(0);
-        return baseEntity;
+        favoriteEntity = favoriteRepository.findByStudentidAndCourseid(studentRepository.findByCookie(cookie).getId(),courseID);
+        if(favoriteEntity==null){
+            favoriteEntity.setCourseid(courseID);
+            favoriteEntity.setStudentid(studentRepository.findByCookie(cookie).getId());
+            favoriteRepository.saveAndFlush(favoriteEntity);
+            baseEntity.setStatus(0);
+            return baseEntity;
+        }else {
+            baseEntity.setStatus(301);
+            return baseEntity;
+        }
     }
 }
