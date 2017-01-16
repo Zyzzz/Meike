@@ -2,8 +2,10 @@ package com.imudges.controller;
 
 import com.imudges.model.BaseEntity;
 import com.imudges.model.EvaluateEntity;
+import com.imudges.model.FavoriteEntity;
 import com.imudges.model.StudentEntity;
 import com.imudges.repository.EvaluateRepository;
+import com.imudges.repository.FavoriteRepository;
 import com.imudges.repository.StudentRepository;
 import com.imudges.utils.MailSender;
 import com.imudges.utils.SHA256Test;
@@ -29,7 +31,9 @@ public class UserController {
      @Autowired
      private StudentRepository studentRepository;
     @Autowired
-    EvaluateRepository evaluateRepository;
+    private EvaluateRepository evaluateRepository;
+    @Autowired
+    private FavoriteRepository favoriteRepository;
      @RequestMapping(value = "/login.html", method = RequestMethod.GET)
      public String ToLogin(){
           return "login";
@@ -222,13 +226,13 @@ public class UserController {
 
     @RequestMapping(value = "/AddComments")
     @ResponseBody
-    public BaseEntity AddComments(String comments,int lessonID){
+    public BaseEntity AddComments(String comments,int lessonID,int studentID){
         BaseEntity baseEntity=new BaseEntity();
         Timestamp d = new Timestamp(System.currentTimeMillis());
         EvaluateEntity evaluateEntity=new EvaluateEntity();
         evaluateEntity.setContent(comments);
         evaluateEntity.setLessonid(lessonID);
-        //evaluateEntity.setStudentid();
+        evaluateEntity.setStudentid(studentID);
         evaluateEntity.setTimes(d);
         evaluateRepository.saveAndFlush(evaluateEntity);
         baseEntity.setStatus(0);
@@ -237,8 +241,12 @@ public class UserController {
 
     @RequestMapping(value = "/CollectCourse")
     @ResponseBody
-    public BaseEntity CollectCourse(){
+    public BaseEntity CollectCourse(int courseID,int studentID){
+        FavoriteEntity favoriteEntity=new FavoriteEntity();
         BaseEntity baseEntity=new BaseEntity();
+        favoriteEntity.setCourseid(courseID);
+        favoriteEntity.setStudentid(studentID);
+        favoriteRepository.saveAndFlush(favoriteEntity);
         baseEntity.setStatus(0);
         return baseEntity;
     }
