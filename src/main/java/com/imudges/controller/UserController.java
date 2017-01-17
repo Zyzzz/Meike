@@ -243,10 +243,12 @@ public class UserController {
     @RequestMapping(value = "/CollectCourse")
     @ResponseBody
     public BaseEntity CollectCourse(int courseID,String cookie){
-        FavoriteEntity favoriteEntity=new FavoriteEntity();
+        FavoriteEntity favoriteEntity;
         BaseEntity baseEntity=new BaseEntity();
-        favoriteEntity = favoriteRepository.findByCourseidAndStudentid(courseID,studentRepository.findByCookie(cookie).getId());
+        studentEntity = studentRepository.findByCookie(cookie);
+        favoriteEntity = favoriteRepository.findByCourseidAndStudentid(courseID,studentEntity.getId());
         if(favoriteEntity==null){
+            favoriteEntity = new FavoriteEntity();
             favoriteEntity.setCourseid(courseID);
             favoriteEntity.setStudentid(studentRepository.findByCookie(cookie).getId());
             favoriteRepository.saveAndFlush(favoriteEntity);
