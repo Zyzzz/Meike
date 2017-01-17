@@ -7,6 +7,8 @@ import java.util.List;
  */
 public class CommentList extends BaseEntity {
     private List<EvaluateviewEntity> evaluateviewEntities;
+    private List<PictureEntity> pictureEntities;
+
 
     public List<EvaluateviewEntity> getEvaluateviewEntities() {
         return evaluateviewEntities;
@@ -14,5 +16,13 @@ public class CommentList extends BaseEntity {
 
     public void setEvaluateviewEntities(List<EvaluateviewEntity> evaluateviewEntities) {
         this.evaluateviewEntities = evaluateviewEntities;
+    }
+
+    public List<PictureEntity> getPictureEntities() {
+        return pictureEntities;
+    }
+
+    public void setPictureEntities(List<PictureEntity> pictureEntities) {
+        this.pictureEntities = pictureEntities;
     }
 }

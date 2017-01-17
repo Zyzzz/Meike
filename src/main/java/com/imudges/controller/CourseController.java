@@ -74,7 +74,12 @@ public class CourseController {
     @RequestMapping(value = "/getAllComments")
     public CommentList getAllComments(int cid){
         CommentList commentList=new CommentList();
-        commentList.setEvaluateviewEntities(evaluateViewRepository.findBycid(cid));
+        List<EvaluateviewEntity> evaluateviewEntities = evaluateViewRepository.findBycid(cid);
+        commentList.setEvaluateviewEntities(evaluateviewEntities);
+        List <PictureEntity> pictureEntities = new ArrayList<>();
+        for(EvaluateviewEntity evaluateviewEntity:evaluateviewEntities){
+            pictureEntities.add(pictureRepository.findByPatternAndOtherid(0,evaluateviewEntity.getSid()));
+        }
         commentList.setStatus(0);
         return commentList;
     }

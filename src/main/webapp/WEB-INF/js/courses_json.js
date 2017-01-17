@@ -10,7 +10,6 @@ $(document).ready(function (){
             type:'post',
             dataType:'json',
             async: false,
-
             error: function(request) {
                 console.log(request);
                 alert("Connection error");
@@ -32,9 +31,7 @@ $(document).ready(function (){
                         +courses[i].courseEntity.type
                         +'</div> <div class="date_col"></div> </li>')
                 }
-
             }
-
         });
 
 });

@@ -73,12 +73,15 @@ public class AdminController {
     {
         return "addOrganization";
     }
+
+
+
+
     @ResponseBody
     @RequestMapping(value = "/A_addOrganization")
     public OrganizationEntity A_addOrganization(String name,String information,String address,double rank,String email,String password){
 
         OrganizationEntity organizationEntity=organizationRepository.findByEmail(email);
-
         if (organizationEntity==null){
             organizationEntity=new OrganizationEntity();
             organizationEntity.setName(name);
@@ -87,7 +90,6 @@ public class AdminController {
             organizationEntity.setRank(rank);
             organizationEntity.setEmail(email);
             organizationEntity.setPassword(password);
-
             organizationRepository.saveAndFlush(organizationEntity);
             organizationEntity.setStatus(0);
         }
