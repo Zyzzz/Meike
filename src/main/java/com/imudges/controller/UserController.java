@@ -212,6 +212,7 @@ public class UserController {
         studentEntity=studentRepository.findByEmail(email);
         BaseEntity baseEntity = new BaseEntity();
         if(studentEntity.getSecurityCode().equals(verifyCode)){
+            studentEntity.setSecurityCode(null);
             baseEntity.setStatus(0);
             studentEntity.setPassword(newpassword);
             studentRepository.saveAndFlush(studentEntity);
