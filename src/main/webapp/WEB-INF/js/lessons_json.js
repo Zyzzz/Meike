@@ -48,7 +48,7 @@ $(document).ready(function (){
         type:'post',
         data: {CourseId:hooyesQueryString("cid")},
         dataType:'json',
-        async: false,
+        async: true,
 
         error: function(request) {
             console.log(request);
@@ -60,8 +60,19 @@ $(document).ready(function (){
             // console.log(json);
             var courses=json.landcviewEntities;
             var pictureEntity = json.pictureEntity;
+            var oPictureEntity = json.oPictureEntity;
+            var organizationEntity = json.organizationEntity;
 
             console.log("length:"+courses.length+"lname:"+courses[0].lname);
+
+
+            $(".col-md-3").prepend( '<div class="personBox"> <div class="personBox_1"> <div class="person_image"> ' +
+                '<img src="'+oPictureEntity.url+'" class="img-responsive" alt=""/></div><div class="person_image_desc"> <h1>'
+                +organizationEntity.name
+                +'</h1> </div> <div class="clearfix"> </div> </div> <div class="person_description"> <p>'+
+                organizationEntity.information+
+                '</p> </div> </div>')
+
 
             $(".col-md-9").prepend('<img src="'+pictureEntity.url+'" class="img-responsive" alt=""/> <h3>'+courses[0].cname+'</h3>' +
                 '<p>' + courses[0].description+'</p>')
