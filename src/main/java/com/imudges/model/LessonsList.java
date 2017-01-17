@@ -8,6 +8,24 @@ import java.util.List;
 public class LessonsList extends BaseEntity{
     private List<LandcviewEntity> landcviewEntities;
     private PictureEntity pictureEntity;
+    private OrganizationEntity organizationEntity;
+    private PictureEntity oPictureEntity;
+
+    public OrganizationEntity getOrganizationEntity() {
+        return organizationEntity;
+    }
+
+    public void setOrganizationEntity(OrganizationEntity organizationEntity) {
+        this.organizationEntity = organizationEntity;
+    }
+
+    public PictureEntity getoPictureEntity() {
+        return oPictureEntity;
+    }
+
+    public void setoPictureEntity(PictureEntity oPictureEntity) {
+        this.oPictureEntity = oPictureEntity;
+    }
 
     public List<LandcviewEntity> getLandcviewEntities() {
         return landcviewEntities;

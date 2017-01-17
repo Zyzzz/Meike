@@ -26,6 +26,8 @@ public class CourseController {
     EvaluateViewRepository evaluateViewRepository;
     @Autowired
     TeacherRepository teacherRepository;
+    @Autowired
+    OrganizationRepository organizationRepository;
 
     @RequestMapping(value = "/lessons_detail.html", method = RequestMethod.GET)
     public String GoLesson(){
@@ -59,8 +61,11 @@ public class CourseController {
     @RequestMapping(value = "/getLessonsByCourseId")
     public LessonsList getLessonsByCourseId(int CourseId){
         LessonsList lessonsList = new LessonsList();
-        lessonsList.setLandcviewEntities(landcViewRepository.findBycid(CourseId));
+        List<LandcviewEntity> landcviewEntities=landcViewRepository.findBycid(CourseId);
+        lessonsList.setLandcviewEntities(landcviewEntities);
         lessonsList.setPictureEntity(pictureRepository.findByPatternAndOtherid(1,CourseId));
+        lessonsList.setOrganizationEntity(organizationRepository.findOne(landcviewEntities.get(0).getOrganizationid()));
+        lessonsList.setoPictureEntity(pictureRepository.findByPatternAndOtherid(2,landcviewEntities.get(0).getOrganizationid()));
         lessonsList.setStatus(0);
         return lessonsList;
     }
