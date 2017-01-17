@@ -52,46 +52,58 @@ $(document).ready(function(){
 	         <a class="navbar-brand" href="index.html">Learn</a>
 	    </div>
 	    <!--/.navbar-header-->
-	    <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" style="height: 1px;">
-	        <ul class="nav navbar-nav">
-		        <li class="dropdown">
-		            <a href="login.html"><i class="fa fa-user"></i><span>Login</span></a>
-		        </li>
-		        <li class="dropdown">
-		        	<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list"></i><span>Courses</span></a>
-		        	   <ul class="dropdown-menu">
-			            <li><a href="courses.html">Courses Categories</a></li>
-			            <li><a href="courses.html">Courses list</a></li>
-			            <li><a href="courses.html">Courses detail</a></li>
-		              </ul>
-		        </li>
-		        <li class="dropdown">
-		            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-calendar"></i><span>Events</span></a>
-		             <ul class="dropdown-menu">
-			            <li><a href="events.html">Event1</a></li>
-			            <li><a href="events.html">Event2</a></li>
-			            <li><a href="events.html">Event3</a></li>
-		             </ul>
-		        </li>
-		        <li class="dropdown">
-		            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-globe"></i><span>English</span></a>
-		            <ul class="dropdown-menu">
-			            <li><a href="#"><span><i class="flags us"></i><span>English</span></span></a></li>
-			            <li><a href="#"><span><i class="flags newzland"></i><span>Newzland</span></span></a></li>
-			        </ul>
-		        </li>
-		        <li class="dropdown">
-		            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-search"></i><span>Search</span></a>
-		            <ul class="dropdown-menu search-form">
-			           <form>        
-                            <input type="text" class="search-text" name="s" placeholder="Search...">    
-                            <button type="submit" class="search-submit"><i class="fa fa-search"></i></button>
-                       </form>
-			        </ul>
-		        </li>
-		     </ul>
-	    </div>
-	    <div class="clearfix"> </div>
+		<div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" style="height: 1px;">
+
+
+			<ul class="nav navbar-nav">
+				<li class="dropdown" id="Login">
+					<a href="login.html"><i class="fa fa-user"></i><span>Login</span></a>
+				</li>
+
+
+				<li class="dropdown">
+
+					<a href="courses.html"><i class="fa fa-list"></i><span>Courses</span></a>
+
+				</li>
+
+
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-calendar"></i><span>Events</span></a>
+					<ul class="dropdown-menu">
+						<li><a href="events.html">Event1</a></li>
+						<li><a href="events.html">Event2</a></li>
+						<li><a href="events.html">Event3</a></li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-globe"></i><span>English</span></a>
+					<ul class="dropdown-menu">
+						<li><a href="#"><span><i class="flags us"></i><span>English</span></span></a></li>
+						<li><a href="#"><span><i class="flags newzland"></i><span>Newzland</span></span></a></li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-search"></i><span>Search</span></a>
+					<ul class="dropdown-menu search-form">
+						<form>
+							<input type="text" class="search-text" name="s" placeholder="Search...">
+							<button type="submit" class="search-submit"><i class="fa fa-search"></i></button>
+						</form>
+					</ul>
+				</li>
+
+
+				<!--//登陆之后显示-->
+				<li class="dropdown" id="user_name"  style="display: none;">
+					<a href="Per_information.html"><i class="fa fa-user"></i><span  id="user_name_text"></span></a>
+				</li>
+				<li class="dropdown" id="logout" style="display: none;">
+					<a href="login.html" onclick="Log_out_clear_cookie()"><i class="fa fa-user"></i><span>Log &nbsp;out</span></a>
+				</li>
+			</ul>
+		</div>
+		<div class="clearfix"> </div>
 	  </div>
 	    <!--/.navbar-collapse-->
 </nav>
@@ -500,5 +512,83 @@ $(document).ready(function(){
 	});
   </script>
 <!-- FlexSlider -->
+<script type="text/javascript">
+	function getCookie(cname)
+	{
+		var name = cname + "=";
+		console.log(document.cookie);
+		var ca = document.cookie.split(';');
+		for(var i=0; i<ca.length; i++)
+		{
+			var c = ca[i].trim();
+			if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+		}
+		return "";
+	}
+
+
+	function Log_out_clear_cookie() {
+
+		document.cookie="cookie=;";
+		document.cookie="nickname=;";
+
+		console.log(document.cookie);
+	}
+
+	window.onload=function () {
+		var document_cookie=document.cookie;
+
+		console.log("document_cookie:"+document.cookie);
+
+		var nickname=getCookie("nickname");
+
+		console.log("nickname:"+nickname);
+
+		var cookie=getCookie("cookie");
+
+		if((nickname!=null&&cookie!=null)&&(cookie!=""||nickname!="")){
+			alert("none");
+			var login=document.getElementById("Login");
+			login.style.opacity="0";
+			login.style.display="none";
+
+			// 显示用户昵称
+
+			var user=document.getElementById("user_name");
+			user.style.display="block";
+
+			var username=document.getElementById("user_name_text");
+			username.innerText=nickname;
+			username.style.display="block";
+
+			// 显示注销
+			var log_out=document.getElementById("logout");
+			log_out.style.display="block";
+		}else{
+			alert("login"+"display");
+			var login=document.getElementById("Login");
+			login.style.opacity="1";
+			login.style.display="display";
+
+			// 显示用户昵称
+
+			var user=document.getElementById("user_name");
+			user.style.display="none";
+
+			var username=document.getElementById("user_name_text");
+			username.innerText=nickname;
+			username.style.display="none";
+
+			// 显示注销
+			var log_out=document.getElementById("logout");
+			log_out.style.display="none";
+		}
+
+
+
+	}
+
+
+</script>
 </body>
 </html>	
