@@ -290,24 +290,33 @@ $(document).ready(function(){
 					<h4 class="modal-title" id="myModalLabel">Please verify your mailbox</h4>
 				</div>
 				<div class="modal-body">
-				<form class="form-inline" role="form" id="user_forget_ajax" >
-					<div class="form-group">
-						<label for="inputEmail" class="sr-only">Email</label>
-						<input id="inputEmail" autocomplete="off"  name="email" class="required form-control"placeholder="Email">
+				<form role="form" class="form-horizontal">
+					<div class="form-inline col-sm-offset-2 col-sm-10">
+						<label for="email" class="col-sm-2 control-label">Email</label>
+						<input id="email" type="email" name="email" class="form-control" placeholder="Email">
+						<input type="button" class="btn btn-positive" id="sendEmail" value="Send Captcha">
 					</div>
-
-					<button  class="btn btn-default" id="sendEmail">Send captcha</button>
-					<!--<div class="form-group">-->
-						<!--<span class="error" >*验证码错误</span>-->
-						<!--<input  autocomplete="off" type="password" class="password required form-control" placeholder="Captcha" name="Captcha">-->
-					<!--</div>-->
+					<div class="form-inline col-sm-offset-2 col-sm-10">
+						<span class="error" >*不符合密码规则</span>
+						<label for="newpassword" class="col-sm-2 control-label">Password</label>
+						<input id="newpassword" autocomplete="off" type="password" class="password form-control" placeholder="New Password" name="newpassword">
+					</div>
+					<div class="form-inline col-sm-offset-2 col-sm-10">
+						<span class="error" >*与新密码不一致</span>
+						<label for="confirm" class="col-sm-2 control-label">Confirm Password</label>
+						<input id="confirm" autocomplete="off" type="password" class="password required form-control" placeholder="Confirm Password" name="repid">
+					</div>
+					<div class="form-inline col-sm-offset-2 col-sm-10">
+						<span class="error" >*验证码错误</span>
+						<input id="verifyCode" autocomplete="off" type="pin" class="password required form-control" placeholder="Captcha" name="verifyCode">
+					</div>
+					<div class="col-sm-offset-2 col-sm-10">
+					<button type="button" class="btn btn-primary" id="changePsw" value="Log In">Submit</button>
+					</div>
 				</form>
 				</div>
-
 				<div class="modal-footer">
-
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary" id="captcha submit" name="submit" value="Log In">Submit</button>
 				</div>
 			</div>
 		</div>

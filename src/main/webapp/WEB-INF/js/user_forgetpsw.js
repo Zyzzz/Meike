@@ -2,34 +2,59 @@
  * Created by IMUDGES on 2017/1/16.
  */
 $(document).ready(function (){
-    $("#sendEmail").click(function(){
+    $("#changePsw").click(function(){
+        var changepsw ={
+            verifyCode:$("#verifyCode").val(),
+            email:$("#email").val(),
+            newpassword:$("#newpassword").val()
+        }
         alert("user_ajax");
         $.ajax({
             // url:'http://localhost:8080/userLogin',
-            url:"/sendEmail",
+            url:"/ChangePasw",
             type:'post',
             dataType:'json',
             async: false,
-            data:$("#user_forget_ajax").serialize(),
-            error: function(request) {
+            data:changepsw,
+            error: function(request,json) {
+                console.log(JSON.stringify(json));
                 console.log(request);
                 alert("Connection error");
             },
             success:function(json){
-
                 console.log(JSON.stringify(json));
-
                 window.json_all=JSON.stringify(json);
                 alert("window.json_all"+window.json_all);
                 var status=json.status;
-
-
-
             }
 
         });
     });
+    $("#sendEmail").click(function(){
+        var email = {
+            email:$("#email").val(),
+        };
+        $.ajax({
+            url:'/sendEmail',
+            data:email,
+            type:'post',
+            dataType:'json',
+            async: false,
+            error: function(request) {
+                            console.log(request);
+                            alert("Connection error");
+                        },
+                        success:function(json){
 
+                            console.log(JSON.stringify(json));
+
+                            window.json_all=JSON.stringify(json);
+                            alert("window.json_all"+window.json_all);
+                            var status=json.status;
+                        }
+
+        })
+    }),
     function autoTime(){
         localStorage.WaitTime--;
         if(localStorage.WaitTime<=0)
