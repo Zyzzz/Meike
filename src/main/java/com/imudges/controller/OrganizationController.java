@@ -3,6 +3,7 @@ package com.imudges.controller;
 import com.imudges.model.*;
 import com.imudges.repository.*;
 import com.imudges.utils.MailSender;
+import com.imudges.utils.SHA256Test;
 import com.imudges.utils.VerifyCodeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -42,6 +44,27 @@ public class OrganizationController {
     @ResponseBody
     @RequestMapping(value = "/Ologin")
     public OrganizationEntity Ologin(String email,String password){
+        organizationEntity = organizationRepository.findByEmail(email);
+        if(organizationEntity==null){
+            organizationEntity = new OrganizationEntity();
+            organizationEntity.setStatus(100);
+        }
+        else if(!organizationEntity.getPassword().equals(password)){
+            organizationEntity = new OrganizationEntity();
+            organizationEntity.setStatus(101);
+        }
+        else {
+            String cookie = SHA256Test.SHA256Encrypt(email+new Date().toString());
+            organizationEntity.setCookie(cookie);
+            organizationRepository.saveAndFlush(organizationEntity);
+            organizationEntity.setStatus(0);
+        }
+        return organizationEntity;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/Ologup")
+    public OrganizationEntity Ologup(String email,String password ){
         OrganizationEntity organizationEntity = organizationRepository.findByEmail(email);
         if(organizationEntity==null) {
             organizationEntity = new OrganizationEntity();
@@ -56,6 +79,7 @@ public class OrganizationController {
         }
         return organizationEntity;
     }
+
 
     @ResponseBody
     @RequestMapping(value = "/Setting_message")

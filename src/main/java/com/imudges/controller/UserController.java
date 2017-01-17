@@ -208,8 +208,8 @@ public class UserController {
 
     @RequestMapping(value = "/ChangePasw")
     @ResponseBody
-    public BaseEntity ChangePasw(String verifyCode,String cookie,String newpassword){
-        studentEntity=studentRepository.findByCookie(cookie);
+    public BaseEntity ChangePasw(String verifyCode,String email,String newpassword){
+        studentEntity=studentRepository.findByEmail(email);
         BaseEntity baseEntity = new BaseEntity();
         if(studentEntity.getSecurityCode().equals(verifyCode)){
             baseEntity.setStatus(0);
