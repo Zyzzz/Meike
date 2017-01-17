@@ -244,7 +244,7 @@ public class UserController {
     public BaseEntity CollectCourse(int courseID,String cookie){
         FavoriteEntity favoriteEntity=new FavoriteEntity();
         BaseEntity baseEntity=new BaseEntity();
-        favoriteEntity = favoriteRepository.findByStudentidAndCourseid(studentRepository.findByCookie(cookie).getId(),courseID);
+        favoriteEntity = favoriteRepository.findByCourseidAndStudentid(courseID,studentRepository.findByCookie(cookie).getId());
         if(favoriteEntity==null){
             favoriteEntity.setCourseid(courseID);
             favoriteEntity.setStudentid(studentRepository.findByCookie(cookie).getId());
