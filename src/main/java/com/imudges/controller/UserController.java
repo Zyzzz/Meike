@@ -1,11 +1,9 @@
 package com.imudges.controller;
 
-import com.imudges.model.BaseEntity;
-import com.imudges.model.EvaluateEntity;
-import com.imudges.model.FavoriteEntity;
-import com.imudges.model.StudentEntity;
+import com.imudges.model.*;
 import com.imudges.repository.EvaluateRepository;
 import com.imudges.repository.FavoriteRepository;
+import com.imudges.repository.PictureRepository;
 import com.imudges.repository.StudentRepository;
 import com.imudges.utils.MailSender;
 import com.imudges.utils.SHA256Test;
@@ -27,13 +25,16 @@ import java.util.Date;
 @Controller
 public class UserController {
      private StudentEntity studentEntity;
-
+     private String basePrcture = "http://ohnledfyz.bkt.clouddn.com/author.png";
      @Autowired
      private StudentRepository studentRepository;
     @Autowired
     private EvaluateRepository evaluateRepository;
     @Autowired
     private FavoriteRepository favoriteRepository;
+    @Autowired
+    private PictureRepository pictureRepository;
+
      @RequestMapping(value = "/login.html", method = RequestMethod.GET)
      public String ToLogin(){
           return "login";
@@ -74,6 +75,12 @@ public class UserController {
             studentEntity.setPassword(password);
             studentRepository.saveAndFlush(studentEntity);
             studentEntity.setStatus(0);
+            studentEntity = studentRepository.findByEmail(email);
+            PictureEntity pictureEntity = new PictureEntity();
+            pictureEntity.setPattern(0);
+            pictureEntity.setOtherid(studentEntity.getId());
+            pictureEntity.setUrl(basePrcture);
+            pictureRepository.saveAndFlush(pictureEntity);
         }
         else {
             studentEntity = new StudentEntity();
