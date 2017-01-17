@@ -31,9 +31,13 @@ public class OrganizationController {
     @Autowired
     private LessonsRepository lessonsRepository;
 
-    @RequestMapping(value = "/Osignin", method = RequestMethod.GET)
+    @RequestMapping(value = "/O_sign-in", method = RequestMethod.GET)
     public String OrganizationLogin(){
         return "O_sign-in";
+    }
+    @RequestMapping(value = "/O_sign-up", method = RequestMethod.GET)
+    public String OrganizationLogup(){
+        return "O_sign-up";
     }
     @ResponseBody
     @RequestMapping(value = "/Ologin")
