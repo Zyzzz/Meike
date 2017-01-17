@@ -58,26 +58,27 @@ $(document).ready(function (){
         success:function(json){
             //alert("success");
             var evaluateviewEntities = json.evaluateviewEntities;
+            var picture = json.pictureEntities;
             console.log(JSON.stringify(json));
 
             console.log(evaluateviewEntities.length);
 
+            $(".comment_section").append('<h4>'+ evaluateviewEntities.length +' Comments</h4> <ul class="comment-list"> </ul></div>');
 
-
-            // console.log(json);
-            //var courses=json.courseInformationEntities;
-            //console.log("course:"+courses[0].courseEntity.name);
-            //console.log("course_length:"+courses.length);
-            //
-            //for(var i=0;i<courses.length;i++){
-            //    $(".table-list").append('<li class="clearfix"> <div class="id_col">'
-            //        +i
-            //        +'</div> <div class="name_col"><a href="course_detail.html?cid='+courses[i].courseEntity.id+'">'
-            //        +courses[i].courseEntity.name
-            //        +'</a></div> <div class="duration_col">'
-            //        +courses[i].courseEntity.type
-            //        +'</div> <div class="date_col"></div> </li>')
-            //}
+            for(var i=0;i<evaluateviewEntities.length;i++){
+                var timestamp4 = new Date(evaluateviewEntities[i].times);
+                $(".comment-list").append('<li> ' +
+                    '<div class="author-box"> ' +
+                    '<div class="author-box_left"><img src="' + picture[i].url+'" class="img-responsive" alt=""/>' +
+                    '</div> <div class="author-box_right">' +
+                    '<h5>'+ evaluateviewEntities[i].nickname + '<span class="m_1">'+timestamp4+'</span>' +
+                    '<p>' +evaluateviewEntities[i].content+'</p> ' +
+                    '</div>' +
+                    ' <div class="clearfix"> </div> ' +
+                    '</div>' +
+                    ' </li> '
+                )
+            }
 
         }
 
