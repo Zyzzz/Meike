@@ -27,7 +27,7 @@ public class EvaluateEntity {
     }
 
     @Basic
-    @Column(name = "content", nullable = false, length = 200)
+    @Column(name = "content", nullable = true, length = 200)
     public String getContent() {
         return content;
     }

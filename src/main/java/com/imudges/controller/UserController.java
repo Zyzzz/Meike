@@ -235,12 +235,12 @@ public class UserController {
 
     @RequestMapping(value = "/AddComments")
     @ResponseBody
-    public BaseEntity AddComments(String comments,int lessonID,String cookie){
+    public BaseEntity AddComments(String comments,int courseid,String cookie){
         BaseEntity baseEntity=new BaseEntity();
         Timestamp d = new Timestamp(System.currentTimeMillis());
         EvaluateEntity evaluateEntity=new EvaluateEntity();
         evaluateEntity.setContent(comments);
-        evaluateEntity.setLessonid(lessonID);
+        evaluateEntity.setCourseid(courseid);
         evaluateEntity.setStudentid(studentRepository.findByCookie(cookie).getId());
         evaluateEntity.setTimes(d);
         evaluateRepository.saveAndFlush(evaluateEntity);
