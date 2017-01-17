@@ -47,6 +47,7 @@ $(document).ready(function (){
     $.ajax({
         url:"/getAllComments",
         type:'post',
+        data:{cid:hooyesQueryString("cid")},
         dataType:'json',
         async: false,
 
@@ -56,7 +57,13 @@ $(document).ready(function (){
         },
         success:function(json){
             //alert("success");
-            //console.log(JSON.stringify(json));
+            var evaluateviewEntities = json.evaluateviewEntities;
+            console.log(JSON.stringify(json));
+
+            console.log(evaluateviewEntities.length);
+
+
+
             // console.log(json);
             //var courses=json.courseInformationEntities;
             //console.log("course:"+courses[0].courseEntity.name);

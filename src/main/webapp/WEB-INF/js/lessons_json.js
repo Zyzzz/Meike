@@ -48,22 +48,21 @@ $(document).ready(function (){
         type:'post',
         data: {CourseId:hooyesQueryString("cid")},
         dataType:'json',
-        async: true,
+        async: false,
 
         error: function(request) {
             console.log(request);
             alert("Connection error");
         },
         success:function(json){
-           // alert("success");
-            console.log(JSON.stringify(json));
+           // alert("success");console.log(JSON.stringify(json));
             // console.log(json);
             var courses=json.landcviewEntities;
             var pictureEntity = json.pictureEntity;
             var oPictureEntity = json.oPictureEntity;
             var organizationEntity = json.organizationEntity;
 
-            console.log("length:"+courses.length+"lname:"+courses[0].lname);
+            //console.log("length:"+courses.length+"lname:"+courses[0].lname);
 
 
             $(".col-md-3").prepend( '<div class="personBox"> <div class="personBox_1"> <div class="person_image"> ' +

@@ -80,6 +80,7 @@ public class CourseController {
         for(EvaluateviewEntity evaluateviewEntity:evaluateviewEntities){
             pictureEntities.add(pictureRepository.findByPatternAndOtherid(0,evaluateviewEntity.getSid()));
         }
+        commentList.setPictureEntities(pictureEntities);
         commentList.setStatus(0);
         return commentList;
     }
