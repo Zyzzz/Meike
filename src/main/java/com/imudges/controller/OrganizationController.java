@@ -212,7 +212,13 @@ public class OrganizationController {
         baseEntity.setStatus(0);
         return baseEntity;
     }
-
+    @ResponseBody
+    @RequestMapping(value = "/getCourseByOcookie")
+    public List<CourseEntity> deleteLessons(String cookie){
+        OrganizationEntity organizationEntity = organizationRepository.findByCookie(cookie);
+        List<CourseEntity> courseEntities = courseRepository.findByOrganizationid(organizationEntity.getId());
+        return courseEntities;
+    }
 
 
 }

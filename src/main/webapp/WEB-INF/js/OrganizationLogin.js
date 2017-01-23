@@ -22,6 +22,7 @@ $(document).ready(function (){
                 window.json_all=JSON.stringify(json);
                 alert("window.json_all"+window.json_all);
                 var status=json.status;
+                document.cookie="ocookie"+"="+json.cookie+";";
                 //if(status=='0'){
                 //    // window.location.href = "admin/index.action";    //跳转到后台主页
                 //    document.cookie= "nickname" +"="+json.nickname+";";
