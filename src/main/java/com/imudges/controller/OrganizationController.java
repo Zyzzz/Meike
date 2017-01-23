@@ -99,37 +99,42 @@ public class OrganizationController {
 
     @RequestMapping(value = "/O_sendEmail")
     @ResponseBody
-    public BaseEntity sendEmail(HttpServletRequest request, String cookie) {
+    public BaseEntity sendEmail(HttpServletRequest request, String email) {
 
-        organizationEntity=organizationRepository.findByCookie(cookie);
-        StringBuilder builder = new StringBuilder();
-        StringBuffer url = new StringBuffer();
-        String subject = "";
-        // type = forget 密码重置
-        String verifyCode = VerifyCodeUtils.generateVerifyCode(4);
-        organizationEntity.setSecurityCode(verifyCode);
-        organizationRepository.saveAndFlush(organizationEntity);
-        request.getSession().setAttribute("resetCertCode", verifyCode);
-        url.append("<font color='red'>" + verifyCode + "</font>");
-        // 正文
-        builder.append("<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" /></head><body>");
-        builder.append("要使用新的密码, 请将已下字符输入验证框中，完成重置密码的操作!");
-        builder.append("<br/><br/>");
-        builder.append("<div>" + url + "</div>");
-        builder.append("</body></html>");
-        subject = "密码重置 - xxxx";
-
-        MailSender.mailSimple(organizationEntity.getEmail(), subject, builder.toString());
-        BaseEntity baseEntity = new BaseEntity();
-        baseEntity.setStatus(0);
-        return baseEntity;
+        organizationEntity=organizationRepository.findByEmail(email);
+        if(email!=null) {
+            StringBuilder builder = new StringBuilder();
+            StringBuffer url = new StringBuffer();
+            String subject = "";
+            // type = forget 密码重置
+            String verifyCode = VerifyCodeUtils.generateVerifyCode(4);
+            organizationEntity.setSecurityCode(verifyCode);
+            organizationRepository.saveAndFlush(organizationEntity);
+            request.getSession().setAttribute("resetCertCode", verifyCode);
+            url.append("<font color='red'>" + verifyCode + "</font>");
+            // 正文
+            builder.append("<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" /></head><body>");
+            builder.append("要使用新的密码, 请将已下字符输入验证框中，完成重置密码的操作!");
+            builder.append("<br/><br/>");
+            builder.append("<div>" + url + "</div>");
+            builder.append("</body></html>");
+            subject = "密码重置 - xxxx";
+            MailSender.mailSimple(organizationEntity.getEmail(), subject, builder.toString());
+            BaseEntity baseEntity = new BaseEntity();
+            baseEntity.setStatus(0);
+            return baseEntity;
+        }else {
+            BaseEntity baseEntity = new BaseEntity();
+            baseEntity.setStatus(100);
+            return baseEntity;
+        }
     }
 
     @ResponseBody
     @RequestMapping(value = "/Change_Password")
-    public BaseEntity ChangePasw(String verifyCode,String cookie,String newpassword){
+    public BaseEntity Change_Password(String verifyCode,String email,String newpassword){
         BaseEntity baseEntity=new BaseEntity();
-        organizationEntity=organizationRepository.findByCookie(cookie);
+        organizationEntity=organizationRepository.findByEmail(email);
         if(organizationEntity.getSecurityCode().equals(verifyCode)){
             baseEntity.setStatus(0);
             organizationEntity.setPassword(newpassword);
