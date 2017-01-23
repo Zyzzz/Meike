@@ -191,15 +191,27 @@ public class OrganizationController {
 
     @ResponseBody
     @RequestMapping(value = "/deleteCourse")
-    public BaseEntity deleteCourse(int cid){
+    public BaseEntity deleteCourse(String cookie,int cid){
         BaseEntity baseEntity = new BaseEntity();
-        List<LessonsEntity> lessonsEntities = lessonsRepository.findBycourseId(cid);
-        for(LessonsEntity lessonsEntity : lessonsEntities){
-            lessonsRepository.delete(lessonsEntity.getId());
+        OrganizationEntity organizationEntity = organizationRepository.findByCookie(cookie);
+        if(organizationEntity!=null) {
+            CourseEntity courseEntity = courseRepository.findOne(cid);
+            if(courseEntity.getOrganizationid()==organizationEntity.getId()) {
+                List<LessonsEntity> lessonsEntities = lessonsRepository.findBycourseId(cid);
+                for (LessonsEntity lessonsEntity : lessonsEntities) {
+                    lessonsRepository.delete(lessonsEntity.getId());
+                }
+                courseRepository.delete(cid);
+                baseEntity.setStatus(0);
+                return baseEntity;
+            }else {
+                baseEntity.setStatus(0);
+                return baseEntity;
+            }
+        }else {
+            baseEntity.setStatus(0);
+            return baseEntity;
         }
-        courseRepository.delete(cid);
-        baseEntity.setStatus(0);
-        return baseEntity;
     }
 
     @ResponseBody
