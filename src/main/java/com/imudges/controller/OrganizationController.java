@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -27,8 +26,6 @@ public class OrganizationController {
     private VideoRepository videoRepository;
     @Autowired
     private OrganizationRepository organizationRepository;
-    @Autowired
-    private TeacherRepository teacherRepository;
     @Autowired
     private CourseRepository courseRepository;
     @Autowired
