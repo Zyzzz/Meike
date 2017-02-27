@@ -32,8 +32,7 @@ public class AdminController {
     LandcViewRepository landcViewRepository;
     @Autowired
     LessonsinformationRepository lessonsinformationRepository;
-    @Autowired
-    TeacherRepository teacherRepository;
+
     @Autowired
     LessonsRepository lessonsRepository;
 
@@ -210,12 +209,12 @@ public class AdminController {
     /*
      *查看所有老师
      */
-    @ResponseBody
-    @RequestMapping(value = "/A_allTeacher")
-    public List<TeacherEntity> A_allTeacher(){
-        List<TeacherEntity> teacherEntityList=teacherRepository.findAll();
-        return teacherEntityList;
-    }
+//    @ResponseBody
+//    @RequestMapping(value = "/A_allTeacher")
+//    public List<TeacherEntity> A_allTeacher(){
+//        List<TeacherEntity> teacherEntityList=teacherRepository.findAll();
+//        return teacherEntityList;
+//    }
 
     /*
      *查看老师的课程

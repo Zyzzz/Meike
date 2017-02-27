@@ -237,13 +237,12 @@ public class OrganizationController {
 
     @ResponseBody
     @RequestMapping(value = "/getAllTeachers")
-    public List<TeacherEntity> getAllTeachers(String cookie){
+    public TeacherList getAllTeachers(String cookie){
         OrganizationEntity organizationEntity = organizationRepository.findByCookie(cookie);
-        List<TeacherEntity> teacherEntityList = teacherRepository.findOrderByOrganizationid(organizationEntity.getId());
+        TeacherList teacherEntityList = new TeacherList();
+        teacherEntityList.setTeacherEntities(teacherRepository.findOrderByOrganizationid(organizationEntity.getId()));
         return  teacherEntityList;
     }
-
-
 
 
 }

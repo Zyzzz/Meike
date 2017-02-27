@@ -12,7 +12,6 @@ public class LessonsinformationEntity extends BaseEntity{
     private int lid;
     private String url;
     private String tname;
-    private int organizatioid;
     private String phone;
     private int tid;
     private int cid;
@@ -65,15 +64,6 @@ public class LessonsinformationEntity extends BaseEntity{
         this.tname = tname;
     }
 
-    @Basic
-    @Column(name = "organizatioid", nullable = false)
-    public int getOrganizatioid() {
-        return organizatioid;
-    }
-
-    public void setOrganizatioid(int organizatioid) {
-        this.organizatioid = organizatioid;
-    }
 
     @Basic
     @Column(name = "phone", nullable = false, length = 20)
@@ -193,7 +183,7 @@ public class LessonsinformationEntity extends BaseEntity{
         LessonsinformationEntity that = (LessonsinformationEntity) o;
 
         if (lid != that.lid) return false;
-        if (organizatioid != that.organizatioid) return false;
+
         if (tid != that.tid) return false;
         if (cid != that.cid) return false;
         if (lessonNumber != that.lessonNumber) return false;
@@ -218,7 +208,7 @@ public class LessonsinformationEntity extends BaseEntity{
         result = 31 * result + lid;
         result = 31 * result + (url != null ? url.hashCode() : 0);
         result = 31 * result + (tname != null ? tname.hashCode() : 0);
-        result = 31 * result + organizatioid;
+
         result = 31 * result + (phone != null ? phone.hashCode() : 0);
         result = 31 * result + tid;
         result = 31 * result + cid;

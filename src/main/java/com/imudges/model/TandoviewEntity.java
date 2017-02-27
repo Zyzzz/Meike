@@ -1,9 +1,7 @@
 package com.imudges.model;
+import javax.persistence.*;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 
 /**
  * Created by cyy on 2017/2/27.
@@ -22,7 +20,7 @@ public class TandoviewEntity {
     private String securityCode;
     private double rank;
 
-    @Basic
+    @Id
     @Column(name = "tid", nullable = false)
     public int getTid() {
         return tid;
