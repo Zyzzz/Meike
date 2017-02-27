@@ -16,8 +16,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import static javafx.scene.input.KeyCode.R;
-
 /**
  * Created by cyy on 2016/12/10.
  */
@@ -165,7 +163,7 @@ public class OrganizationController {
         teacherEntity=new TeacherEntity();
         organizationEntity=organizationRepository.findByCookie(cookie);
         teacherEntity.setName(name);
-        teacherEntity.setOrganizatioid(organizationEntity.getId());
+        teacherEntity.setOrganizationid(organizationEntity.getId());
         teacherEntity.setName(phone);
         teacherEntity.setStatus(0);
         teacherRepository.saveAndFlush(teacherEntity);
