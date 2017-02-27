@@ -10,7 +10,7 @@ import javax.persistence.*;
 public class TeacherEntity extends BaseEntity{
     private int id;
     private String name;
-    private int organizatioid;
+    private int organizationid;
     private String phone;
 
     @Id
@@ -34,13 +34,13 @@ public class TeacherEntity extends BaseEntity{
     }
 
     @Basic
-    @Column(name = "organizatioid", nullable = false)
-    public int getOrganizatioid() {
-        return organizatioid;
+    @Column(name = "organizationid", nullable = false)
+    public int getOrganizationid() {
+        return organizationid;
     }
 
-    public void setOrganizatioid(int organizatioid) {
-        this.organizatioid = organizatioid;
+    public void setOrganizationid(int organizationid) {
+        this.organizationid = organizationid;
     }
 
     @Basic
@@ -61,7 +61,7 @@ public class TeacherEntity extends BaseEntity{
         TeacherEntity that = (TeacherEntity) o;
 
         if (id != that.id) return false;
-        if (organizatioid != that.organizatioid) return false;
+        if (organizationid != that.organizationid) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
         if (phone != null ? !phone.equals(that.phone) : that.phone != null) return false;
 
@@ -72,7 +72,7 @@ public class TeacherEntity extends BaseEntity{
     public int hashCode() {
         int result = id;
         result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + organizatioid;
+        result = 31 * result + organizationid;
         result = 31 * result + (phone != null ? phone.hashCode() : 0);
         return result;
     }

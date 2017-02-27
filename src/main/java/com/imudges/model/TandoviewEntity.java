@@ -1,26 +1,28 @@
 package com.imudges.model;
 
-import javax.persistence.*;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
- * Created by Administrator on 2016/12/9.
+ * Created by cyy on 2017/2/27.
  */
 @Entity
 @Table(name = "tandoview", schema = "newmeike", catalog = "")
 public class TandoviewEntity {
     private int tid;
     private String tname;
-    private int organizatioid;
+    private int organizationid;
     private String phone;
     private int oid;
     private String oname;
     private String information;
     private String address;
+    private String securityCode;
     private double rank;
-    private String email;
-    private String password;
 
-    @Id
+    @Basic
     @Column(name = "tid", nullable = false)
     public int getTid() {
         return tid;
@@ -41,13 +43,13 @@ public class TandoviewEntity {
     }
 
     @Basic
-    @Column(name = "organizatioid", nullable = false)
-    public int getOrganizatioid() {
-        return organizatioid;
+    @Column(name = "organizationid", nullable = false)
+    public int getOrganizationid() {
+        return organizationid;
     }
 
-    public void setOrganizatioid(int organizatioid) {
-        this.organizatioid = organizatioid;
+    public void setOrganizationid(int organizationid) {
+        this.organizationid = organizationid;
     }
 
     @Basic
@@ -101,6 +103,16 @@ public class TandoviewEntity {
     }
 
     @Basic
+    @Column(name = "securityCode", nullable = true, length = 255)
+    public String getSecurityCode() {
+        return securityCode;
+    }
+
+    public void setSecurityCode(String securityCode) {
+        this.securityCode = securityCode;
+    }
+
+    @Basic
     @Column(name = "rank", nullable = false, precision = 0)
     public double getRank() {
         return rank;
@@ -108,26 +120,6 @@ public class TandoviewEntity {
 
     public void setRank(double rank) {
         this.rank = rank;
-    }
-
-    @Basic
-    @Column(name = "email", nullable = false, length = 50)
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    @Basic
-    @Column(name = "password", nullable = false, length = 30)
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     @Override
@@ -138,7 +130,7 @@ public class TandoviewEntity {
         TandoviewEntity that = (TandoviewEntity) o;
 
         if (tid != that.tid) return false;
-        if (organizatioid != that.organizatioid) return false;
+        if (organizationid != that.organizationid) return false;
         if (oid != that.oid) return false;
         if (Double.compare(that.rank, rank) != 0) return false;
         if (tname != null ? !tname.equals(that.tname) : that.tname != null) return false;
@@ -146,8 +138,7 @@ public class TandoviewEntity {
         if (oname != null ? !oname.equals(that.oname) : that.oname != null) return false;
         if (information != null ? !information.equals(that.information) : that.information != null) return false;
         if (address != null ? !address.equals(that.address) : that.address != null) return false;
-        if (email != null ? !email.equals(that.email) : that.email != null) return false;
-        if (password != null ? !password.equals(that.password) : that.password != null) return false;
+        if (securityCode != null ? !securityCode.equals(that.securityCode) : that.securityCode != null) return false;
 
         return true;
     }
@@ -158,16 +149,15 @@ public class TandoviewEntity {
         long temp;
         result = tid;
         result = 31 * result + (tname != null ? tname.hashCode() : 0);
-        result = 31 * result + organizatioid;
+        result = 31 * result + organizationid;
         result = 31 * result + (phone != null ? phone.hashCode() : 0);
         result = 31 * result + oid;
         result = 31 * result + (oname != null ? oname.hashCode() : 0);
         result = 31 * result + (information != null ? information.hashCode() : 0);
         result = 31 * result + (address != null ? address.hashCode() : 0);
+        result = 31 * result + (securityCode != null ? securityCode.hashCode() : 0);
         temp = Double.doubleToLongBits(rank);
         result = 31 * result + (int) (temp ^ (temp >>> 32));
-        result = 31 * result + (email != null ? email.hashCode() : 0);
-        result = 31 * result + (password != null ? password.hashCode() : 0);
         return result;
     }
 }

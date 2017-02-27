@@ -12,8 +12,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import static javafx.scene.input.KeyCode.R;
 
 /**
  * Created by cyy on 2016/12/10.
@@ -40,6 +43,10 @@ public class OrganizationController {
     @RequestMapping(value = "/O_sign-up", method = RequestMethod.GET)
     public String OrganizationLogup(){
         return "O_sign-up";
+    }
+    @RequestMapping(value = "/teacher", method = RequestMethod.GET)
+    public String Teacher(){
+        return "teacher";
     }
     @ResponseBody
     @RequestMapping(value = "/Ologin")
@@ -231,6 +238,15 @@ public class OrganizationController {
         List<CourseEntity> courseEntities = courseRepository.findByOrganizationid(organizationEntity.getId());
         return courseEntities;
     }
+
+    @ResponseBody
+    @RequestMapping(value = "/getAllTeachers")
+    public List<TeacherList> getAllTeachers(String cookie){
+        OrganizationEntity organizationEntity = organizationRepository.findByCookie(cookie);
+        return new ArrayList<>();
+    }
+
+
 
 
 }
