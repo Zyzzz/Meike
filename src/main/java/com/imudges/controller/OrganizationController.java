@@ -33,7 +33,8 @@ public class OrganizationController {
     private CourseRepository courseRepository;
     @Autowired
     private LessonsRepository lessonsRepository;
-
+    @Autowired
+    private TeacherRepository teacherRepository;
     @RequestMapping(value = "/O_sign-in", method = RequestMethod.GET)
     public String OrganizationLogin(){
         return "O_sign-in";
@@ -239,9 +240,10 @@ public class OrganizationController {
 
     @ResponseBody
     @RequestMapping(value = "/getAllTeachers")
-    public List<TeacherList> getAllTeachers(String cookie){
+    public List<TeacherEntity> getAllTeachers(String cookie){
         OrganizationEntity organizationEntity = organizationRepository.findByCookie(cookie);
-        return new ArrayList<>();
+        List<TeacherEntity> teacherEntityList = teacherRepository.findOrderByOrganizationid(organizationEntity.getId());
+        return  teacherEntityList;
     }
 
 

@@ -11,5 +11,5 @@ import java.util.List;
  */
 @Repository
 public interface TeacherRepository extends JpaRepository<TeacherEntity,Integer> {
-    public List<TeacherEntity> findByOrganizationid(int organizationid);
+    public List<TeacherEntity> findOrderByOrganizationid(int organizationid);
 }
