@@ -58,6 +58,17 @@ public class CourseController {
     }
 
     @ResponseBody
+    @RequestMapping(value = "/getCourseByName")
+    public  List<CourseEntity> getCourseByName(String name){
+
+
+        List<CourseEntity> courseEntities = courseRepository.findByName("%"+name+"%");
+        return  courseEntities;
+
+    }
+
+
+    @ResponseBody
     @RequestMapping(value = "/getLessonsByCourseId")
     public LessonsList getLessonsByCourseId(int CourseId){
         LessonsList lessonsList = new LessonsList();

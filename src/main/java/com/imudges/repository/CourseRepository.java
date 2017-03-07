@@ -2,6 +2,7 @@ package com.imudges.repository;
 
 import com.imudges.model.CourseEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -12,4 +13,6 @@ import java.util.List;
 @Repository
 public interface CourseRepository extends JpaRepository<CourseEntity,Integer> {
     List<CourseEntity> findByOrganizationid(int organization);
+    @Query("select id,name,type,lessonNumber,organizationid,description from CourseEntity where name like ?1")
+    List<CourseEntity> findByName(String name);
 }
