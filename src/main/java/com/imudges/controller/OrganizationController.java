@@ -44,6 +44,10 @@ public class OrganizationController {
     public String Teacher(){
         return "teacher";
     }
+    @RequestMapping(value = "/O_allcourse", method = RequestMethod.GET)
+    public String O_allcourse(){
+        return "O_allcourse";
+    }
     @ResponseBody
     @RequestMapping(value = "/Ologin")
     public OrganizationEntity Ologin(String email,String password){

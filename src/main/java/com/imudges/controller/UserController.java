@@ -230,11 +230,12 @@ public class UserController {
 
     @RequestMapping(value = "/ModfityStudent")
     @ResponseBody
-    public StudentEntity ModfityStudent(String cookie,int age, String phone,String address,String information){
+    public StudentEntity ModfityStudent(String cookie,String nickname,int age, String phone,String address){
         studentEntity=studentRepository.findByCookie(cookie);
+        studentEntity.setNickname(nickname);
         studentEntity.setAddress(address);
         studentEntity.setAge(age);
-        studentEntity.setInformation(information);
+        //studentEntity.setInformation(information);
         studentEntity.setPhone(phone);
         studentRepository.saveAndFlush(studentEntity);
         return studentEntity;
