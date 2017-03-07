@@ -30,7 +30,7 @@ $(document).ready(function (){
             // console.log("course_length:"+courses.length);
             //
              for(var i=0;i<teachers.length;i++){
-                $(".table1").append('<tr> <td>' +
+                $("#table1").append('<tr> <td>' +
                     teachers[i].name+'</td> <td>'+
                     teachers[i].phone +'</td> </tr>')
             //         +i

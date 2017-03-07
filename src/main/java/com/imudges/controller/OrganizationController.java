@@ -160,6 +160,13 @@ public class OrganizationController {
 
 
     @ResponseBody
+    @RequestMapping(value = "/getAllType")
+    public List<String> getAllType(String cookie){
+        organizationEntity=organizationRepository.findByCookie(cookie);
+        return courseRepository.findTypeByOrgaizationid(organizationEntity.getId());
+    }
+
+    @ResponseBody
     @RequestMapping(value = "/Add_teacher")
     public TeacherEntity AddTeacher(String cookie,String name,String phone){
         teacherEntity=new TeacherEntity();

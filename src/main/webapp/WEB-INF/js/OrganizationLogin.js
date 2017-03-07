@@ -23,14 +23,15 @@ $(document).ready(function (){
                 alert("window.json_all"+window.json_all);
                 var status=json.status;
                 document.cookie="ocookie"+"="+json.cookie+";";
-                //if(status=='0'){
-                //    // window.location.href = "admin/index.action";    //跳转到后台主页
-                //    document.cookie= "nickname" +"="+json.nickname+";";
-                //    document.cookie="cookie"+"="+json.cookie+";";
-                //    window.opener=null;
-                //    window.open('index.html','_self');
-                //    console.log(document.cookie);
-                //}else{
+                if(status=='0'){
+                   // window.location.href = "admin/index.action";    //跳转到后台主页
+                   document.cookie= "name" +"="+json.name+";";
+
+                   window.opener=null;
+                   window.open('O_index.html','_self');
+                   console.log(document.cookie);
+                }
+                //else{
                 //    var error=document.getElementsByClassName("error");
                 //    if(status=="100"){
                 //        window.opener=null;
@@ -44,7 +45,7 @@ $(document).ready(function (){
                 //            error[1].style.display="block";
                 //        }
                 //    }
-                //
+
                 //}
 
             }
