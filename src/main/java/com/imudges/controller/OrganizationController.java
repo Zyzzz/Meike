@@ -169,7 +169,7 @@ public class OrganizationController {
     @RequestMapping(value = "/getOCourseByType")
     public List<CourseEntity> getCourseByType(String cookie,String Type){
         organizationEntity=organizationRepository.findByCookie(cookie);
-        return courseRepository.findByOrgaizationidAndType(organizationEntity.getId(),Type);
+        return courseRepository.findByorganizationidAndType(organizationEntity.getId(),Type);
     }
 
 
