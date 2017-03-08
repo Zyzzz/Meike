@@ -61,12 +61,16 @@ public class CourseController {
     @RequestMapping(value = "/getCourseByName")
     public  List<CourseEntity> getCourseByName(String name){
 
-
         List<CourseEntity> courseEntities = courseRepository.findByName("%"+name+"%");
         return  courseEntities;
-
     }
 
+    @ResponseBody
+    @RequestMapping(value = "/getCourseByType")
+    public  List<CourseEntity> getCourseByType(String type){
+        List<CourseEntity> courseEntities = courseRepository.findByType(type);
+        return  courseEntities;
+    }
 
     @ResponseBody
     @RequestMapping(value = "/getLessonsByCourseId")

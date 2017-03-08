@@ -17,4 +17,6 @@ public interface CourseRepository extends JpaRepository<CourseEntity,Integer> {
     List<CourseEntity> findByName(String name);
     @Query("select distinct type from CourseEntity where organizationid=?1")
     List<String> findTypeByOrgaizationid(int organizationid);
+    List<CourseEntity> findByOrgaizationidAndType(int organizationid,String type);
+    List<CourseEntity> findByType(String type);
 }
