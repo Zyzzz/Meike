@@ -33,6 +33,13 @@ public class CourseController {
     public String GoLesson(){
         return "lessons_detail";
     }
+
+    @RequestMapping(value = "/search_courses.html", method = RequestMethod.GET)
+    public String search_course(){
+        return "search_courses";
+    }
+
+
     @ResponseBody
     @RequestMapping(value = "/getAllCourse")
     public CourseListEntity getAllCourse(){
