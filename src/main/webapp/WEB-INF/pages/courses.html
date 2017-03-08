@@ -191,51 +191,51 @@ $(document).ready(function(){
 	<div class="courses_box1">
 	   <div class="container">
 	   	  <div class="col-md-3">
-			<div class="courses_box1-left">
-                <form>
-                 <div class="select-block1">
-                    <select>
-                        <option value="">Discipline</option>
-                        <option value="">Discipline</option>
-                        <option value="">Discipline</option>
-                        <option value="">Discipline</option>
-                        <option value="">Discipline</option>
-                    </select>
-                 </div>
-                <!-- select-block -->
-                 <div class="select-block1">
-                    <select>
-                        <option value="">Duration</option>
-                        <option value="">Duration</option>
-                        <option value="">Duration</option>
-                        <option value="">Duration</option>
-                        <option value="">Duration</option>
-                    </select>
-                </div>
-                <!-- select-block -->
-                <div class="select-block1">
-                    <select>
-                        <option value="">Level</option>
-                        <option value="">Level</option>
-                        <option value="">Level</option>
-                        <option value="">Level</option>
-                        <option value="">Level</option>
-                    </select>
-                </div>
-                <!-- select-block -->
-                <div class="select-block1">
-                    <select>
-                        <option value="">Location</option>
-                        <option value="">Location</option>
-                        <option value="">Location</option>
-                        <option value="">Location</option>
-                        <option value="">Location</option>
-                    </select>
-                </div>
-                <!-- select-block -->
-                <input type="submit" value="search" class="course-submit">		                            
-            </form>
-	       </div>
+			<!--<div class="courses_box1-left">-->
+                <!--<form>-->
+                 <!--<div class="select-block1">-->
+                    <!--<select>-->
+                        <!--<option value="">Discipline</option>-->
+                        <!--<option value="">Discipline</option>-->
+                        <!--<option value="">Discipline</option>-->
+                        <!--<option value="">Discipline</option>-->
+                        <!--<option value="">Discipline</option>-->
+                    <!--</select>-->
+                 <!--</div>-->
+                <!--&lt;!&ndash; select-block &ndash;&gt;-->
+                 <!--<div class="select-block1">-->
+                    <!--<select>-->
+                        <!--<option value="">Duration</option>-->
+                        <!--<option value="">Duration</option>-->
+                        <!--<option value="">Duration</option>-->
+                        <!--<option value="">Duration</option>-->
+                        <!--<option value="">Duration</option>-->
+                    <!--</select>-->
+                <!--</div>-->
+                <!--&lt;!&ndash; select-block &ndash;&gt;-->
+                <!--<div class="select-block1">-->
+                    <!--<select>-->
+                        <!--<option value="">Level</option>-->
+                        <!--<option value="">Level</option>-->
+                        <!--<option value="">Level</option>-->
+                        <!--<option value="">Level</option>-->
+                        <!--<option value="">Level</option>-->
+                    <!--</select>-->
+                <!--</div>-->
+                <!--&lt;!&ndash; select-block &ndash;&gt;-->
+                <!--<div class="select-block1">-->
+                    <!--<select>-->
+                        <!--<option value="">Location</option>-->
+                        <!--<option value="">Location</option>-->
+                        <!--<option value="">Location</option>-->
+                        <!--<option value="">Location</option>-->
+                        <!--<option value="">Location</option>-->
+                    <!--</select>-->
+                <!--</div>-->
+                <!--&lt;!&ndash; select-block &ndash;&gt;-->
+                <!--<input type="submit" value="search" class="course-submit">		                            -->
+            <!--</form>-->
+	       <!--</div>-->
 	       <div class="personBox">
               <div class="personBox_1">
                  <div class="person_image">
@@ -604,6 +604,10 @@ $(document).ready(function(){
     </div>
 <!-- FlexSlider -->
 <script type="text/javascript">
+	function doSearch() {
+		var msg=$('.search-text').val();
+		location.href='/search_courses.html?name='+msg;
+	}
 	function getCookie(cname)
 	{
 		var name = cname + "=";
@@ -638,7 +642,7 @@ $(document).ready(function(){
 		var cookie=getCookie("cookie");
 
 		if((nickname!=null&&cookie!=null)&&(cookie!=""||nickname!="")){
-			alert("none");
+//			alert("none");
 			var login=document.getElementById("Login");
 			login.style.opacity="0";
 			login.style.display="none";
@@ -656,7 +660,7 @@ $(document).ready(function(){
 			var log_out=document.getElementById("logout");
 			log_out.style.display="block";
 		}else{
-			alert("login"+"display");
+//			alert("login"+"display");
 			var login=document.getElementById("Login");
 			login.style.opacity="1";
 			login.style.display="display";

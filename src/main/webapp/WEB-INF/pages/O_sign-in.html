@@ -101,6 +101,7 @@
 
 
 
+        <!-- Modal忘记密码摸态框-->
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -109,27 +110,27 @@
                         <h4 class="modal-title" id="myModalLabel">Please verify your mailbox</h4>
                     </div>
                     <div class="modal-body">
-                        <form role="form" class="form-horizontal">
-                            <div class="form-inline col-sm-offset-2 col-sm-10">
+                        <form role="form" class="" style="padding-left: 15%;line-height: 5%;">
+                            <div class="form-inline col-sm-offset-2 col-sm-10" style="padding-bottom: 5%">
                                 <label for="email" class="col-sm-2 control-label">Email</label>
                                 <input id="email" type="email" name="email" class="form-control" placeholder="Email">
                                 <input type="button" class="btn btn-positive" id="sendEmail" value="Send Captcha">
                             </div>
-                            <div class="form-inline col-sm-offset-2 col-sm-10">
-                                <span class="error" >*不符合密码规则</span>
+                            <div class="form-inline col-sm-offset-2 col-sm-10" style="padding-bottom: 5%">
+                                <!--<span class="error" >*不符合密码规则</span>-->
                                 <label for="newpassword" class="col-sm-2 control-label">Password</label>
                                 <input id="newpassword" autocomplete="off" type="password" class="password form-control" placeholder="New Password" name="newpassword">
                             </div>
-                            <div class="form-inline col-sm-offset-2 col-sm-10">
-                                <span class="error" >*与新密码不一致</span>
+                            <div class="form-inline col-sm-offset-2 col-sm-10" style="padding-bottom: 5%">
+                                <!--<span class="error" >*与新密码不一致</span>-->
                                 <label for="confirm" class="col-sm-2 control-label">Confirm Password</label>
                                 <input id="confirm" autocomplete="off" type="password" class="password required form-control" placeholder="Confirm Password" name="repid">
                             </div>
-                            <div class="form-inline col-sm-offset-2 col-sm-10">
-                                <span class="error" >*验证码错误</span>
+                            <div class="form-inline col-sm-offset-2 col-sm-10" style="padding-bottom: 5%">
+                                <!--<span class="error" >*验证码错误</span>-->
                                 <input id="verifyCode" autocomplete="off" type="pin" class="password required form-control" placeholder="Captcha" name="verifyCode">
                             </div>
-                            <div class="col-sm-offset-2 col-sm-10">
+                            <div class="col-sm-offset-2 col-sm-10" style="padding-bottom: 5%">
                                 <button type="button" class="btn btn-primary" id="changePsw" value="Log In">Submit</button>
                             </div>
                         </form>

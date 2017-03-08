@@ -5,10 +5,10 @@ $(document).ready(function () {
     $("#submit").click(function () {
         var id=hooyesQueryString("cid");
         var comment=$("#comment").val();
-        alert("id:"+id+"comment:"+comment);
+        // alert("id:"+id+"comment:"+comment);
 
         var cookie=getcookie("cookie");
-        alert(cookie);
+        // alert(cookie);
         $.ajax({
            url:"/AddComments",
             type:"post",
@@ -16,7 +16,7 @@ $(document).ready(function () {
             async: false,
             data:{comments:comment,courseid:id,cookie:cookie},
             success:function (json) {
-               alert("success");
+               // alert("success");
                 console.log(JSON.stringify(json));
                 window.opener=null;
                 window.open('course_detail.html?cid='+id,'_self');

@@ -6,12 +6,12 @@
 $(document).ready(function (){
     $("#submit").click(function(){
 
-        alert("submit");
+        // alert("submit");
         var IsRight=insertManager();
-        alert("IsRight:"+IsRight);
+        // alert("IsRight:"+IsRight);
         if(IsRight){
 
-            alert("user_ajax");
+            // alert("user_ajax");
             $.ajax({
                 // url:'http://localhost:8080/userLogin',
                 url:"/user_register",
@@ -25,12 +25,12 @@ $(document).ready(function (){
                 },
                 success:function(json){
 
-                    alert(JSON.stringify(json));
+                    // alert(JSON.stringify(json));
 
                     var status=json.status;
                     if(status=='0'){
                         // window.location.href = "admin/index.action";    //跳转到后台主页
-                        alert("success");
+                        // alert("success");
                         window.opener=null;
                         window.open('login.html','_self');
 

@@ -513,6 +513,10 @@ $(document).ready(function(){
   </script>
 <!-- FlexSlider -->
 <script type="text/javascript">
+	function doSearch() {
+		var msg=$('.search-text').val();
+		location.href='/search_courses.html?name='+msg;
+	}
 	function getCookie(cname)
 	{
 		var name = cname + "=";
@@ -547,7 +551,7 @@ $(document).ready(function(){
 		var cookie=getCookie("cookie");
 
 		if((nickname!=null&&cookie!=null)&&(cookie!=""||nickname!="")){
-			alert("none");
+//			alert("none");
 			var login=document.getElementById("Login");
 			login.style.opacity="0";
 			login.style.display="none";
@@ -565,7 +569,7 @@ $(document).ready(function(){
 			var log_out=document.getElementById("logout");
 			log_out.style.display="block";
 		}else{
-			alert("login"+"display");
+//			alert("login"+"display");
 			var login=document.getElementById("Login");
 			login.style.opacity="1";
 			login.style.display="display";

@@ -47,7 +47,7 @@ function hooyesQueryString(queryStringName)
 }
 
 function collect() {
-    alert(getcookie("cookie"));
+    // alert(getcookie("cookie"));
     $.ajax({
         // url:'http://localhost:8080/userLogin',
         url:"/CollectCourse",
@@ -65,7 +65,7 @@ function collect() {
             console.log(JSON.stringify(json));
 
             window.json_all=JSON.stringify(json);
-            alert("window.json_all"+window.json_all);
+            // alert("window.json_all"+window.json_all);
             var status=json.status;
             if (status!=0){
                 alert(json.result)

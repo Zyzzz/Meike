@@ -25,11 +25,11 @@ $(document).ready(function (){
                 document.cookie="ocookie"+"="+json.cookie+";";
                 if(status=='0'){
                    // window.location.href = "admin/index.action";    //跳转到后台主页
-                   document.cookie= "name" +"="+json.name+";";
+                   document.cookie= "oname" +"="+json.name+";";
 
                    window.opener=null;
                    window.open('O_index.html','_self');
-                   console.log(document.cookie);
+                   console.log("organizationLogin:"+document.cookie);
                 }
                 //else{
                 //    var error=document.getElementsByClassName("error");

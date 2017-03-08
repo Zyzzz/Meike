@@ -21,7 +21,7 @@ $(document).ready(function (){
                console.log(JSON.stringify(json));
 
                window.json_all=JSON.stringify(json);
-               alert("window.json_all"+window.json_all);
+               // alert("window.json_all"+window.json_all);
                var status=json.status;
                if(status=='0'){
                    // window.location.href = "admin/index.action";    //跳转到后台主页
