@@ -66,10 +66,36 @@ public class CourseController {
 
     @ResponseBody
     @RequestMapping(value = "/getCourseByName")
-    public  List<CourseEntity> getCourseByName(String name){
+    public  CourseListEntity getCourseByName(String name){
 
-        List<CourseEntity> courseEntities = courseRepository.findByName("%"+name+"%");
-        return  courseEntities;
+        List<Object> courseEntities = courseRepository.findByName("%"+name+"%");
+        List<PictureEntity> pictureEntities  = pictureRepository.findByPattern(1);
+        List<CourseEntity> courseEntities1 = new ArrayList();
+        List<CourseInformationEntity> courseInformationEntities = new ArrayList<>();
+        CourseListEntity courseListEntity = new CourseListEntity();
+
+
+        for(int i = 0;i<courseEntities.size();i++){
+            for(PictureEntity pictureEntity :pictureEntities){
+                CourseEntity courseEntity = new CourseEntity();
+                Object[] obj= (Object[])courseEntities.get(i);
+                courseEntity.setId((Integer)obj[0]);
+                courseEntity.setName(obj[1].toString());
+                courseEntity.setType(obj[2].toString());
+                courseEntity.setLessonNumber((Integer)obj[3]);
+                courseEntity.setOrganizationid((Integer)obj[4]);
+                courseEntity.setDescription(obj[5].toString());
+                if(courseEntity.getId()==pictureEntity.getOtherid()){
+                    CourseInformationEntity courseInformationEntity = new CourseInformationEntity();
+                    courseInformationEntity.setCourseEntity(courseEntity);
+                    courseInformationEntity.setPictureEntity(pictureEntity);
+                    courseInformationEntities.add(courseInformationEntity);
+                }
+            }
+        }
+        courseListEntity.setStatus(0);
+        courseListEntity.setCourseInformationEntities(courseInformationEntities);
+        return courseListEntity;
     }
 
     @ResponseBody
