@@ -90,9 +90,9 @@ $(document).ready(function(){
 		        <li class="dropdown">
 		            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-search"></i><span>Search</span></a>
 		            <ul class="dropdown-menu search-form">
-			           <form>        
+			           <form >
                             <input type="text" class="search-text" name="s" placeholder="Search...">    
-                            <button type="submit" class="search-submit"><i class="fa fa-search"></i></button>
+                            <button type="button" class="search-submit" onclick="doSearch()"><i class="fa fa-search"></i></button>
                        </form>
 			        </ul>
 		        </li>
@@ -705,6 +705,10 @@ $(document).ready(function(){
 <script src="js/jquery.countdown.js"></script>
 <script src="js/script.js"></script>
 <script type="text/javascript">
+	function doSearch() {
+		var msg=$('.search-text').val();
+		location.href='/serach_courses.html?name='+msg;
+	}
 	function getCookie(cname)
 	{
 		var name = cname + "=";
