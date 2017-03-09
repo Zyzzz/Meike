@@ -48,6 +48,14 @@ public class OrganizationController {
     public String O_allcourse(){
         return "O_addcourse";
     }
+    @RequestMapping(value = "/O_alltype", method = RequestMethod.GET)
+    public String O_alltype(){
+        return "O_alltype";
+    }
+    @RequestMapping(value = "/O_alllessons", method = RequestMethod.GET)
+    public String O_alllessonse(){
+        return "O_alllessons";
+    }
     @ResponseBody
     @RequestMapping(value = "/Ologin")
     public OrganizationEntity Ologin(String email,String password){
