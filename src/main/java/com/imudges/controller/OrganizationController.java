@@ -46,7 +46,7 @@ public class OrganizationController {
     }
     @RequestMapping(value = "/O_allcourse", method = RequestMethod.GET)
     public String O_allcourse(){
-        return "O_addcourse";
+        return "O_allcourse";
     }
     @RequestMapping(value = "/O_alltype", method = RequestMethod.GET)
     public String O_alltype(){
@@ -55,6 +55,10 @@ public class OrganizationController {
     @RequestMapping(value = "/O_alllessons", method = RequestMethod.GET)
     public String O_alllessonse(){
         return "O_alllessons";
+    }
+    @RequestMapping(value = "/O_addlessons", method = RequestMethod.GET)
+    public String O_addlessons(){
+        return "O_addlessons";
     }
     @ResponseBody
     @RequestMapping(value = "/Ologin")

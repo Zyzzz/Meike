@@ -29,7 +29,7 @@ $(document).ready(function () {
             async: false,
             data:{cookie:cookie,nickname:nickname,age:age,address:address,phone:phone},
             success:function (json) {
-                alert("success");
+                // alert("success");
                 console.log(JSON.stringify(json));
                 window.opener=null;
                 window.open('course_detail.html?cid='+id,'_self');

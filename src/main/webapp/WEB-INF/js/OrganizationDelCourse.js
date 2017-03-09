@@ -6,7 +6,7 @@ $(document).ready(function () {
     $("#???").click(function () {
         var id=hooyesQueryString("cid");
         var cookie=getcookie("ocookie");
-        alert(cookie);
+        // alert(cookie);
         $.ajax({
             url:"/deleteCourse",
             type:"post",
@@ -14,7 +14,7 @@ $(document).ready(function () {
             async: false,
             data:{cid:id,cookie:cookie},
             success:function (json) {
-                alert("success");
+                // alert("success");
                 console.log(JSON.stringify(json));
                 //window.opener=null;
                 //window.open('course_detail.html?cid='+id,'_self');

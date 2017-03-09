@@ -20,7 +20,7 @@ $(document).ready(function (){
             success:function(json){
                 console.log(JSON.stringify(json));
                 window.json_all=JSON.stringify(json);
-                alert("window.json_all"+window.json_all);
+                // alert("window.json_all"+window.json_all);
                 var status=json.status;
                 document.cookie="ocookie"+"="+json.cookie+";";
                 if(status=='0'){

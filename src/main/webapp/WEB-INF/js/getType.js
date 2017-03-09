@@ -23,7 +23,7 @@ $(document).ready(function (){
             alert("Connection error");
         },
         success:function(json){
-            alert("success");
+            // alert("success");
             console.log(JSON.stringify(json));
             // // console.log(json);
             var type=json;
