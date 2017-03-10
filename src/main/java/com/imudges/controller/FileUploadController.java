@@ -57,5 +57,16 @@ public class FileUploadController {
         System.out.println(url);
         return "index";
     }
+    @ResponseBody
+    @RequestMapping(value = "upload")
+    public String upload(MultipartFile vidoe,HttpServletRequest request) throws IOException {
+        //CommodityEntity commodityEntity = new CommodityEntity();
+        String filePath3 = uploadFile(vidoe, request);
+        System.out.println(filePath3);
+        Upload upload  = new Upload();
+        File file= new File(filePath3);
+        String url = upload.upload(file);
 
+        return "index";
+    }
 }

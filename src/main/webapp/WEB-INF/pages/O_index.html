@@ -291,11 +291,7 @@
           console.log("document_cookie:"+document.cookie);
 
           var nickname=getCookie("oname");
-
-          console.log("oname:"+oname);
-
-          var cookie=getCookie("cookie");
-
+          var cookie=getCookie("ocookie");
           if((nickname!=null&&cookie!=null)&&(cookie!=""||nickname!="")){
 //			alert("none");
 //              var login=document.getElementById("Login");
@@ -308,7 +304,7 @@
 //              user.style.display="block";
 
               var username=document.getElementById("oname");
-              username.innerText=nickname;
+              username.innerText= decodeURI(nickname);
 //              username.style.display="block";
 
               // 显示注销
