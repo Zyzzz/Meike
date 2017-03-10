@@ -85,6 +85,7 @@ $(document).ready(function (){
                         +courses[i].time
                         +' Minute</div> </li>')
                 }
+
         }
     });
 

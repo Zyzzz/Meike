@@ -38,53 +38,53 @@ $(document).ready(function(){
 <body>
 <nav class="navbar navbar-default" role="navigation">
 	<div class="container">
-	    <div class="navbar-header">
-	        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-		        <span class="sr-only">Toggle navigation</span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-	        </button>
-	        <a class="navbar-brand" href="index.html">Learn</a>
-	    </div>
-	    <!--/.navbar-header-->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="index.html">美课网</a>
+		</div>
+		<!--/.navbar-header-->
 		<div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" style="height: 1px;">
 
 
 			<ul class="nav navbar-nav">
 				<li class="dropdown" id="Login">
-					<a href="login.html"><i class="fa fa-user"></i><span>Login</span></a>
+					<a href="login.html"><i class="fa fa-user"></i><span>登&nbsp;陆</span></a>
 				</li>
 
 
 				<li class="dropdown">
 
-					<a href="courses.html"><i class="fa fa-list"></i><span>Courses</span></a>
+					<a href="courses.html"><i class="fa fa-list"></i><span>课&nbsp;程</span></a>
 
 				</li>
 
 
+				<!--<li class="dropdown">-->
+				<!--<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-calendar"></i><span>Events</span></a>-->
+				<!--<ul class="dropdown-menu">-->
+				<!--<li><a href="events.html">Event1</a></li>-->
+				<!--<li><a href="events.html">Event2</a></li>-->
+				<!--<li><a href="events.html">Event3</a></li>-->
+				<!--</ul>-->
+				<!--</li>-->
+				<!--<li class="dropdown">-->
+				<!--<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-globe"></i><span>English</span></a>-->
+				<!--<ul class="dropdown-menu">-->
+				<!--<li><a href="#"><span><i class="flags us"></i><span>English</span></span></a></li>-->
+				<!--<li><a href="#"><span><i class="flags newzland"></i><span>Newzland</span></span></a></li>-->
+				<!--</ul>-->
+				<!--</li>-->
 				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-calendar"></i><span>Events</span></a>
-					<ul class="dropdown-menu">
-						<li><a href="events.html">Event1</a></li>
-						<li><a href="events.html">Event2</a></li>
-						<li><a href="events.html">Event3</a></li>
-					</ul>
-				</li>
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-globe"></i><span>English</span></a>
-					<ul class="dropdown-menu">
-						<li><a href="#"><span><i class="flags us"></i><span>English</span></span></a></li>
-						<li><a href="#"><span><i class="flags newzland"></i><span>Newzland</span></span></a></li>
-					</ul>
-				</li>
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-search"></i><span>Search</span></a>
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-search"></i><span>搜&nbsp;索</span></a>
 					<ul class="dropdown-menu search-form">
-						<form>
+						<form >
 							<input type="text" class="search-text" name="s" placeholder="Search...">
-							<button type="submit" class="search-submit"><i class="fa fa-search"></i></button>
+							<button type="button" class="search-submit" onclick="doSearch()"><i class="fa fa-search"></i></button>
 						</form>
 					</ul>
 				</li>
@@ -95,94 +95,92 @@ $(document).ready(function(){
 					<a href="Per_information.html"><i class="fa fa-user"></i><span  id="user_name_text"></span></a>
 				</li>
 				<li class="dropdown" id="logout" style="display: none;">
-					<a href="login.html" onclick="Log_out_clear_cookie()"><i class="fa fa-user"></i><span>Log &nbsp;out</span></a>
+					<a href="login.html" onclick="Log_out_clear_cookie()"><i class="fa fa-user"></i><span>登 &nbsp;出</span></a>
 				</li>
 			</ul>
 		</div>
 		<div class="clearfix"> </div>
-
-	  </div>
-	    <!--/.navbar-collapse-->
+	</div>
+	<!--/.navbar-collapse-->
 </nav>
 <nav class="navbar nav_bottom" role="navigation">
- <div class="container">
-  <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header nav_2">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#"></a>
-    </div> 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
-        <ul class="nav navbar-nav nav_1">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-    		<li class="dropdown mega-dropdown active">
-			    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admissions<span class="caret"></span></a>				
-				<div class="dropdown-menu mega-dropdown-menu">
-                    <div class="container-fluid">
-    				    <!-- Tab panes -->
-                        <div class="tab-content">
-                          <div class="tab-pane active" id="men">
-                            <ul class="nav-list list-inline">
-                                <li><a href="admission.html"><img src="images/t7.jpg" class="img-responsive" alt=""/></a></li>
-                                <li><a href="admission.html"><img src="images/t8.jpg" class="img-responsive" alt=""/></a></li>
-                                <li><a href="admission.html"><img src="images/t9.jpg" class="img-responsive" alt=""/></a></li>
-                                <li><a href="admission.html"><img src="images/t1.jpg" class="img-responsive" alt=""/></a></li>
-                            </ul>
-                          </div>
-                          <div class="tab-pane" id="women">
-                            <ul class="nav-list list-inline">
-                                <li><a href="admission.html"><img src="images/t1.jpg" class="img-responsive" alt=""/></a></li>
-                                <li><a href="admission.html"><img src="images/t2.jpg" class="img-responsive" alt=""/></a></li>
-                                <li><a href="admission.html"><img src="images/t3.jpg" class="img-responsive" alt=""/></a></li>
-                                <li><a href="admission.html"><img src="images/t4.jpg" class="img-responsive" alt=""/></a></li>
-                                <li><a href="admission.html"><img src="images/t5.jpg" class="img-responsive" alt=""/></a></li>
-                                <li><a href="admission.html"><img src="images/t6.jpg" class="img-responsive" alt=""/></a></li>
-                            </ul>
-                          </div>
-                        </div>
-                    </div>
-                    <!-- Nav tabs -->
-                    <ul class="nav nav-tabs" role="tablist">
-                       <li class="active"><a href="#men" role="tab" data-toggle="tab">School</a></li>
-                       <li><a href="#women" role="tab" data-toggle="tab">College</a></li>
-                    </ul>                    
-				</div>				
-			</li>
-			<li><a href="faculty.html">Faculty</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Programs<span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="terms.html">Terms of use</a></li>
-                <li><a href="shortcodes.html">Shortcodes</a></li>
-                <li><a href="faq.html">Faq</a></li>
-              </ul>
-            </li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="features.html">Features</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="career.html">Career</a></li>
-            <li class="last"><a href="contact.html">Contacts</a></li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-   </div>
+	<div class="container">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header nav_2">
+			<button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#"></a>
+		</div>
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+			<ul class="nav navbar-nav nav_1">
+				<li><a href="index.html">首&nbsp;页</a></li>
+				<li><a href="about.html">关于我们</a></li>
+				<!--<li class="dropdown mega-dropdown active">-->
+				<!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">Admissions<span class="caret"></span></a>				-->
+				<!--<div class="dropdown-menu mega-dropdown-menu">-->
+				<!--<div class="container-fluid">-->
+				<!--&lt;!&ndash; Tab panes &ndash;&gt;-->
+				<!--<div class="tab-content">-->
+				<!--<div class="tab-pane active" id="men">-->
+				<!--<ul class="nav-list list-inline">-->
+				<!--<li><a href="admission.html"><img src="images/t7.jpg" class="img-responsive" alt=""/></a></li>-->
+				<!--<li><a href="admission.html"><img src="images/t8.jpg" class="img-responsive" alt=""/></a></li>-->
+				<!--<li><a href="admission.html"><img src="images/t9.jpg" class="img-responsive" alt=""/></a></li>-->
+				<!--<li><a href="admission.html"><img src="images/t1.jpg" class="img-responsive" alt=""/></a></li>-->
+				<!--</ul>-->
+				<!--</div>-->
+				<!--<div class="tab-pane" id="women">-->
+				<!--<ul class="nav-list list-inline">-->
+				<!--<li><a href="admission.html"><img src="images/t1.jpg" class="img-responsive" alt=""/></a></li>-->
+				<!--<li><a href="admission.html"><img src="images/t2.jpg" class="img-responsive" alt=""/></a></li>-->
+				<!--<li><a href="admission.html"><img src="images/t3.jpg" class="img-responsive" alt=""/></a></li>-->
+				<!--<li><a href="admission.html"><img src="images/t4.jpg" class="img-responsive" alt=""/></a></li>-->
+				<!--<li><a href="admission.html"><img src="images/t5.jpg" class="img-responsive" alt=""/></a></li>-->
+				<!--<li><a href="admission.html"><img src="images/t6.jpg" class="img-responsive" alt=""/></a></li>-->
+				<!--</ul>-->
+				<!--</div>-->
+				<!--</div>-->
+				<!--</div>-->
+				<!--&lt;!&ndash; Nav tabs &ndash;&gt;-->
+				<!--<ul class="nav nav-tabs" role="tablist">-->
+				<!--<li class="active"><a href="#men" role="tab" data-toggle="tab">School</a></li>-->
+				<!--<li><a href="#women" role="tab" data-toggle="tab">College</a></li>-->
+				<!--</ul>                    -->
+				<!--</div>				-->
+				<!--</li>-->
+				<!--<li><a href="faculty.html">Faculty</a></li>-->
+				<!--<li class="dropdown">-->
+				<!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">Programs<span class="caret"></span></a>-->
+				<!--<ul class="dropdown-menu" role="menu">-->
+				<!--<li><a href="terms.html">Terms of use</a></li>-->
+				<!--<li><a href="shortcodes.html">Shortcodes</a></li>-->
+				<!--<li><a href="faq.html">Faq</a></li>-->
+				<!--</ul>-->
+				<!--</li>-->
+				<li><a href="services.html">服&nbsp;务</a></li>
+				<li><a href="features.html">合作伙伴</a></li>
+				<li><a href="blog.html">论&nbsp;坛</a></li>
+				<li class="last"><a href="contact.html">联系我们</a></li>
+			</ul>
+		</div><!-- /.navbar-collapse -->
+	</div>
 </nav>
 <!-- banner -->
   <div class="courses_banner">
   	<div class="container">
-  		<h3>Courses</h3>
+  		<h3>课程</h3>
   		<p class="description">
-             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lorem quam, adipiscing condimentum tristique vel, eleifend sed turpis. Pellentesque cursus arcu id magna euismod in elementum purus molestie.
+            2017精品课程陆续上线中
         </p>
         <div class="breadcrumb1">
             <ul>
-                <li class="icon6"><a href="index.html">Home</a></li>
-                <li class="current-page">Courses</li>
+                <li class="icon6"><a href="index.html">首页</a></li>
+                <li class="current-page">课程</li>
             </ul>
         </div>
   	</div>
@@ -236,25 +234,25 @@ $(document).ready(function(){
                 <!--<input type="submit" value="search" class="course-submit">		                            -->
             <!--</form>-->
 	       <!--</div>-->
-	       <div class="personBox">
-              <div class="personBox_1">
-                 <div class="person_image">
-                      <img src="images/t13.png" class="img-responsive" alt=""/> 
-                 </div>
-                 <div class="person_image_desc">
-                   <h1>Lorem Ipsum</h1>
-                   <p>Tempor Incididunt</p>
-                </div>
-                <div class="clearfix"> </div>
-             </div>
-             <div class="person_description">
-                <p>
-                    On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble <a href="#">More..</a>
-                </p>
-             </div>
-          </div>
+	       <!--<div class="personBox">-->
+              <!--<div class="personBox_1">-->
+                 <!--<div class="person_image">-->
+                      <!--<img src="images/t13.png" class="img-responsive" alt=""/> -->
+                 <!--</div>-->
+                 <!--<div class="person_image_desc">-->
+                   <!--<h1>Lorem Ipsum</h1>-->
+                   <!--<p>Tempor Incididunt</p>-->
+                <!--</div>-->
+                <!--<div class="clearfix"> </div>-->
+             <!--</div>-->
+             <!--<div class="person_description">-->
+                <!--<p>-->
+                    <!--On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble <a href="#">More..</a>-->
+                <!--</p>-->
+             <!--</div>-->
+          <!--</div>-->
           <div class="social-widget">
-          	<h2>Connect with us</h2>
+          	<h2>关注我们</h2>
           	  <ul class="courses_social">
 				<li class="facebook-icon">
 					<div>
@@ -278,77 +276,77 @@ $(document).ready(function(){
 			 </ul>
            </div>
            <section class="slider">
-            	<h3>Testimonial</h3>
+            	<h3>热门讨论</h3>
 				<div class="flexslider">
 					<ul class="slides">
 						<li>
 							<div class="banner-info1">
-							   <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat quis nostrud.</p>	
-							   <h5><a href="#">Laoreet ,</a>Dateratr since 2015</h5>
+							   <p>看了一天全看完了，感觉都很容易，自己一动手老错</p>
+							   <h5><a href="#">mooc14890699</a>2017.3.1 14:51</h5>
 							</div>
 						</li>
 						<li>
 							<div class="banner-info1">
-							   <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, content of a page.</p>	
-							   <h5><a href="#">Distracted ,</a>Dateratr since 2015</h5>
+							   <p>大一新生，非计算机专业，大学计算机最基础的理论没必要学么</p>
+							   <h5><a href="#">阿鲍 </a>2017.3.1 14:52</h5>
 							</div>
 						</li>
 						<li>
 							<div class="banner-info1">
-							   <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of usin but the majority.</p>	
-							   <h5><a href="#">Suffered ,</a>Dateratr since 2015</h5>
+							   <p>计算机里面有符号整数，负数是用补码表示的，补码补的是什么？</p>
+							   <h5><a href="#">我是石榴君</a>2017.3.1 14:53</h5>
 							</div>
 						</li>
 				    </ul>
 				 </div>
 	      </section>
 	      <ul class="posts">
-	      	<h3>Recent Posts</h3>
-			<li>
-				<article class="entry-item">
-					<div class="entry-thumb pull-left">
-						<img src="images/t17.jpg" class="img-responsive" alt=""/>
-					</div>
-					<div class="entry-content">
-						<h6><a href="#">Established</a></h6>
-						<p><a href="#">Admin</a> &nbsp;/&nbsp; 30 Dec 2015</p>
-					</div>
-					<div class="clearfix"> </div>
-				</article>
-			</li>
-			<li>
-				<article class="entry-item">
-					<div class="entry-thumb pull-left">
-						<img src="images/t7.jpg" class="img-responsive" alt=""/>
-					</div>
-					<div class="entry-content">
-						<h6><a href="#">Established</a></h6>
-						<p><a href="#">Admin</a> &nbsp;/&nbsp; 30 Dec 2015</p>
-					</div>
-					<div class="clearfix"> </div>
-				</article>
-			</li>
-			<li>
-				<article class="entry-item">
-					<div class="entry-thumb pull-left">
-						<img src="images/t16.jpg" class="img-responsive" alt=""/>
-					</div>
-					<div class="entry-content">
-						<h6><a href="#">Established</a></h6>
-						<p><a href="#">Admin</a> &nbsp;/&nbsp; 30 Dec 2015</p>
-					</div>
-					<div class="clearfix"> </div>
-				</article>
-		    </li>
+	      	<!--<h3>最新课程</h3>-->
+			<!--<li>-->
+				<!--<article class="entry-item">-->
+					<!--<div class="entry-thumb pull-left">-->
+						<!--<img src="images/t17.jpg" class="img-responsive" alt=""/>-->
+					<!--</div>-->
+					<!--<div class="entry-content">-->
+						<!--<h6><a href="#">Established</a></h6>-->
+						<!--<p><a href="#">Admin</a> &nbsp;/&nbsp; 30 Dec 2015</p>-->
+					<!--</div>-->
+					<!--<div class="clearfix"> </div>-->
+				<!--</article>-->
+			<!--</li>-->
+			<!--<li>-->
+				<!--<article class="entry-item">-->
+					<!--<div class="entry-thumb pull-left">-->
+						<!--<img src="images/t7.jpg" class="img-responsive" alt=""/>-->
+					<!--</div>-->
+					<!--<div class="entry-content">-->
+						<!--<h6><a href="#">Established</a></h6>-->
+						<!--<p><a href="#">Admin</a> &nbsp;/&nbsp; 30 Dec 2015</p>-->
+					<!--</div>-->
+					<!--<div class="clearfix"> </div>-->
+				<!--</article>-->
+			<!--</li>-->
+			<!--<li>-->
+				<!--<article class="entry-item">-->
+					<!--<div class="entry-thumb pull-left">-->
+						<!--<img src="images/t16.jpg" class="img-responsive" alt=""/>-->
+					<!--</div>-->
+					<!--<div class="entry-content">-->
+						<!--<h6><a href="#">Established</a></h6>-->
+						<!--<p><a href="#">Admin</a> &nbsp;/&nbsp; 30 Dec 2015</p>-->
+					<!--</div>-->
+					<!--<div class="clearfix"> </div>-->
+				<!--</article>-->
+		    <!--</li>-->
          </ul>
 		</div>
 		<div class="col-md-9">
 			<div class="course_list">
                 <div class="table-header clearfix">
-                	<div class="id_col">ID</div>
-                	<div class="name_col">Course Name</div>
-                    <div class="duration_col">Type</div>
-                    <div class="date_col">Start Date</div>
+                	<div class="id_col">课号</div>
+                	<div class="name_col">课程名</div>
+                    <div class="duration_col">类别</div>
+                    <div class="date_col">上线时间</div>
     			</div>
                 <ul class="table-list">
                     <!--<li class="clearfix">-->
@@ -526,82 +524,82 @@ $(document).ready(function(){
 		    <div class="clearfix"> </div>
 	   </div>
 	</div>
-    <div class="footer">
-    	<div class="container">
-    		<div class="col-md-3 grid_4">
-    		   <h3>About Us</h3>	
-    		   <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.."</p>
-    		      <ul class="social-nav icons_2 clearfix">
-                    <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#" class="facebook"> <i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a></li>
-                 </ul>
-    		</div>
-    		<div class="col-md-3 grid_4">
-    		   <h3>Quick Links</h3>
-    			<ul class="footer_list">
-    				<li><a href="#">-  PRIOR LEARNING ASSESSMENT </a></li>
-    				<li><a href="#">-  INTERNATIONAL STUDENTS</a></li>
-    				<li><a href="#">-  CAREER OPPORTUNITIES</a></li>
-    				<li><a href="#">-   NEW STUDENT ORIENTATION</a></li>
-    				<li><a href="#">-   NEW CLASSROOM TECHNOLOGY</a></li>
-    			</ul>
-    		</div>
-    		<div class="col-md-3 grid_4">
-    		   <h3>Contact Us</h3>
-    			<address>
-                    <strong>Contrary to popular belief</strong>
-                    <br>
-                    <span>4877 It is a long established</span>
-                    <br><br>
-                    <span>Contrary to popular , 15089</span>
-                    <br>
-                    <abbr>Telephone : </abbr> +1 (734) 123-4567
-                    <br>
-                    <abbr>Email : </abbr> <a href="mailto@example.com">info(at)Learn.com</a>
-               </address>
-    		</div>
-    		<div class="col-md-3 grid_4">
-    		   <h3>Working Hours</h3>
-    			 <table class="table_working_hours">
-		        	<tbody>
-		        		<tr class="opened_1">
-							<td class="day_label">monday</td>
-							<td class="day_value">9:30 am - 6.00 pm</td>
-						</tr>
-					    <tr class="opened">
-							<td class="day_label">tuesday</td>
-							<td class="day_value">9:30 am - 6.00 pm</td>
-						</tr>
-					    <tr class="opened">
-							<td class="day_label">wednesday</td>
-							<td class="day_value">9:30 am - 6.00 pm</td>
-						</tr>
-					    <tr class="opened">
-							<td class="day_label">thursday</td>
-							<td class="day_value">9:30 am - 6.00 pm</td>
-						</tr>
-					    <tr class="opened">
-							<td class="day_label">friday</td>
-							<td class="day_value">9:30 am - 3.00 pm</td>
-						</tr>
-					    <tr class="closed">
-							<td class="day_label">saturday</td>
-							<td class="day_value closed"><span>Closed</span></td>
-						</tr>
-					    <tr class="closed">
-							<td class="day_label">sunday</td>
-							<td class="day_value closed"><span>Closed</span></td>
-						</tr>
-				    </tbody>
-				</table>
-            </div>
-    		<div class="clearfix"> </div>
-    		<div class="copy">
-		       <p>Copyright &copy; 2015.Company name All rights reserved.<a target="_blank" href="http://www.cssmoban.com/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
-	        </div>
-    	</div>
-    </div>
+<div class="footer">
+	<div class="container">
+		<div class="col-md-3 grid_4">
+			<h3>关于我们</h3>
+			<p>内蒙古大学精英学生开发者联盟（IMUDGES， Inner Mongolia University Developer Group of Elite Student）成立于2011年，是由一群喜欢钻研、勤于动手、勇于创新的学生组成的一个学生组织。联盟以“自由、创新、共享”为宗旨，希望为“学生”、“学校”、“企业”提供更好的合作平台。</p>
+			<!--<ul class="social-nav icons_2 clearfix">-->
+			<!--<li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>-->
+			<!--<li><a href="#" class="facebook"> <i class="fa fa-facebook"></i></a></li>-->
+			<!--<li><a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a></li>-->
+			<!--</ul>-->
+		</div>
+		<div class="col-md-3 grid_4">
+			<h3>快捷链接</h3>
+			<ul class="footer_list">
+				<li><a href="#">-  PRIOR LEARNING ASSESSMENT </a></li>
+				<li><a href="#">-  INTERNATIONAL STUDENTS</a></li>
+				<li><a href="#">-  CAREER OPPORTUNITIES</a></li>
+				<li><a href="#">-   NEW STUDENT ORIENTATION</a></li>
+				<li><a href="#">-   NEW CLASSROOM TECHNOLOGY</a></li>
+			</ul>
+		</div>
+		<div class="col-md-3 grid_4">
+			<h3>联系我们</h3>
+			<address>
+				<strong>网站访问情况</strong>
+				<br>
+				<span>4877 正在访问</span>
+				<br><br>
+				<span>累计访问人数 , 15089</span>
+				<br>
+				<abbr>固话 : </abbr> +1 (734) 123-4567
+				<br>
+				<abbr>邮箱 : </abbr> <a href="mailto@example.com">info(at)Learn.com</a>
+			</address>
+		</div>
+		<div class="col-md-3 grid_4">
+			<h3>工作时间</h3>
+			<table class="table_working_hours">
+				<tbody>
+				<tr class="opened_1">
+					<td class="day_label">星期一</td>
+					<td class="day_value">9:30 am - 6.00 pm</td>
+				</tr>
+				<tr class="opened">
+					<td class="day_label">星期二</td>
+					<td class="day_value">9:30 am - 6.00 pm</td>
+				</tr>
+				<tr class="opened">
+					<td class="day_label">星期三</td>
+					<td class="day_value">9:30 am - 6.00 pm</td>
+				</tr>
+				<tr class="opened">
+					<td class="day_label">星期四</td>
+					<td class="day_value">9:30 am - 6.00 pm</td>
+				</tr>
+				<tr class="opened">
+					<td class="day_label">星期五</td>
+					<td class="day_value">9:30 am - 3.00 pm</td>
+				</tr>
+				<tr class="closed">
+					<td class="day_label">星期六</td>
+					<td class="day_value closed"><span>9:30 am - 6.00 pm</span></td>
+				</tr>
+				<tr class="closed">
+					<td class="day_label">星期日</td>
+					<td class="day_value closed"><span>9:30 am - 6.00 pm</span></td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="clearfix"> </div>
+		<!--<div class="copy">-->
+		<!--<p>Copyright &copy; 2015.Company name All rights reserved.<a target="_blank" href="http://www.cssmoban.com/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>-->
+		<!--</div>-->
+	</div>
+</div>
 <!-- FlexSlider -->
 <script type="text/javascript">
 	function doSearch() {

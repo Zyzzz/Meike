@@ -31,6 +31,25 @@ $(document).ready(function (){
                         +courses[i].courseEntity.type
                         +'</div> <div class="date_col"></div> </li>')
                 }
+
+                for(var j=0;j<courses.length;j++){
+                    $(".posts").append('<h3>最新课程</h3> <li>'
+                        +'<article class="entry-item">'
+                        +'<div class="entry-thumb pull-left">'
+                        +'<img src='+courses[j].pictureEntity.url+' class="img-responsive" alt=""/>'
+                        +'</div>'
+                        +'<div class="entry-content">'
+                       +'<h6><a href="#">' +
+                        courses[j].courseEntity.name +
+                        '</a></h6>'
+                        +'<p><a href="#">'
+                        +courses[j].courseEntity.type
+                        + '</a> &nbsp;/&nbsp; 30 Dec 2015</p>'
+                    +'</div>'
+                    +'<div class="clearfix"> </div>'
+                     +'</article> </li>'
+                    )
+                }
             }
         });
 
