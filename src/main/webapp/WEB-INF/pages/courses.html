@@ -651,7 +651,7 @@ $(document).ready(function(){
 			user.style.display="block";
 
 			var username=document.getElementById("user_name_text");
-			username.innerText=nickname;
+			username.innerText=decodeURI(nickname);
 			username.style.display="block";
 
 			// 显示注销
@@ -669,7 +669,7 @@ $(document).ready(function(){
 			user.style.display="none";
 
 			var username=document.getElementById("user_name_text");
-			username.innerText=nickname;
+			username.innerText=decodeURI(nickname);
 			username.style.display="none";
 
 			// 显示注销

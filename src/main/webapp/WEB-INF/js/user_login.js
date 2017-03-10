@@ -28,7 +28,7 @@ $(document).ready(function (){
 
 
 
-                   document.cookie= "nickname" +"="+json.nickname+";";
+                   document.cookie= "nickname" +"="+encodeURI(json.nickname)+";";
 
                    document.cookie="cookie"+"="+json.cookie+";";
 
