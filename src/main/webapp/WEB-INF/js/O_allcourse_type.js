@@ -71,13 +71,16 @@ $(document).ready(function (){
             // console.log(type);
             // console.log("course_length:"+courses.length);
             //
+
+
+
             for(var i=0;i<type.length;i++) {
 
                 $("#O_allcourse_type").append('<tr>' +
                     ' <td>' + type[i].id + '</td> ' +
 
                     ' <td>' +
-                    '<a href="/O_alllessons?CourseId=' + type[i].id + '">' +
+                    '<a href="/O_alllessons?CourseId=' + type[i].id+1 + '">' +
                     type[i].name
                     + '</a></td>'+
                     ' <td>' + type[i]. lessonNumber+ '</td> ' +

@@ -66,7 +66,6 @@ public class FileUploadController {
         Upload upload  = new Upload();
         File file= new File(filePath3);
         String url = upload.upload(file);
-
         return "index";
     }
 }
