@@ -5,7 +5,7 @@
 
 $(document).ready(function (){
     $("#submit").click(function(){
-        alert("user_ajax");
+        //alert("user_ajax");
         $.ajax({
             // url:'http://localhost:8080/userLogin',
             url:"/Ologin",
