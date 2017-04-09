@@ -120,10 +120,10 @@
             </div>
         </div>
         <div class="span9">
-            <h1 class="page-title">Edit User</h1>
+            <h1 class="page-title">新建课节</h1>
 <div class="btn-toolbar">
-    <button class="btn btn-primary"><i class="icon-save"></i> Save</button>
-    <a href="#myModal" data-toggle="modal" class="btn">Delete</a>
+    <button class="btn btn-primary" name="Save" id="Save"><i class="icon-save"></i> Save</button>
+
   <div class="btn-group">
   </div>
 </div>
@@ -134,7 +134,7 @@
     </ul>
     <div id="myTabContent" class="tab-content">
       <div class="tab-pane active in" id="home">
-    <form id="tab">
+    <form id="tab"  enctype="multipart/form-data">
         <label>课节名</label>
         <input type="text"   class="input-xlarge">
         <label>教师</label>
@@ -142,14 +142,18 @@
 
 
         </select>
-        <label>First Name</label>
+        <label>时间</label>
         <input type="text" class="input-xlarge">
-        <label>Last Name</label>
-        <input type="text" value="Smith" class="input-xlarge">
-        <label>Email</label>
-        <input type="text" value="jsmith@yourcompany.com" class="input-xlarge">
-        <label>Address</label>
-        <textarea rows="3" class="input-xlarge">
+        <label>选择上传视频</label>
+        <a href="javascript:;" class="a-upload">
+            <input type="file" name="" id="">点击这里上传文件
+        </a>
+        <!--<label>Last Name</label>-->
+        <!--<input type="text" value="Smith" class="input-xlarge">-->
+        <!--<label>Email</label>-->
+        <!--<input type="text" value="jsmith@yourcompany.com" class="input-xlarge">-->
+        <!--<label>Address</label>-->
+        <!--<textarea rows="3" class="input-xlarge">-->
 
         </textarea>
 
