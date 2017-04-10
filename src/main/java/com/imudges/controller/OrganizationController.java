@@ -214,13 +214,14 @@ public class OrganizationController {
 
     @ResponseBody
     @RequestMapping(value = "/addCourse")
-    public BaseEntity addCourse(String cookie,String cname,String type,int lessonNumber){
+    public BaseEntity addCourse(String cookie,String cname,String type,String description){
         BaseEntity baseEntity = new BaseEntity();
         CourseEntity courseEntity = new CourseEntity();
         OrganizationEntity organizationEntity = organizationRepository.findByCookie(cookie);
-        courseEntity.setLessonNumber(lessonNumber);
+        //courseEntity.setLessonNumber(lessonNumber);
         courseEntity.setType(type);
         courseEntity.setOrganizationid(organizationEntity.getId());
+        courseEntity.setDescription(description);
         courseEntity.setName(cname);
         courseRepository.saveAndFlush(courseEntity);
         baseEntity.setStatus(0);
