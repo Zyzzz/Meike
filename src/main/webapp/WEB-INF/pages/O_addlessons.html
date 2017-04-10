@@ -212,12 +212,88 @@
 
 
         <script src="js/getAllTeacherstolesson.js"></script>
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+        <script src="js/OrganizationLogin.js" type="text/javascript"></script>
+        <script type="text/javascript">
+
+            function getCookie(cname)
+            {
+                var name = cname + "=";
+                console.log(document.cookie);
+                var ca = document.cookie.split(';');
+                for(var i=0; i<ca.length; i++)
+                {
+                    var c = ca[i].trim();
+                    if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+                }
+                return "";
+            }
+
+
+            function Log_out_clear_cookie() {
+
+                document.cookie="ocookie=;";
+                document.cookie="oname=;";
+
+                console.log(document.cookie);
+            }
+
+            window.onload=function () {
+                var document_cookie=document.cookie;
+
+                console.log("document_cookie:"+document.cookie);
+
+                var nickname=getCookie("oname");
+                var cookie=getCookie("ocookie");
+                if((nickname!=null&&cookie!=null)&&(cookie!=""||nickname!="")){
+//			alert("none");
+//              var login=document.getElementById("Login");
+//              login.style.opacity="0";
+//              login.style.display="none";
+
+                    // 显示用户昵称
+
+//              var user=document.getElementById("user_name");
+//              user.style.display="block";
+
+                    var username=document.getElementById("oname");
+                    username.innerText= decodeURI(nickname);
+//              username.style.display="block";
+
+                    // 显示注销
+//              var log_out=document.getElementById("logout");
+//              log_out.style.display="block";
+                }else{
+//			alert("login"+"display");
+//              var login=document.getElementById("Login");
+//              login.style.opacity="1";
+//              login.style.display="display";
+
+                    // 显示用户昵称
+
+//              var user=document.getElementById("user_name");
+//              user.style.display="none";
+
+                    var username=document.getElementById("oname");
+                    username.innerText="Jack Smith";
+                    username.style.display="none";
+
+                    // 显示注销
+//              var log_out=document.getElementById("logout");
+//              log_out.style.display="none";
+                }
+
+
+
+            }
+
+
+        </script>
     
     
     
