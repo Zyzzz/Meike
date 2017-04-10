@@ -35,7 +35,7 @@ $(document).ready(function (){
                 if(status=='0'){
                     // window.location.href = "admin/index.action";    //跳转到后台主页
                     window.opener=null;
-                    window.open('O_allcourse?type='+$('#coursetype option:selected').text(),'_self');
+                    window.open('O_allcourse?type='+$('#tpye option:selected').text(),'_self');
                 }
 
             }
