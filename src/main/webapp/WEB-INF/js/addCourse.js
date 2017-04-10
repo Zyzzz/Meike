@@ -14,7 +14,7 @@ function getcookie(objname){//获取指定名称的cookie的值
 
 $(document).ready(function (){
     $("#save").click(function(){
-        //alert("user_ajax");
+        alert($("#courseform").serialize());
 
         $.ajax({
             // url:'http://localhost:8080/userLogin',
@@ -35,7 +35,7 @@ $(document).ready(function (){
                 if(status=='0'){
                     // window.location.href = "admin/index.action";    //跳转到后台主页
                     window.opener=null;
-                    window.open('O_allcourse?type='+$('#tpye option:selected').text(),'_self');
+                    window.open('O_allcourse?type='+$('#coursetpye option:selected').text(),'_self');
                 }
 
             }
