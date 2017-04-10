@@ -48,6 +48,10 @@ public class OrganizationController {
     public String O_allcourse(){
         return "O_allcourse";
     }
+    @RequestMapping(value = "/O_addcourse", method = RequestMethod.GET)
+    public String O_addcourse(){
+        return "O_addcourse";
+    }
     @RequestMapping(value = "/O_alltype", method = RequestMethod.GET)
     public String O_alltype(){
         return "O_alltype";
@@ -56,6 +60,7 @@ public class OrganizationController {
     public String O_alllessonse(){
         return "O_alllessons";
     }
+
     @RequestMapping(value = "/O_addlessons", method = RequestMethod.GET)
     public String O_addlessons(){
         return "O_addlessons";

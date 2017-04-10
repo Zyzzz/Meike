@@ -80,7 +80,7 @@ $(document).ready(function (){
                     ' <td>' + type[i].id + '</td> ' +
 
                     ' <td>' +
-                    '<a href="/O_alllessons?CourseId=' + type[i].id+1 + '">' +
+                    '<a href="/O_alllessons?CourseId=' + type[i].id + '">' +
                     type[i].name
                     + '</a></td>'+
                     ' <td>' + type[i]. lessonNumber+ '</td> ' +
