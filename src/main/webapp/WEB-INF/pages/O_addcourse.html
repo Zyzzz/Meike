@@ -122,7 +122,7 @@
         <div class="span9">
             <h1 class="page-title">新建课程</h1>
 <div class="btn-toolbar">
-    <button class="btn btn-primary"><i class="icon-save"></i> 保存</button>
+    <button class="btn btn-primary" name="save" id="save"><i class="icon-save"></i> 保存</button>
   <div class="btn-group">
   </div>
 </div>
@@ -132,15 +132,15 @@
     </ul>
     <div id="myTabContent" class="tab-content">
       <div class="tab-pane active in" id="home">
-    <form id="tab">
+    <form id="courseform" name="courseform">
         <label>课程名</label>
-        <input type="text"class="input-xlarge">
+        <input type="text"class="input-xlarge" name="cname">
         <label>课程类型</label>
-        <select name="DropDownTimezone" id="DropDownTimezone" class="input-xlarge">
+        <select name="coursetype" id="coursetype" class="input-xlarge">
 
         </select>
         <label>课程描述</label>
-        <textarea value="Smith" rows="3" class="input-xlarge">
+        <textarea name="description" value="Smith" rows="3" class="input-xlarge">
 
         </textarea>
 
@@ -188,7 +188,7 @@
 
 
         <script src="js/getAllTypeCourse.js"></script>
-    
+        <script src="js/addCourse.js"></script>
     
     
     </div>

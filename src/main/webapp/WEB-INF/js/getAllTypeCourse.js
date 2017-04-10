@@ -33,7 +33,7 @@ $(document).ready(function (){
             // console.log("course_length:"+courses.length);
             //
             for(var i=0;i<types.length;i++){
-                $("#DropDownTimezone").append( '<option value="'+types[i]+'" >'+types[i]+'</option>')
+                $("#coursetype").append( '<option value="'+types[i]+'" >'+types[i]+'</option>')
                 //         +i
                 //         +'</div> <div class="name_col"><a href="course_detail.html?cid='+courses[i].courseEntity.id+'">'
                 //         +courses[i].courseEntity.name
