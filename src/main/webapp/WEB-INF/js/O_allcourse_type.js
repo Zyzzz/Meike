@@ -49,10 +49,8 @@ function hooyesQueryString(queryStringName)
 
 
 $(document).ready(function (){
-    //alert("courses_json_request");
     var a = decodeURI(hooyesQueryString("type"));
     alert("a:"+a);
-    //console.log(a.toString());
     $.ajax({
         url:"/getOCourseByType",
         type:'post',
@@ -64,16 +62,8 @@ $(document).ready(function (){
             alert("Connection error");
         },
         success:function(json){
-            // alert("success");
             console.log(JSON.stringify(json));
-            // console.log(json);
             var type=json;
-            // console.log(type);
-            // console.log("course_length:"+courses.length);
-            //
-
-
-
             for(var i=0;i<type.length;i++) {
 
                 $("#O_allcourse_type").append('<tr>' +
@@ -86,20 +76,11 @@ $(document).ready(function (){
                     ' <td>' + type[i]. lessonNumber+ '</td> ' +
                     ' <td>' + type[i]. description+ '</td> ' +
                     '<td> ' +
-                    ' <a href="user.html"><i class="icon-pencil"></i></a>' +
+                    ' <a href="javascript:;" onclick="deleteCourse(type[i].id)"><i class="icon-pencil"></i></a>' +
                     ' <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>' +
                     '</td></tr>'
                 )
 
-                // <tr>
-                // <td>1</td>
-                // <td>Mark</td>
-                //
-                // <td>
-                // <a href="user.html"><i class="icon-pencil"></i></a>
-                //     <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
-                //     </td>
-                //     </tr>
             }
         }
     });
