@@ -9,12 +9,12 @@ function getcookie(objname){//获取指定名称的cookie的值
     }
 }
 
-function deleteCourse(cid){
+function deleteCourse(lid){
 
     $.ajax({
-        url:"/deleteCourse",
+        url:"/deleteLessons",
         type:'post',
-        data:{cookie:getcookie("ocookie"),cid:cid},
+        data:{cookie:getcookie("ocookie"),cid:lid},
         dataType:'json',
         async: false,
         error: function(request) {
@@ -28,3 +28,6 @@ function deleteCourse(cid){
     });
 
 }
+/**
+ * Created by Administrator on 2017/4/14.
+ */
