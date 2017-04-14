@@ -255,12 +255,19 @@ public class OrganizationController {
 
     @ResponseBody
     @RequestMapping(value = "/deleteLessons")
-    public BaseEntity deleteLessons(int lid){
+    public BaseEntity deleteLessons(String cookie,int lid){
         BaseEntity baseEntity = new BaseEntity();
         LessonsEntity lessonsEntitie = lessonsRepository.findOne(lid);
-        videoRepository.delete(lessonsEntitie.getVideoId());
-        lessonsRepository.delete(lessonsEntitie);
-        baseEntity.setStatus(0);
+        OrganizationEntity organizationEntity = organizationRepository.findByCookie(cookie);
+        if(organizationEntity!=null) {
+            if(lessonsEntitie.getCourseId()==organizationEntity.getId()){
+                videoRepository.delete(lessonsEntitie.getVideoId());
+                lessonsRepository.delete(lessonsEntitie);
+                baseEntity.setStatus(0);
+                return baseEntity;
+            }
+        }
+        baseEntity.setStatus(204);
         return baseEntity;
     }
     @ResponseBody
