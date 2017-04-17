@@ -1,5 +1,5 @@
 /**
- * Created by Zyzzz on 2017/4/11.
+ * Created by Zyzzz on 2017/4/14
  */
 function getcookie(objname){//获取指定名称的cookie的值
     var arrstr = document.cookie.split("; ");
@@ -28,6 +28,4 @@ function deleteCourse(lid){
     });
 
 }
-/**
- * Created by Administrator on 2017/4/14.
- */
+

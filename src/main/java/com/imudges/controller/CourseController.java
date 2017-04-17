@@ -70,11 +70,9 @@ public class CourseController {
 
         List<Object> courseEntities = courseRepository.findByName("%"+name+"%");
         List<PictureEntity> pictureEntities  = pictureRepository.findByPattern(1);
-        List<CourseEntity> courseEntities1 = new ArrayList();
+
         List<CourseInformationEntity> courseInformationEntities = new ArrayList<>();
         CourseListEntity courseListEntity = new CourseListEntity();
-
-
         for(int i = 0;i<courseEntities.size();i++){
             for(PictureEntity pictureEntity :pictureEntities){
                 CourseEntity courseEntity = new CourseEntity();

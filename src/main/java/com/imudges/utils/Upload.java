@@ -39,7 +39,7 @@ public class Upload {
             Response res = uploadManager.put(file, null, getUpToken());
             Gson gson = new Gson();
             //打印返回的信息
-            System.out.println(res.bodyString());
+           // System.out.println(res.bodyString());
             qiniuModel=JsonUtil.fromJson(res.bodyString(),QiniuModel.class);
             //System.out.println(qiniuModel.getKey());
 

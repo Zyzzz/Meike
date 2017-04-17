@@ -55,28 +55,18 @@ $(document).ready(function (){
         success:function(json){
           //  alert("success");
             console.log(JSON.stringify(json));
-            var url=json.url;
-            var lessonName=json.lname;
-            // console.log(json);
-            // var courses=json.landcviewEntities;
-            // var courseEntity = json.courseEntity;
-            // var pictureEntity = json.pictureEntity;
-            //
-            // console.log("length:"+courses.length+"lname:"+courses[0].lname);
-            //
+            var url=json.lessonsinformationEntity.url;
+            var lessonName=json.lessonsinformationEntity.lname;
+            var pictureurl = json.pictureEntity.url;
+            var tname = json.lessonsinformationEntity.tname;
             $(".col-md-9").prepend('<video width="1080" height="540" controls="controls">'+
                 '<source src="'+url+'" type="video/mp4" /> </video>'+'<h3>'+lessonName+'</h3>>')
 
-            //
-            // for(var i=0;i<courses.length;i++){
-            //     $(".table-list").append('<li class="clearfix"> <div class="id_col">'
-            //         +(i+1)
-            //         +'</div> <div class="name_col"><a href="lessons_detail.html?lid='+courses[i].lid+'">'
-            //         +courses[i].lname
-            //         +'</a></div> <div class="duration_col">'
-            //         +courses[i].time
-            //         +' Minute</div> </li>')
-            // }
+            //$("#personBox").prepend(' <div class="personBox_1"> ' +
+            //    '<div class="person_image">' +
+            //    ' <img src="'+pictureurl+
+            //     '" class="img-responsive" alt=""/> </div> <div class="person_image_desc"> <h1>' +
+            //     tname+'</h1> <p>北京 全栈工程师</p> </div> <div class="clearfix"> </div> </div>')
         }
     });
 
