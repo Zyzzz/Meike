@@ -38,6 +38,9 @@ public class OrganizationController {
     private LessonsRepository lessonsRepository;
     @Autowired
     private TeacherRepository teacherRepository;
+    @Autowired
+    private PictureRepository pictureRepository;
+
     @RequestMapping(value = "/O_sign-in", method = RequestMethod.GET)
     public String OrganizationLogin(){
         return "O_sign-in";
@@ -198,27 +201,34 @@ public class OrganizationController {
 
     @ResponseBody
     @RequestMapping(value = "/Add_teacher")
-    public TeacherEntity AddTeacher(String cookie,String name,String phone,MultipartFile picture,HttpServletRequest request) throws IOException {
+    public TeacherEntity AddTeacher(String cookie,String name,String phone) {
 
+        teacherEntity=new TeacherEntity();
+        organizationEntity=organizationRepository.findByCookie(cookie);
+        teacherEntity.setName(name);
+        teacherEntity.setOrganizationid(organizationEntity.getId());
+        teacherEntity.setPhone(phone);
+        teacherEntity.setStatus(0);
+        teacherRepository.saveAndFlush(teacherEntity);
+        teacherEntity=teacherRepository.findByNameAndPhoneAndOrganizationid(name,phone,organizationEntity.getId());
+        return teacherEntity;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/uploadPicture")
+    public PictureEntity uploadPicture(int tid,MultipartFile picture,HttpServletRequest request) throws IOException {
         String filePath3 = uploadFile(picture, request);
         Upload upload  = new Upload();
         File file= new File(filePath3);
         String url = upload.upload(file);
         PictureEntity pictureEntity = new PictureEntity();
         pictureEntity.setUrl(url);
-        teacherEntity=new TeacherEntity();
-        organizationEntity=organizationRepository.findByCookie(cookie);
-        teacherEntity.setName(name);
-        teacherEntity.setOrganizationid(organizationEntity.getId());
-        teacherEntity.setName(phone);
-        teacherEntity.setStatus(0);
-        teacherRepository.saveAndFlush(teacherEntity);
-        teacherEntity=teacherRepository.findByNameAndPhoneAndOrganizationid(name,phone,organizationEntity.getId());
         pictureEntity.setPattern(3);
-        pictureEntity.setOtherid(teacherEntity.getId());
-
-        return teacherEntity;
+        pictureEntity.setOtherid(tid);
+        pictureRepository.saveAndFlush(pictureEntity);
+        return  pictureEntity;
     }
+
 
     @ResponseBody
     @RequestMapping(value = "/Delete_teacher")

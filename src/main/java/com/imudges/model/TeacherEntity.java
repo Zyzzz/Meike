@@ -14,7 +14,7 @@ public class TeacherEntity extends BaseEntity{
     private String phone;
 
     @Id
-    @Column(name = "id", nullable = false)
+    @Column(name = "id", nullable = true)
     public int getId() {
         return id;
     }
@@ -24,7 +24,7 @@ public class TeacherEntity extends BaseEntity{
     }
 
     @Basic
-    @Column(name = "name", nullable = false, length = 20)
+    @Column(name = "name", nullable = true, length = 20)
     public String getName() {
         return name;
     }
@@ -44,7 +44,7 @@ public class TeacherEntity extends BaseEntity{
     }
 
     @Basic
-    @Column(name = "phone", nullable = false, length = 20)
+    @Column(name = "phone", nullable = true)
     public String getPhone() {
         return phone;
     }
