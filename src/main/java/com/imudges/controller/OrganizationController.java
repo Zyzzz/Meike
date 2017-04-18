@@ -4,16 +4,22 @@ import com.imudges.model.*;
 import com.imudges.repository.*;
 import com.imudges.utils.MailSender;
 import com.imudges.utils.SHA256Test;
+import com.imudges.utils.Upload;
 import com.imudges.utils.VerifyCodeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.io.IOException;
 import java.util.Date;
 import java.util.List;
+
+import static com.imudges.utils.FileUpload.uploadFile;
 
 /**
  * Created by cyy on 2016/12/10.
@@ -192,7 +198,14 @@ public class OrganizationController {
 
     @ResponseBody
     @RequestMapping(value = "/Add_teacher")
-    public TeacherEntity AddTeacher(String cookie,String name,String phone){
+    public TeacherEntity AddTeacher(String cookie,String name,String phone,MultipartFile picture,HttpServletRequest request) throws IOException {
+
+        String filePath3 = uploadFile(picture, request);
+        Upload upload  = new Upload();
+        File file= new File(filePath3);
+        String url = upload.upload(file);
+        PictureEntity pictureEntity = new PictureEntity();
+        pictureEntity.setUrl(url);
         teacherEntity=new TeacherEntity();
         organizationEntity=organizationRepository.findByCookie(cookie);
         teacherEntity.setName(name);
@@ -200,6 +213,10 @@ public class OrganizationController {
         teacherEntity.setName(phone);
         teacherEntity.setStatus(0);
         teacherRepository.saveAndFlush(teacherEntity);
+        teacherEntity=teacherRepository.findByNameAndPhoneAndOrganizationid(name,phone,organizationEntity.getId());
+        pictureEntity.setPattern(3);
+        pictureEntity.setOtherid(teacherEntity.getId());
+
         return teacherEntity;
     }
 

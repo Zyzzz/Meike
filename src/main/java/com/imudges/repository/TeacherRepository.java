@@ -12,4 +12,5 @@ import java.util.List;
 @Repository
 public interface TeacherRepository extends JpaRepository<TeacherEntity,Integer> {
     public List<TeacherEntity> findOrderByOrganizationid(int organizationid);
+    public TeacherEntity findByNameAndPhoneAndOrganizationid(String name,String phone,int organizationid);
 }
