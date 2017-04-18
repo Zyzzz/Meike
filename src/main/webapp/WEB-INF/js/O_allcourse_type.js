@@ -50,7 +50,6 @@ function hooyesQueryString(queryStringName)
 
 $(document).ready(function (){
     var a = decodeURI(hooyesQueryString("type"));
-    alert("a:"+a);
     $.ajax({
         url:"/getOCourseByType",
         type:'post',
@@ -76,8 +75,8 @@ $(document).ready(function (){
                     ' <td>' + type[i]. lessonNumber+ '</td> ' +
                     ' <td>' + type[i]. description+ '</td> ' +
                     '<td> ' +
-                    ' <a href="javascript:;" onclick="deleteCourse(type[i].id)"><i class="icon-pencil"></i></a>' +
-                    ' <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>' +
+                    '<a href="user.html"><i class="icon-pencil"></i></a>' +
+                    ' <a href="javascript:;" onclick="deleteCourse('+type[i].id+')"><i class="icon-remove"></i></a>' +
                     '</td></tr>'
                 )
 

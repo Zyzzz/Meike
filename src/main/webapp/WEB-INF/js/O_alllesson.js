@@ -69,9 +69,9 @@ $(document).ready(function (){
             // console.log(type);
             // console.log("course_length:"+courses.length);
             //
-            alert(type.landcviewEntities.length);
+            // alert(type.landcviewEntities.length);
             for(var i=0;i<type.landcviewEntities.length;i++) {
-                alert("test");
+                // alert("test");
                 $("#Otable").append('<tr>' +
                     ' <td>' + type.landcviewEntities[i].lid + '</td> ' +
 

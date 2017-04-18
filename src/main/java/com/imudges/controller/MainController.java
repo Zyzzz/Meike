@@ -20,4 +20,9 @@ public class MainController {
         return "O_index";
     }
 
+    @RequestMapping(value = "/about", method = RequestMethod.GET)
+    public String About_us() {
+        return "about";
+    }
+
 }
