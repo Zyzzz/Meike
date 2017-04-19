@@ -241,7 +241,7 @@ public class OrganizationController {
 
     @ResponseBody
     @RequestMapping(value = "/addCourse")
-    public BaseEntity addCourse(String cookie,String cname,String type,String description){
+    public BaseEntity addCourse(String cookie,String cname,String type,String description,MultipartFile picture,HttpServletRequest request) throws IOException{
         BaseEntity baseEntity = new BaseEntity();
         CourseEntity courseEntity = new CourseEntity();
         OrganizationEntity organizationEntity = organizationRepository.findByCookie(cookie);
@@ -251,6 +251,16 @@ public class OrganizationController {
         courseEntity.setDescription(description);
         courseEntity.setName(cname);
         courseRepository.saveAndFlush(courseEntity);
+        courseEntity = courseRepository.findOrderByNameAndType(cname,type);
+        String filePath3 = uploadFile(picture, request);
+        Upload upload  = new Upload();
+        File file= new File(filePath3);
+        String url = upload.upload(file);
+        PictureEntity pictureEntity = new PictureEntity();
+        pictureEntity.setUrl(url);
+        pictureEntity.setPattern(3);
+        pictureEntity.setOtherid(courseEntity.getId());
+        pictureRepository.saveAndFlush(pictureEntity);
         baseEntity.setStatus(0);
         return baseEntity;
     }

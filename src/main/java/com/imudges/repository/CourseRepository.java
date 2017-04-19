@@ -19,4 +19,5 @@ public interface CourseRepository extends JpaRepository<CourseEntity,Integer> {
     List<String> findTypeByOrgaizationid(int organizationid);
     List<CourseEntity> findByorganizationidAndType(int organizationid,String type);
     List<CourseEntity> findByType(String type);
+    CourseEntity findOrderByNameAndType(String name,String Type);
 }
