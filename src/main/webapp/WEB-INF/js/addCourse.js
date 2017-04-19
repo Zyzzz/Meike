@@ -16,13 +16,22 @@ $(document).ready(function (){
     $("#save").click(function(){
         alert($("#courseform").serialize());
 
+
+
+        var formData = new FormData();
+        formData.append("picture", document.getElementById("picture").files[0]);
+        formData.append("cname", document.getElementById("cname").text());
+        var text = $('#coursetpye option:selected').text()
+        formData.append("coursetpye", text);
+        formData.append("description", document.getElementById("description").text());
         $.ajax({
             // url:'http://localhost:8080/userLogin',
             url:"/addCourse",
             type:'post',
-            dataType:'json',
             async: false,
-            data:'cookie='+getcookie('ocookie')+'&'+ $("#courseform").serialize(),
+            processData:false,
+            contentType:false,
+            data:formData,
             error: function(request) {
                 console.log(request);
                 alert("Connection error");

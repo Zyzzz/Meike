@@ -134,16 +134,19 @@
       <div class="tab-pane active in" id="home">
     <form id="courseform" name="courseform">
         <label>课程名</label>
-        <input type="text"class="input-xlarge" name="cname">
+        <input type="text"class="input-xlarge" name="cname" id="cname">
         <label>课程类型</label>
         <select name="type" id="coursetpye" class="input-xlarge">
 
         </select>
         <label>课程描述</label>
-        <textarea name="description" value="Smith" rows="3" class="input-xlarge">
+        <textarea name="description" id="description" value="Smith" rows="3" class="input-xlarge">
 
         </textarea>
-
+        <label>头像</label>
+        <a href="javascript:;" class="a-upload">
+            <input type="file" id="picture" >点击这里上传头像
+        </a>
     </form>
       </div>
   </div>
