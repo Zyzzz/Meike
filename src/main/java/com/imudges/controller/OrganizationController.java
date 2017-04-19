@@ -258,7 +258,7 @@ public class OrganizationController {
         String url = upload.upload(file);
         PictureEntity pictureEntity = new PictureEntity();
         pictureEntity.setUrl(url);
-        pictureEntity.setPattern(3);
+        pictureEntity.setPattern(2);
         pictureEntity.setOtherid(courseEntity.getId());
         pictureRepository.saveAndFlush(pictureEntity);
         baseEntity.setStatus(0);
