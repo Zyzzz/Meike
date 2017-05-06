@@ -14,16 +14,18 @@ function getcookie(objname){//获取指定名称的cookie的值
 
 $(document).ready(function (){
     $("#save").click(function(){
-        alert($("#courseform").serialize());
+
 
 
 
         var formData = new FormData();
+        formData.append("cookie",getcookie("ocookie"))
         formData.append("picture", document.getElementById("picture").files[0]);
-        formData.append("cname", document.getElementById("cname").text());
+        formData.append("cname", document.getElementById("cname").value);
         var text = $('#coursetpye option:selected').text()
-        formData.append("coursetpye", text);
-        formData.append("description", document.getElementById("description").text());
+        formData.append("type", text);
+        alert(document.getElementById("description").value);
+        formData.append("description", document.getElementById("description").value);
         $.ajax({
             // url:'http://localhost:8080/userLogin',
             url:"/addCourse",
