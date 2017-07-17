@@ -104,13 +104,13 @@
     margin-bottom: 10px;
 }
 
-.img-responsive{
-    position: absolute;
-    margin: 0;
-    width: 150px;
-    top: 0;
-    left: 0;
-}
+/*.img-responsive{*/
+    /*position: absolute;*/
+    /*margin: 0;*/
+    /*width: 150px;*/
+    /*top: 0;*/
+    /*left: 0;*/
+/*}*/
 
 .event_right{
     margin-top: 140px;

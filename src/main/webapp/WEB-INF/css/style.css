@@ -1,5 +1,25 @@
+@font-face {
+    font-family: "LDMONG16100802BT";
+    src: url("../fonts/LD-MONG-BT.ttf") format("ttf");
+    src: url("../fonts/LD-MONG-BT.eot") format("eot");
+    src: url("../fonts/LD-MONG-BT.svg") format("svg");
+    src: url("../fonts/LD-MONG-BT.otf") format("otf");
+    src: url("../fonts/LD-MONG-BT.woff") format("woff");
+}
 h4, h5, h6,
-h1, h2, h3 {margin-top: 0;}
+h1, h2, h3
+{margin-top: 0;
+    float:left;
+    -webkit-writing-mode: vertical-lr;
+    -o-writing-mode: vertical-lr;
+    -ms-writing-mode: tb-lr;
+    writing-mode: vertical-lr;
+    writing-mode: tb-lr;
+    -moz-writing-mode: vertical-lr;
+    -webkit-text-orientation: sideways-right;
+    layout-flow: vertical-ideographic;
+    white-space: nowrap;
+    font-family: 'LDMONG16100802BT';}
 ul, ol {margin: 0;}
 p {margin: 0;}
 html, body{
@@ -13,6 +33,19 @@ body a{
 	-moz-transition:0.5s all;
 	-o-transition:0.5s all;
 	-ms-transition:0.5s all;
+}
+.course_list {
+    float:left;
+    -webkit-writing-mode: vertical-lr;
+    -o-writing-mode: vertical-lr;
+    -ms-writing-mode: tb-lr;
+    writing-mode: vertical-lr;
+    writing-mode: tb-lr;
+    -moz-writing-mode: vertical-lr;
+    -webkit-text-orientation: sideways-right;
+    layout-flow: vertical-ideographic;
+    white-space: nowrap;
+    font-family: 'LDMONG16100802BT';
 }
 .navbar-default {
     background-color:#f1b458 !important;
@@ -215,7 +248,7 @@ ul.nav_1 li.last{
 }
 /*-- banner --*/
 .banner-bg{
-	background:url(../images/2.jpg) no-repeat center top;
+	background:url(../images/m2.png) no-repeat center top;
 }
 .banner-bg, .banner-img, .banner-img2{
 	background-size:cover;
@@ -225,11 +258,11 @@ ul.nav_1 li.last{
 	min-height:600px;
 }
 .banner-img{
-	background:url(../images/3.jpg) no-repeat center top;
+	background:url(../images/m3.png) no-repeat center top;
 
 }
 .banner-img2{
-	background:url(../images/1.jpg) no-repeat center top;
+	background:url(../images/m1.png) no-repeat center top;
 }
 .banner-info {
 	 text-align: center;
@@ -255,7 +288,7 @@ ul.nav_1 li.last{
 .banner-info a{
 	color:#FFF;
 	background:#f1b458;
-	padding: .7em 1.5em;
+	padding: 0.7em 0.5em;
 	text-decoration:none;
 }
 .banner-info a:hover i.icon_1{
@@ -1409,6 +1442,17 @@ ul.comment-list {
     padding: 0;
     margin: 0;
     list-style: none;
+    float:left;
+    -webkit-writing-mode: vertical-lr;
+    -o-writing-mode: vertical-lr;
+    -ms-writing-mode: tb-lr;
+    writing-mode: vertical-lr;
+    writing-mode: tb-lr;
+    -moz-writing-mode: vertical-lr;
+    -webkit-text-orientation: sideways-right;
+    layout-flow: vertical-ideographic;
+    white-space: nowrap;
+    font-family: 'LDMONG16100802BT';
 }
 ul.children {
     padding: 0;
@@ -2681,6 +2725,7 @@ p.description {
 }
 .course_list, .col-md-9.detail, .col-md-8.detail{
     margin: 3em 0 0 0;
+
 }
 .form-submit{
 	top:0;
