@@ -5,7 +5,7 @@ p {margin: 0;}
 html, body{
 	font-family: 'PT Sans Narrow', sans-serif;
 	font-size: 100%;
-    background:#fff; 
+    background:#fff;
 }
 body a{
 	transition:0.5s all;
@@ -60,7 +60,7 @@ body a{
 }
 .dropdown-menu.columns-2 {
     min-width: 400px;
-} 
+}
 .dropdown-menu.columns-3 {
     min-width:550px;
 }
@@ -88,7 +88,7 @@ body a{
 .dropdown-menu {
     right: 0 !important;
     left:inherit;
-}    
+}
 .nav_bottom{
 	background:none;
 }
@@ -106,19 +106,19 @@ body a{
     width: 100%;
     padding:0;
 }
-.nav-tabs > li > a, 
-.nav-tabs > li > a:hover, 
-.nav-tabs > li > a:focus, 
-.nav-tabs > li.active > a, 
+.nav-tabs > li > a,
+.nav-tabs > li > a:hover,
+.nav-tabs > li > a:focus,
+.nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
   border: none;
   border-radius: 0;
 }
 .nav-list { border-bottom: 1px solid #eee; }
-.nav-list > li { 
+.nav-list > li {
   padding:20px 15px 15px;
-  border-left: 1px solid #eee; 
+  border-left: 1px solid #eee;
   margin-right: 0 !important;
 }
 .nav-list > li:last-child { border-right: 1px solid #eee; }
@@ -215,7 +215,7 @@ ul.nav_1 li.last{
 }
 .banner-img{
 	background:url(../images/3.jpg) no-repeat center top;
-	
+
 }
 .banner-img2{
 	background:url(../images/1.jpg) no-repeat center top;
@@ -686,10 +686,6 @@ a#profile-tab, a#home-tab, a#profile-tab1{
 .event_right p a:hover{
 	text-decoration:underline;
 }
-.event_right img{
-	margin:1em 0 0 0;
-	width:50px;
-}
 .bg{
 	background: url(../images/bg.jpg)no-repeat center top;
     background-size: cover;
@@ -783,10 +779,10 @@ a#profile-tab, a#home-tab, a#profile-tab1{
     outline: none;
     display: inline-block;
     vertical-align: middle;
-}   
+}
 .newsletter input[type="submit"]:hover{
 	background:#2f374c;
-} 
+}
 .portfolio-left{
     background: #f2f4f8;
     padding:0;
@@ -1601,16 +1597,16 @@ ul.meta-post li:before {
 }
 ul.meta-post li.author:before {
     content: "\f007";
-}  
+}
 ul.meta-post li.view:before {
     content: "\f133";
-}  
+}
 ul.meta-post li.category:before {
     content: "\f164";
-}   
+}
 .author-box1{
 	margin-top:3em;
-}     
+}
 form.login {
     text-align: center;
     width: 35%;
@@ -1628,7 +1624,7 @@ form.login {
     color: #767676;
     transition: 200ms;
     -webkit-transition: 200ms;
-}  
+}
 input.btn.btn-primary.btn-lg1.btn-block {
     background-color:#f1b458;
     border-color:#f1b458;
@@ -2156,7 +2152,7 @@ p.m_3{
 }
 .grid_3.grid_5 {
     margin: 3em 0 0 0;
-}   
+}
 /* --faq --*/
 dl.faq-list{
 	margin-bottom:0;
@@ -2178,7 +2174,7 @@ dl.faq-list{
     display: block;
     font-weight: bold;
     margin: 0;
-} 
+}
 .faq-list .marker1{
     position: absolute;
     top: 0;
@@ -2186,7 +2182,7 @@ dl.faq-list{
     display: block;
     font-weight: bold;
     margin: 0;
-} 
+}
 p.m_4{
 	padding-left:30px;
 }
@@ -2540,13 +2536,13 @@ form.contact_form {
 @media (max-width:1220px){
 ul.nav_1 li {
     margin-right: 20px;
-}	
+}
 }
 @media (max-width:1024px){
 .callbacks_tabs {
     list-style: none;
     position: absolute;
-    top: 90%;	
+    top: 90%;
 }
 .banner-bg, .banner-img, .banner-img2 {
     min-height: 500px;
@@ -2585,7 +2581,7 @@ ul.nav_1 li {
 @media (max-width:930px){
 ul.nav_1 li {
     margin-right: -3px;
-}	
+}
 .col-sm-3.dropdown-button {
     padding: 0 5px;
 }
@@ -2691,7 +2687,7 @@ p.description {
 }
 .banner-info p {
     font-size: 18px;
-}	
+}
 .banner-info {
     padding:4em 0 0 0;
 }
@@ -2803,11 +2799,11 @@ input.no-box1{
 }
 .navbar-collapse {
     max-height:700px !important;
-}   
+}
 .search-form .search-submit {
     right: 8px;
     top: 71px;
-} 
+}
 .navbar-default .navbar-toggle .icon-bar {
     background-color: #fff;
 }
@@ -2820,7 +2816,7 @@ input.no-box1{
 }
 .navbar-brand {
     margin: 15px 0 0 0;
-}    
+}
 .col-sm-3.dropdown-button {
     margin-bottom: 5px;
 }
@@ -2856,7 +2852,7 @@ input.no-box1{
     margin: 2em 0 0 0;
 }
 .newsletter input[type="text"] {
-    padding: 14px 2%;    
+    padding: 14px 2%;
 }
 .newsletter input[type="submit"] {
     font-size: 1em;
@@ -2874,7 +2870,7 @@ input.no-box1{
 }
 .courses_banner h3 {
     font-size: 1.6em;
-}    
+}
 p.description {
     width: 100%;
 }
@@ -2887,7 +2883,7 @@ p.description {
 }
 .shortcode_but {
     padding: 12px 15px;
-}    
+}
 .shortcode_but.large {
     font-size: 14px;
     padding: 12px 20px;
@@ -2901,7 +2897,7 @@ p.description {
 }
 .team_box p {
     font-size: 1em;
-}  
+}
 .contact_form h2 {
     font-size: 1.6em;
 }
@@ -2910,7 +2906,7 @@ p.description {
 .banner-info h3 {
     font-size: 27px;
     letter-spacing:5px;
-}	
+}
 .banner-info p {
     font-size: 14px;
 }
@@ -2997,7 +2993,7 @@ ul.items_list li {
 }
 ul.items_list1 {
     width: 48%;
-}    
+}
 ul.pagination {
    margin: 0;
 }
@@ -3057,7 +3053,7 @@ h6.shortcode {
 }
 @media (max-width:320px){
 .navbar-brand {
-   font-size: 32px;	
+   font-size: 32px;
    padding-left: 10px;
    line-height: 15px;
 }
@@ -3080,7 +3076,7 @@ h6.shortcode {
 .callbacks_tabs a:after {
     height: 10px;
     width: 10px;
-}    
+}
 .banner-bg, .banner-img, .banner-img2 {
     min-height: 250px;
 }
@@ -3135,7 +3131,7 @@ h6.shortcode {
 .input-group input[type="text"], select {
     min-height:25px;
     padding: 5px 5px 5px 5px;
-}    
+}
 .submit_button input[type="submit"] {
    padding: 6px 0px;
 }
@@ -3152,7 +3148,7 @@ h6.shortcode {
 p.description {
     font-size: 0.85em;
     line-height: 1.5em;
-}    
+}
 form.login {
     width: 72%;
 }
@@ -3203,7 +3199,7 @@ input.btn.btn-primary.btn-lg1.btn-block {
     font-size: 1.4em;
 }
 .admission h1 {
-   font-size: 1.4em;    
+   font-size: 1.4em;
 }
 .admission, .services, .service_3, .features {
     padding: 2em 0;
@@ -3218,7 +3214,7 @@ input.btn.btn-primary.btn-lg1.btn-block {
 .course-submit {
     line-height: 30px;
     padding: 0 15px;
-}   
+}
 ul.items_list li {
     font-size: 14px;
 }
@@ -3227,7 +3223,7 @@ input.no-box1 {
 }
 ul.items_list h3, ul.items_list1 h3 {
     font-size: 16px;
-}    
+}
 .news h1:after, .grid_1_right h2:after {
     bottom: -7px;
 }
@@ -3242,10 +3238,10 @@ ul.items_list h3, ul.items_list1 h3 {
 }
 ul.meta-post li {
     margin-right: 7px;
-}    
+}
 .detail h3 {
    font-size: 1.5em;
-}    
+}
 .author-box-left {
    width: 20%;
 }
@@ -3361,7 +3357,7 @@ h5.shortcode {
 }
 .shortcode_but {
     margin-right:0;
-}   
+}
 .shortcode_but.small {
     padding: 5px 3px;
 }
