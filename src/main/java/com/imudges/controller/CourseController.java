@@ -108,11 +108,14 @@ public class CourseController {
     public LessonsList getLessonsByCourseId(int CourseId){
         LessonsList lessonsList = new LessonsList();
         List<LandcviewEntity> landcviewEntities=landcViewRepository.findBycid(CourseId);
-        lessonsList.setLandcviewEntities(landcviewEntities);
-        lessonsList.setPictureEntity(pictureRepository.findByPatternAndOtherid(1,CourseId));
-        lessonsList.setOrganizationEntity(organizationRepository.findOne(landcviewEntities.get(0).getOrganizationid()));
-        lessonsList.setoPictureEntity(pictureRepository.findByPatternAndOtherid(2,landcviewEntities.get(0).getOrganizationid()));
-        lessonsList.setStatus(0);
+        if(landcviewEntities.size()>0){
+            lessonsList.setLandcviewEntities(landcviewEntities);
+            lessonsList.setPictureEntity(pictureRepository.findByPatternAndOtherid(1,CourseId));
+            lessonsList.setOrganizationEntity(organizationRepository.findOne(landcviewEntities.get(0).getOrganizationid()));
+            lessonsList.setoPictureEntity(pictureRepository.findByPatternAndOtherid(2,landcviewEntities.get(0).getOrganizationid()));
+            lessonsList.setStatus(0);
+
+        }
         return lessonsList;
     }
 

@@ -16,6 +16,8 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.Date;
 import java.util.List;
 
@@ -195,6 +197,13 @@ public class OrganizationController {
     @RequestMapping(value = "/getOCourseByType")
     public List<CourseEntity> getCourseByType(String cookie,String Type){
         organizationEntity=organizationRepository.findByCookie(cookie);
+        try {
+            Type = URLDecoder.decode(Type, "utf-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+
+
         return courseRepository.findByorganizationidAndType(organizationEntity.getId(),Type);
     }
 
