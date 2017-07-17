@@ -23,7 +23,7 @@ function deleteCourse(cid){
         },
         success:function(json){
             console.log(JSON.stringify(json));
-
+            location.reload()
         }
     });
 

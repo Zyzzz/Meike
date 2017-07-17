@@ -50,14 +50,12 @@ $(document).ready(function (){
         async: false,
         error: function(request) {
             console.log(request);
-            alert("Connection error");
         },
         success:function(json){
             //alert("success");
             var courses=json.courseInformationEntities;
             console.log("course:"+courses[0].courseEntity.name);
             console.log("course_length:"+courses.length);
-
             for(var i=0;i<courses.length;i++){
                 $(".table-list").append('<li class="clearfix"> <div class="id_col">'
                     +i

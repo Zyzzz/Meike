@@ -9,7 +9,7 @@ function getcookie(objname){//获取指定名称的cookie的值
     }
 }
 
-function deleteCourse(lid){
+function deleteLessons(lid){
 
     $.ajax({
         url:baseurl+"/deleteLessons",
@@ -23,7 +23,7 @@ function deleteCourse(lid){
         },
         success:function(json){
             console.log(JSON.stringify(json));
-
+            location.reload()
         }
     });
 

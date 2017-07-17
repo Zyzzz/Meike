@@ -80,7 +80,7 @@ $(document).ready(function (){
 
                     '<td> ' +
                     ' <a href="user.html"><i class="icon-pencil"></i></a>' +
-                    ' <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>' +
+                    ' <a href="javascript:;" onclick="deleteLessons('+type.landcviewEntities[i].id+')"><i class="icon-remove"></i></a>'+
                     '</td></tr>'
                 )
 
