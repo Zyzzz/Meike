@@ -11,8 +11,8 @@ $(document).ready(function (){
         alert("user_ajax");
         $.ajax({
             // url:'http://localhost:8080/userLogin',
-            url:"/ChangePasw",
-            type:'post',
+            url:baseurl+"/ChangePasw",
+            type:'get',
             dataType:'json',
             async: false,
             data:changepsw,

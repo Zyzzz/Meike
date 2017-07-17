@@ -50,8 +50,8 @@ function collect() {
     // alert(getcookie("cookie"));
     $.ajax({
         // url:'http://localhost:8080/userLogin',
-        url:"/CollectCourse",
-        type:'post',
+        url:baseurl+"/CollectCourse",
+        type:'get',
         data:{courseID:hooyesQueryString("cid"),cookie:getcookie("cookie")},
         dataType:'json',
         async: true,

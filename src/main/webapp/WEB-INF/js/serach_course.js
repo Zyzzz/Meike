@@ -43,8 +43,8 @@ function hooyesQueryString(queryStringName)
 $(document).ready(function (){
     //alert("courses_json_request");
     $.ajax({
-        url:"/getCourseByName",
-        type:'post',
+        url:baseurl+"/getCourseByName",
+        type:'get',
         dataType:'json',
         data:{name:hooyesQueryString("name")},
         async: false,

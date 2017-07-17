@@ -12,6 +12,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="js/jquery.min.js"></script>
 	<script src="js/play_video.js"></script>
 <script src="js/bootstrap.min.js"></script>
+	<!--引入公共的变量-->
+	<script type="text/javascript" src="js/All_var.js"></script>
 <!-- Custom Theme files -->
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <link rel="stylesheet" href="css/jquery.countdown.css" />
@@ -589,7 +591,7 @@ $(document).ready(function(){
 <script type="text/javascript">
 	function doSearch() {
 		var msg=$('.search-text').val();
-		location.href='/search_courses.html?name='+msg;
+		location.href=baseurl+'/search_courses.html?name='+msg;
 	}
 	function getCookie(cname)
 	{

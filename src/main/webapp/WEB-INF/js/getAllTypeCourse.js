@@ -15,8 +15,8 @@ function getcookie(objname){//获取指定名称的cookie的值
 $(document).ready(function (){
     //alert("courses_json_request");
     $.ajax({
-        url:"/getAllType",
-        type:'post',
+        url:baseurl+"/getAllType",
+        type:'get',
         data:{cookie:getcookie("ocookie")},
         dataType:'json',
         async: false,

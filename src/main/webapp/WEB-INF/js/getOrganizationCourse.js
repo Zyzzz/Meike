@@ -10,8 +10,8 @@
 $(document).ready(function (){
 
     $.ajax({
-        url:"/getCourseByOcookie",
-        type:'post',
+        url:baseurl+"/getCourseByOcookie",
+        type:'get',
         data:{cookie:getcookie("ocookie")},
         dataType:'json',
         async: false,

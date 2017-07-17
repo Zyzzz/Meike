@@ -16,7 +16,7 @@ $(document).ready(function (){
         var a= 'cookie='+getcookie('ocookie')+'&'+ $("#tab").serialize()
         $.ajax({
             // url:'http://localhost:8080/userLogin',
-            url:"/Add_teacher",
+            url:baseurl+"/Add_teacher",
             type:'post',
             dataType:'json',
             async: false,
@@ -36,7 +36,7 @@ $(document).ready(function (){
                     formData.append("tid",id)
                     formData.append("picture", document.getElementById("picture").files[0]);
                     $.ajax({
-                        url:"/uploadPicture",
+                        url:baseurl+"/uploadPicture",
                         type:'post',
                         async: false,
                         processData:false,

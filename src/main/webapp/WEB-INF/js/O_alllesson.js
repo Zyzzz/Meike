@@ -52,8 +52,8 @@ $(document).ready(function (){
     //alert("courses_json_request");
     //console.log(a.toString());
     $.ajax({
-        url:"/getLessonsByCourseId",
-        type:'post',
+        url:baseurl+"/getLessonsByCourseId",
+        type:'get',
         data:{CourseId:hooyesQueryString("CourseId")},
         dataType:'json',
         async: false,

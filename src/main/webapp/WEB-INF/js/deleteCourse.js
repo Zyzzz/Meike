@@ -12,8 +12,8 @@ function getcookie(objname){//获取指定名称的cookie的值
 function deleteCourse(cid){
 
     $.ajax({
-        url:"/deleteCourse",
-        type:'post',
+        url:baseurl+"/deleteCourse",
+        type:'get',
         data:{cookie:getcookie("ocookie"),cid:cid},
         dataType:'json',
         async: false,

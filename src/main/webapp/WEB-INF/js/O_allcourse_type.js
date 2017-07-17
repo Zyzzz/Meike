@@ -51,8 +51,8 @@ function hooyesQueryString(queryStringName)
 $(document).ready(function (){
     var a = decodeURI(hooyesQueryString("type"));
     $.ajax({
-        url:"/getOCourseByType",
-        type:'post',
+        url:baseurl+"/getOCourseByType",
+        type:'get',
         data:{cookie:getcookie("ocookie"),Type:a},
         dataType:'json',
         async: false,

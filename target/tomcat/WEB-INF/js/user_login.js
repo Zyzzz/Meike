@@ -7,8 +7,8 @@ $(document).ready(function (){
       //alert("user_ajax");
        $.ajax({
            // url:'http://localhost:8080/userLogin',
-           url:"/userLogin",
-           type:'post',
+           url:baseurl+"/userLogin",
+           type:'get',
            dataType:'json',
            async: false,
            data:$("#user_login_ajax").serialize(),

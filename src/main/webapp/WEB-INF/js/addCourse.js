@@ -28,7 +28,7 @@ $(document).ready(function (){
         formData.append("description", document.getElementById("description").value);
         $.ajax({
             // url:'http://localhost:8080/userLogin',
-            url:"/addCourse",
+            url:baseurl+"/addCourse",
             type:'post',
             async: false,
             processData:false,

@@ -44,8 +44,8 @@ $(document).ready(function (){
     //alert(hooyesQueryString("cid"));
     $.ajax({
 
-        url:"/getLessonsByCourseId",
-        type:'post',
+        url:baseurl+"/getLessonsByCourseId",
+        type:'get',
         data: {CourseId:hooyesQueryString("cid")},
         dataType:'json',
         async: false,

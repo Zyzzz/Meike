@@ -6,3 +6,4 @@
 // 存json
 window.json_all=null;
 
+baseurl=""

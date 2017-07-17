@@ -45,8 +45,8 @@ function hooyesQueryString(queryStringName)
 $(document).ready(function (){
 
     $.ajax({
-        url:"/getAllComments",
-        type:'post',
+        url:baseurl+"/getAllComments",
+        type:'get',
         data:{cid:hooyesQueryString("cid")},
         dataType:'json',
         async: false,

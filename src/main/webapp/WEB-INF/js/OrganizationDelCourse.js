@@ -8,8 +8,8 @@ $(document).ready(function () {
         var cookie=getcookie("ocookie");
         // alert(cookie);
         $.ajax({
-            url:"/deleteCourse",
-            type:"post",
+            url:baseurl+"/deleteCourse",
+            type:"get",
             dataType:'json',
             async: false,
             data:{cid:id,cookie:cookie},

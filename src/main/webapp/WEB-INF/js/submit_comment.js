@@ -10,8 +10,8 @@ $(document).ready(function () {
         var cookie=getcookie("cookie");
         // alert(cookie);
         $.ajax({
-           url:"/AddComments",
-            type:"post",
+           url:baseurl+"/AddComments",
+            type:"get",
             dataType:'json',
             async: false,
             data:{comments:comment,courseid:id,cookie:cookie},

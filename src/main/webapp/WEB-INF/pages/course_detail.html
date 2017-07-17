@@ -10,6 +10,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css' />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="js/jquery.min.js"></script>
+
 	<script type="text/javascript" src="js/Collect_course.js"></script>
 	<!--<script type="text/javascript" src="js/courses_json.js"></script>-->
 	<script type="text/javascript" src="js/lessons_json.js"></script>
@@ -17,6 +18,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<script type="text/javascript" src="js/getComments.js"></script>
 	<!--提交评论-->
 	<script type="text/javascript" src="js/submit_comment.js"></script>
+	<!--引入公共的变量-->
+	<script type="text/javascript" src="js/All_var.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <!-- Custom Theme files -->
 <link href="css/style.css" rel='stylesheet' type='text/css' />
@@ -515,7 +518,7 @@ $(document).ready(function(){
 <script type="text/javascript">
 	function doSearch() {
 		var msg=$('.search-text').val();
-		location.href='/search_courses.html?name='+msg;
+		location.href=baseurl+'/search_courses.html?name='+msg;
 	}
 	function getCookie(cname)
 	{

@@ -42,8 +42,8 @@ $(document).ready(function (){
    // alert(hooyesQueryString("lid"));
     $.ajax({
 
-        url:"/getLessonsByLid",
-        type:'post',
+        url:baseurl+"/getLessonsByLid",
+        type:'get',
         data: {lid:hooyesQueryString("lid")},
         dataType:'json',
         async: false,

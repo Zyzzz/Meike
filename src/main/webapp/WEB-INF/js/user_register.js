@@ -14,8 +14,8 @@ $(document).ready(function (){
             // alert("user_ajax");
             $.ajax({
                 // url:'http://localhost:8080/userLogin',
-                url:"/user_register",
-                type:'post',
+                url:baseurl+"/user_register",
+                type:'get',
                 dataType:'json',
                 async: false,
                 data:$("#user_register_ajax").serialize(),

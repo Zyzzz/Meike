@@ -6,8 +6,8 @@ $(document).ready(function (){
         //alert("courses_json_request");
         $.ajax({
 
-            url:"/getAllCourse",
-            type:'post',
+            url:baseurl+"/getAllCourse",
+            type:'get',
             dataType:'json',
             async: false,
             error: function(request) {
