@@ -1,3 +1,26 @@
+@font-face {
+    font-family: "LDMONG16100802BT";
+    src: url("../fonts/LD-MONG-BT.ttf") format("ttf");
+    src: url("../fonts/LD-MONG-BT.eot") format("eot");
+    src: url("../fonts/LD-MONG-BT.svg") format("svg");
+    src: url("../fonts/LD-MONG-BT.otf") format("otf");
+    src: url("../fonts/LD-MONG-BT.woff") format("woff");
+}
+.view{
+    max-height:670px;
+    max-width:800px;
+    font-family: AoyunWhite,serif;
+    writing-mode:vertical-lr;
+    -webkit-writing-mode:vertical-lr;
+    -moz-writing-mode: vertical-lr;
+    -o-writing-mode: vertical-lr;
+    -ms-writing-mode: tb-lr;
+    text-orientation: sideways-right;
+    -webkit-text-orientation: sideways-right;
+    text-justify: inter-ideograph;
+    text-align:justify;
+}
+
 .text-vertical{
     float:left;
     color:#4874b6;

@@ -35,14 +35,25 @@ body a{
    float:right;
 }
 .navbar-brand {
-    height: 100%;
+    height: auto;
     padding: 0;
-    margin: 20px 0 0 0;
+    margin: 10px 0 10px 0;
     padding-left: 15px;
     font-size: 45px;
     text-transform: uppercase;
     letter-spacing: 3px;
     font-weight: 500;
+    float:left;
+    -webkit-writing-mode: vertical-lr;
+    -o-writing-mode: vertical-lr;
+    -ms-writing-mode: tb-lr;
+    writing-mode: vertical-lr;
+    writing-mode: tb-lr;
+    -moz-writing-mode: vertical-lr;
+    -webkit-text-orientation: sideways-right;
+    layout-flow: vertical-ideographic;
+    white-space: nowrap;
+    font-family: 'LDMONG16100802BT';
 }
 .navbar-default .navbar-brand {
     color: #fff;

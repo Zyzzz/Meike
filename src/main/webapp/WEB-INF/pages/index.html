@@ -62,13 +62,13 @@ $(document).ready(function(){
 
 	        <ul class="nav navbar-nav">
 		        <li class="dropdown" id="Login">
-		            <a href="login.html"><i class="fa fa-user"></i><span>登&nbsp;录</span></a>
+		            <a class="text-vertical" style="font-size: 30px" href="login.html"><i class="fa fa-user"></i>登&nbsp;录</a>
 		        </li>
 
 
 		        <li class="dropdown">
 
-					<a href="courses.html"><i class="fa fa-list"></i><span>课&nbsp;程</span></a>
+					<a class="text-vertical" style="font-size: 30px" href="courses.html"><i class="fa fa-list"></i>课&nbsp;程</a>
 
 				</li>
 
@@ -89,13 +89,15 @@ $(document).ready(function(){
 			        <!--</ul>-->
 		        <!--</li>-->
 		        <li class="dropdown">
-		            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-search"></i><span>搜&nbsp;索</span></a>
-		            <ul class="dropdown-menu search-form">
+		            <a href="#" class="text-vertical" style="font-size: 30px" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-search"></i>搜&nbsp;索</a>
+		            <div class="view">
+					<ul class="dropdown-menu search-form ">
 			           <form >
                             <input type="text" class="search-text" name="s" placeholder="Search...">
                             <button type="button" class="search-submit" onclick="doSearch()"><i class="fa fa-search"></i></button>
                        </form>
 			        </ul>
+					</div>
 		        </li>
 
 
@@ -127,7 +129,7 @@ $(document).ready(function(){
    <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
         <ul class="nav navbar-nav nav_1 ">
-            <li class="text-vertical"><a href="index.html">首&nbsp;页</a></li>
+            <li class="text-vertical"><a href="index.html">ᠲᠡᠷᠢᠭᠦᠨ ᠨᠢᠭᠤᠷ</a></li>
             <li class="text-vertical"><a href="about.html">关于我们</a></li>
             <li class="text-vertical"><a href="services.html">服&nbsp;务</a></li>
             <li class="text-vertical"><a href="features.html">合作伙伴</a></li>
@@ -146,7 +148,7 @@ $(document).ready(function(){
 						$(function () {
 						  // Slideshow 4
 						  $("#slider3").responsiveSlides({
-							auto: true,
+							auto: false,
 							pager: true,
 							nav: true,
 							speed: 500,
@@ -229,7 +231,6 @@ $(document).ready(function(){
 		          </div>
 	</div>
 	<!-- //banner -->
-    <div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >手机网站模板</a></div>
 	<div class="details">
        <div class="container">
 		 <div class="col-sm-10 dropdown-buttons">
