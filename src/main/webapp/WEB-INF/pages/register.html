@@ -11,6 +11,7 @@
 <script type="text/javascript" src="statics/js/dialog.js"></script>
 <link href="statics/css/reset.css" rel="stylesheet" type="text/css" />
 <link href="statics/css/dialog_simp.css" rel="stylesheet" type="text/css" />
+    <script src="js/user_register.js" type="text/javascript"></script>
 <script language="JavaScript">
 <!--
 $(function(){
@@ -257,7 +258,7 @@ function show_protocol() {
 	<h2> &nbsp;&nbsp;&nbsp;&nbsp;<span class="on"><em>1</em>  </span>
 		</h2>
 
-<form method="post" action="" id="myform">
+    <form class="login"  id="user_register_ajax" onsubmit="return insertManager();">
 	<input type="hidden" name="siteid" value="1" />
 
 	<div class="form-login form-reg">
@@ -282,17 +283,20 @@ function show_protocol() {
 
         <table>
             <tr><td>
-    	        <div class="input"><label>  ：</label><input type="text" id="username" name="username" size="30" class="input-text s-text"></div>
+                <div class="input"><label>E-mail：</label><input type="text"  name="email" size="30" class="input-text s-text">
+                </div>
+    	        <!--<div class="input"><label>  ：</label><input type="text" id="username" name="username" size="30" class="input-text s-text">-->
+                <!--</div>-->
             </td></tr>
             <tr><td>
-                <div class="input"><label> ：</label><input type="password" id="password" name="password" size="30" class="input-text s-text"></div>
+                <div class="input"><label> ：</label><input type="password" name="password"  id="password" size="30" class="input-text s-text"></div>
             </td></tr>
             <tr><td>
-                <div class="input"><label>   ：</label><input type="password" name="pwdconfirm" id="pwdconfirm" size="30" class="input-text s-text"></div>
+                <div class="input"><label>   ：</label><input type="password" name="repsword" id="repsword"  size="30" class="input-text s-text"></div>
             </td></tr>
             <tr><td>
-                <div class="input"><label>E-mail：</label><input type="text" id="email" name="email" size="30" class="input-text s-text"></div>
-		        <div class="input"><label> ：</label><input type="text" id="nickname" name="nickname" size="30"  class="input-text s-text"></div>
+
+		        <!--<div class="input"><label> ：</label><input type="text" id="nickname" name="nickname" size="30"  class="input-text s-text"></div>-->
             </td></tr>
         </table>
 					<!--是否开启选择会员模型选项-->
@@ -312,8 +316,8 @@ function show_protocol() {
 
 		-->
         	<div class="reg">
-                <div class="submit"><input type="submit" name="dosubmit" class="btn-green-small" value=""></div><br />
-                <!--<input type="checkbox" name="protocol" id="protocol" value=""><a href="javascript:void(0);" onclick="show_protocol();return false;" class="blue">     </a>-->
+                <div class="submit"><input type="submit" id="submit" name="submit" class="btn-green-small" value=""></div><br />
+                <input type="checkbox" name="protocol" id="protocol" value=""><a href="javascript:void(0);" onclick="show_protocol();return false;" class="blue"></a>
             </div>
         </div>
 </form>
