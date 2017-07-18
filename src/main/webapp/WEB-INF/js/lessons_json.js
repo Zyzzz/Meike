@@ -73,7 +73,7 @@ $(document).ready(function (){
                 '</p> </div> </div>')
 
 
-            $(".col-md-9").prepend('<img src="'+pictureEntity.url+'" class="img-responsive" alt=""/> <h3>'+courses[0].cname+'</h3>' +
+            $(".col-md-9").prepend('<img src="'+pictureEntity.url+'" class="img-responsive" style="height: 198px" alt=""/> <h3>'+courses[0].cname+'</h3>' +
                 '<p>' + courses[0].description+'</p>')
 
            for(var i=0;i<courses.length;i++){
@@ -83,7 +83,7 @@ $(document).ready(function (){
                         +courses[i].lname
                         +'</a></div> <div class="duration_col">'
                         +courses[i].time
-                        +' Minute</div> </li>')
+                        +' ᠮᠢᠨᠦ᠋ᠲ</div> </li>')
                 }
 
         }

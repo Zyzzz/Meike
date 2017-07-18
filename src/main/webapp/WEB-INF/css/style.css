@@ -47,6 +47,7 @@ body a{
     white-space: nowrap;
     font-family: 'LDMONG16100802BT';
 }
+
 .navbar-default {
     background-color:#f1b458 !important;
     border-color:#f1b458;
@@ -1056,6 +1057,17 @@ ul.footer_list li a:hover{
 	padding:0;
 	margin:0;
 	list-style:none;
+    float:left;
+    -webkit-writing-mode: vertical-lr;
+    -o-writing-mode: vertical-lr;
+    -ms-writing-mode: tb-lr;
+    writing-mode: vertical-lr;
+    writing-mode: tb-lr;
+    -moz-writing-mode: vertical-lr;
+    -webkit-text-orientation: sideways-right;
+    layout-flow: vertical-ideographic;
+    white-space: nowrap;
+    font-family: 'LDMONG16100802BT';
 }
 .breadcrumb1 li {
     position: relative;
@@ -1063,16 +1075,60 @@ ul.footer_list li a:hover{
     padding-right: 10px;
     display: inline-block;
     color:#fff;
+    float:left;
+    -webkit-writing-mode: vertical-lr;
+    -o-writing-mode: vertical-lr;
+    -ms-writing-mode: tb-lr;
+    writing-mode: vertical-lr;
+    writing-mode: tb-lr;
+    -moz-writing-mode: vertical-lr;
+    -webkit-text-orientation: sideways-right;
+    layout-flow: vertical-ideographic;
+    white-space: nowrap;
+    font-family: 'LDMONG16100802BT';
 }
 .breadcrumb1 li.current-page:after{
 	display:none;
+    float:left;
+    -webkit-writing-mode: vertical-lr;
+    -o-writing-mode: vertical-lr;
+    -ms-writing-mode: tb-lr;
+    writing-mode: vertical-lr;
+    writing-mode: tb-lr;
+    -moz-writing-mode: vertical-lr;
+    -webkit-text-orientation: sideways-right;
+    layout-flow: vertical-ideographic;
+    white-space: nowrap;
+    font-family: 'LDMONG16100802BT';
 }
 .breadcrumb1 li a {
     display:inline-block;
     color:#f1b458;
+    float:left;
+    -webkit-writing-mode: vertical-lr;
+    -o-writing-mode: vertical-lr;
+    -ms-writing-mode: tb-lr;
+    writing-mode: vertical-lr;
+    writing-mode: tb-lr;
+    -moz-writing-mode: vertical-lr;
+    -webkit-text-orientation: sideways-right;
+    layout-flow: vertical-ideographic;
+    white-space: nowrap;
+    font-family: 'LDMONG16100802BT';
 }
 .breadcrumb1 li a:hover{
 	color:#fff;
+    float:left;
+    -webkit-writing-mode: vertical-lr;
+    -o-writing-mode: vertical-lr;
+    -ms-writing-mode: tb-lr;
+    writing-mode: vertical-lr;
+    writing-mode: tb-lr;
+    -moz-writing-mode: vertical-lr;
+    -webkit-text-orientation: sideways-right;
+    layout-flow: vertical-ideographic;
+    white-space: nowrap;
+    font-family: 'LDMONG16100802BT';
 }
 .breadcrumb1 li:after {
     content: '\f105';
@@ -1082,6 +1138,17 @@ ul.footer_list li a:hover{
     left: 100%;
     top:6px;
     color: #cecfd2;
+    float:left;
+    -webkit-writing-mode: vertical-lr;
+    -o-writing-mode: vertical-lr;
+    -ms-writing-mode: tb-lr;
+    writing-mode: vertical-lr;
+    writing-mode: tb-lr;
+    -moz-writing-mode: vertical-lr;
+    -webkit-text-orientation: sideways-right;
+    layout-flow: vertical-ideographic;
+    white-space: nowrap;
+    font-family: 'LDMONG16100802BT';
 }
 .courses_banner h3{
 	color:#fff;
@@ -1094,6 +1161,17 @@ p.description{
     line-height: 1.8em;
     width: 70%;
     margin: 0 auto 2em auto;
+    float:left;
+    -webkit-writing-mode: vertical-lr;
+    -o-writing-mode: vertical-lr;
+    -ms-writing-mode: tb-lr;
+    writing-mode: vertical-lr;
+    writing-mode: tb-lr;
+    -moz-writing-mode: vertical-lr;
+    -webkit-text-orientation: sideways-right;
+    layout-flow: vertical-ideographic;
+    white-space: nowrap;
+    font-family: 'LDMONG16100802BT';
 }
 /*-- courses --*/
 .courses_banner{
@@ -1240,6 +1318,17 @@ p.description{
 	color:#777;
 	font-size:0.95em;
 	line-height:1.8em;
+    float:left;
+    -webkit-writing-mode: vertical-lr;
+    -o-writing-mode: vertical-lr;
+    -ms-writing-mode: tb-lr;
+    writing-mode: vertical-lr;
+    writing-mode: tb-lr;
+    -moz-writing-mode: vertical-lr;
+    -webkit-text-orientation: sideways-right;
+    layout-flow: vertical-ideographic;
+    white-space: nowrap;
+    font-family: 'LDMONG16100802BT';
 }
 .person_description p a{
 	color:#000;
@@ -1331,6 +1420,17 @@ ul.posts li{
 }
 .entry-content {
     overflow: hidden;
+    float:left;
+    -webkit-writing-mode: vertical-lr;
+    -o-writing-mode: vertical-lr;
+    -ms-writing-mode: tb-lr;
+    writing-mode: vertical-lr;
+    writing-mode: tb-lr;
+    -moz-writing-mode: vertical-lr;
+    -webkit-text-orientation: sideways-right;
+    layout-flow: vertical-ideographic;
+    white-space: nowrap;
+    font-family: 'LDMONG16100802BT';
 }
 .entry-content h6{
     font-weight:600;
@@ -2707,6 +2807,17 @@ ul.nav_1 li {
 }
 p.description {
     width: 85%;
+    float:left;
+    -webkit-writing-mode: vertical-lr;
+    -o-writing-mode: vertical-lr;
+    -ms-writing-mode: tb-lr;
+    writing-mode: vertical-lr;
+    writing-mode: tb-lr;
+    -moz-writing-mode: vertical-lr;
+    -webkit-text-orientation: sideways-right;
+    layout-flow: vertical-ideographic;
+    white-space: nowrap;
+    font-family: 'LDMONG16100802BT';
 }
 .service_1 {
     margin-bottom: 2em;
@@ -2929,6 +3040,17 @@ input.no-box1{
 }
 p.description {
     width: 100%;
+    float:left;
+    -webkit-writing-mode: vertical-lr;
+    -o-writing-mode: vertical-lr;
+    -ms-writing-mode: tb-lr;
+    writing-mode: vertical-lr;
+    writing-mode: tb-lr;
+    -moz-writing-mode: vertical-lr;
+    -webkit-text-orientation: sideways-right;
+    layout-flow: vertical-ideographic;
+    white-space: nowrap;
+    font-family: 'LDMONG16100802BT';
 }
 .bg_1 {
     min-height: 865px;
@@ -3016,6 +3138,17 @@ input.btn.btn-primary.btn-lg1.btn-block {
 }
 p.description {
     margin: 0 auto 1em auto;
+    float:left;
+    -webkit-writing-mode: vertical-lr;
+    -o-writing-mode: vertical-lr;
+    -ms-writing-mode: tb-lr;
+    writing-mode: vertical-lr;
+    writing-mode: tb-lr;
+    -moz-writing-mode: vertical-lr;
+    -webkit-text-orientation: sideways-right;
+    layout-flow: vertical-ideographic;
+    white-space: nowrap;
+    font-family: 'LDMONG16100802BT';
 }
 .table-header > div.name_col {
     width: 43%;
@@ -3204,6 +3337,17 @@ h6.shortcode {
 p.description {
     font-size: 0.85em;
     line-height: 1.5em;
+    float:left;
+    -webkit-writing-mode: vertical-lr;
+    -o-writing-mode: vertical-lr;
+    -ms-writing-mode: tb-lr;
+    writing-mode: vertical-lr;
+    writing-mode: tb-lr;
+    -moz-writing-mode: vertical-lr;
+    -webkit-text-orientation: sideways-right;
+    layout-flow: vertical-ideographic;
+    white-space: nowrap;
+    font-family: 'LDMONG16100802BT';
 }
 form.login {
     width: 72%;

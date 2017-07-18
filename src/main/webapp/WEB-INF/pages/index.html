@@ -47,60 +47,60 @@ $(document).ready(function(){
 <body>
 <nav class="navbar navbar-default" role="navigation">
 	<div class="container">
-	    <div class="navbar-header">
-	        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-		        <span class="sr-only">Toggle navigation</span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-	        </button>
-	        <a class="navbar-brand" href="index.html">ᠭᠣᠶᠤ</a>
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="index.html">ᠭᠣᠶᠤ</a>
 			<a class="navbar-brand" href="index.html">ᠰᠠᠢᠬᠠᠨ</a>
 			<a class="navbar-brand" href="index.html">ᠬᠡᠴᠢᠶᠡᠯ</a>
-	    </div>
-	    <!--/.navbar-header-->
-	    <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" style="height: 1px;">
+		</div>
+		<!--/.navbar-header-->
+		<div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" style="height: 1px;">
 
 
-	        <ul class="nav navbar-nav">
-		        <li class="dropdown" id="Login">
-		            <a class="text-vertical" style="font-size: 30px" href="login.html"><i class="fa fa-user"></i>ᠳᠠᠩᠰᠠᠯᠠᠬᠤ</a>
-		        </li>
+			<ul class="nav navbar-nav">
+				<li class="dropdown" id="Login">
+					<a class="text-vertical" style="font-size: 30px" href="login.html"><i class="fa fa-user"></i>ᠳᠠᠩᠰᠠᠯᠠᠬᠤ</a>
+				</li>
 
 
-		        <li class="dropdown">
+				<li class="dropdown">
 
 					<a class="text-vertical" style="font-size: 30px" href="courses.html"><i class="fa fa-list"></i>ᠬᠡᠴᠢᠶᠡᠯ</a>
 
 				</li>
 
 
-		        <!--<li class="dropdown">-->
-		            <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-calendar"></i><span>Events</span></a>-->
-		             <!--<ul class="dropdown-menu">-->
-			            <!--<li><a href="events.html">Event1</a></li>-->
-			            <!--<li><a href="events.html">Event2</a></li>-->
-			            <!--<li><a href="events.html">Event3</a></li>-->
-		             <!--</ul>-->
-		        <!--</li>-->
-		        <!--<li class="dropdown">-->
-		            <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-globe"></i><span>English</span></a>-->
-		            <!--<ul class="dropdown-menu">-->
-			            <!--<li><a href="#"><span><i class="flags us"></i><span>English</span></span></a></li>-->
-			            <!--<li><a href="#"><span><i class="flags newzland"></i><span>Newzland</span></span></a></li>-->
-			        <!--</ul>-->
-		        <!--</li>-->
-		        <li class="dropdown">
-		            <a href="#" class="text-vertical" style="font-size: 30px" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-search"></i>ᠪᠦᠬᠦᠨ ᠦ ᠰᠢᠭᠦᠯᠲᠡ</a>
-		            <div class="view">
-					<ul class="dropdown-menu search-form ">
-			           <form >
-                            <input type="text" class="search-text" name="s" placeholder="Search...">
-                            <button type="button" class="search-submit" onclick="doSearch()"><i class="fa fa-search"></i></button>
-                       </form>
-			        </ul>
+				<!--<li class="dropdown">-->
+				<!--<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-calendar"></i><span>Events</span></a>-->
+				<!--<ul class="dropdown-menu">-->
+				<!--<li><a href="events.html">Event1</a></li>-->
+				<!--<li><a href="events.html">Event2</a></li>-->
+				<!--<li><a href="events.html">Event3</a></li>-->
+				<!--</ul>-->
+				<!--</li>-->
+				<!--<li class="dropdown">-->
+				<!--<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-globe"></i><span>English</span></a>-->
+				<!--<ul class="dropdown-menu">-->
+				<!--<li><a href="#"><span><i class="flags us"></i><span>English</span></span></a></li>-->
+				<!--<li><a href="#"><span><i class="flags newzland"></i><span>Newzland</span></span></a></li>-->
+				<!--</ul>-->
+				<!--</li>-->
+				<li class="dropdown">
+					<a href="#" class="text-vertical" style="font-size: 30px" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-search"></i>ᠪᠦᠬᠦᠨ ᠦ ᠰᠢᠭᠦᠯᠲᠡ</a>
+					<div class="view">
+						<ul class="dropdown-menu search-form ">
+							<form >
+								<input type="text" class="search-text" name="s" placeholder="Search...">
+								<button type="button" class="search-submit" onclick="doSearch()"><i class="fa fa-search"></i></button>
+							</form>
+						</ul>
 					</div>
-		        </li>
+				</li>
 
 
 				<!--//登陆之后显示-->
@@ -108,13 +108,13 @@ $(document).ready(function(){
 					<a href="Per_information.html"><i class="fa fa-user"></i><span  id="user_name_text"></span></a>
 				</li>
 				<li class="dropdown" id="logout" style="display: none;">
-					<a href="login.html" onclick="Log_out_clear_cookie()"><i class="fa fa-user"></i><span>ᠳᠠᠩᠰᠠᠨ ᠠᠴᠠ ᠪᠣᠴᠠᠬᠤ</span></a>
+					<a class="text-vertical" style="font-size: 30px" href="login.html" onclick="Log_out_clear_cookie()"><i class="fa fa-user"></i>ᠳᠠᠩᠰᠠᠨ ᠠᠴᠠ ᠪᠣᠴᠠᠬᠤ</a>
 				</li>
-		    </ul>
-	    </div>
-	    <div class="clearfix"> </div>
-	  </div>
-	    <!--/.navbar-collapse-->
+			</ul>
+		</div>
+		<div class="clearfix"> </div>
+	</div>
+	<!--/.navbar-collapse-->
 </nav>
 <nav class="navbar nav_bottom" role="navigation">
  <div class="container">
@@ -135,7 +135,7 @@ $(document).ready(function(){
             <li class="text-vertical"><a href="about.html">ᠮᠠᠨ ᠤ ᠲᠤᠬᠠᠢ</a></li>
             <li class="text-vertical"><a href="services.html">ᠦᠢᠯᠡᠴᠢᠯᠡᠯᠭᠡ</a></li>
             <li class="text-vertical"><a href="features.html">ᠬᠠᠮᠲᠤᠷᠠᠭᠰᠠᠨ ᠨᠢᠭᠡᠴᠡ</a></li>
-            <li class="text-vertical"><a href="blog.html">ᠶᠡᠷᠢᠯᠴᠠᠭ᠎ᠠ</a></li>
+            <li class="text-vertical"><a href="http://www.mednee.com/">ᠶᠡᠷᠢᠯᠴᠠᠭ᠎ᠠ</a></li>
             <li class="last text-vertical"><a href="contact.html">ᠮᠠᠨ ᠲᠠᠢ ᠬᠠᠷᠢᠯᠴᠠᠭᠠᠷᠠᠢ</a></li>
         </ul>
      </div><!-- /.navbar-collapse -->
@@ -379,7 +379,7 @@ $(document).ready(function(){
 	  			    	<div class="event_right">
 	  			    		  <h3><a href="#">ᠬᠡᠴᠢᠶᠡᠯ</a></h3>
 	  						  <p>ᠲᠣᠪᠴᠢ ᠲᠠᠨᠢᠯᠴᠠᠭᠤᠯᠭ᠎ᠠ<a href="#">ᠨᠠᠷᠢᠨ ᠠᠭᠤᠯᠭ᠎ᠠ</a></p>
-	  						  <img src="images/t5.jpg" class="img-responsive" alt=""/>
+	  						  <img src="images/t5.jpg" class="img-responsive1" alt=""/>
 	  		    	    </div>
 	  		    	    <div class="clearfix"></div>
 	  			   </div>
@@ -400,7 +400,7 @@ $(document).ready(function(){
 					   <div class="event_right">
 						   <h3><a href="#">ᠬᠡᠴᠢᠶᠡᠯ</a></h3>
 						   <p>ᠲᠣᠪᠴᠢ ᠲᠠᠨᠢᠯᠴᠠᠭᠤᠯᠭ᠎ᠠ<a href="#">ᠨᠠᠷᠢᠨ ᠠᠭᠤᠯᠭ᠎ᠠ</a></p>
-						   <img src="images/t9.jpg" class="img-responsive" alt=""/>
+						   <img src="images/t9.jpg" class="img-responsive1" alt=""/>
 					   </div>
 	  		    	    <div class="clearfix"></div>
 	  			   </div>
@@ -634,74 +634,72 @@ $(document).ready(function(){
     <!--</div>-->
     <div class="footer"  style="background-color: #362b36">
     	<div class="container">
-    		<div class="col-md-3 grid_4">
-    		   <h3>关于我们</h3>
-				<p>内蒙古大学精英学生开发者联盟（IMUDGES， Inner Mongolia University Developer Group of Elite Student）成立于2011年，<br />是由一群喜欢钻研、勤于动手、勇于创新的学生组成的一个学生组织。联盟以“自由、创新、共享”为宗旨，<br />希望为“学生”、“学校”、“企业”提供更好的合作平台。</p>
-    		      <!--<ul class="social-nav icons_2 clearfix">-->
-                    <!--<li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>-->
-                    <!--<li><a href="#" class="facebook"> <i class="fa fa-facebook"></i></a></li>-->
-                    <!--<li><a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a></li>-->
-                 <!--</ul>-->
-    		</div>
-    		<div class="col-md-3 grid_4">
-    		   <h3>快捷链接</h3>
-    			<ul class="footer_list">
-    				<li><a href="#">-  PRIOR LEARNING ASSESSMENT </a></li>
-    				<li><a href="#">-  INTERNATIONAL STUDENTS</a></li>
-    				<li><a href="#">-  CAREER OPPORTUNITIES</a></li>
-    				<li><a href="#">-   NEW STUDENT ORIENTATION</a></li>
-    				<li><a href="#">-   NEW CLASSROOM TECHNOLOGY</a></li>
-    			</ul>
-    		</div>
-    		<div class="col-md-3 grid_4">
-    		   <h3>联系我们</h3>
-    			<address>
-                    <strong>网站访问情况</strong>
-                    <br>
-                    <span>4877 正在访问</span>
-                    <br><br>
-                    <span>累计访问人数 , 15089</span>
-                    <br>
-                    <abbr>固话 : </abbr> +1 (734) 123-4567
-                    <br>
-                    <abbr>邮箱 : </abbr> <a href="mailto@example.com">info(at)Learn.com</a>
-               </address>
-    		</div>
-    		<div class="col-md-3 grid_4">
-    		   <h3>工作时间</h3>
-    			 <table class="table_working_hours">
-		        	<tbody>
-		        		<tr class="opened_1">
-							<td class="day_label">星期一</td>
-							<td class="day_value">9:30 am - 6.00 pm</td>
-						</tr>
-					    <tr class="opened">
-							<td class="day_label">星期二</td>
-							<td class="day_value">9:30 am - 6.00 pm</td>
-						</tr>
-					    <tr class="opened">
-							<td class="day_label">星期三</td>
-							<td class="day_value">9:30 am - 6.00 pm</td>
-						</tr>
-					    <tr class="opened">
-							<td class="day_label">星期四</td>
-							<td class="day_value">9:30 am - 6.00 pm</td>
-						</tr>
-					    <tr class="opened">
-							<td class="day_label">星期五</td>
-							<td class="day_value">9:30 am - 3.00 pm</td>
-						</tr>
-					    <tr class="closed">
-							<td class="day_label">星期六</td>
-							<td class="day_value closed"><span>9:30 am - 6.00 pm</span></td>
-						</tr>
-					    <tr class="closed">
-							<td class="day_label">星期日</td>
-							<td class="day_value closed"><span>9:30 am - 6.00 pm</span></td>
-						</tr>
-				    </tbody>
+			<div class="col-md-3 grid_4">
+				<h3>ᠮᠠᠨ ᠤ ᠲᠤᠬᠠᠢ</h3>
+				<p>内蒙古大学精英学生开发者联盟（IMUDGES， Inner Mongolia University Developer Group of Elite Student）成立于2011年，是由一群喜欢钻研、勤于动手、勇于创新的学生组成的一个学生组织。联盟以“自由、创新、共享”为宗旨，希望为“学生”、“学校”、“企业”提供更好的合作平台。</p>
+				<!--<ul class="social-nav icons_2 clearfix">-->
+				<!--<li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>-->
+				<!--<li><a href="#" class="facebook"> <i class="fa fa-facebook"></i></a></li>-->
+				<!--<li><a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a></li>-->
+				<!--</ul>-->
+			</div>
+			<div class="col-md-3 grid_4">
+				<h3>ᠳᠥᠲᠡᠵᠠᠯᠭᠠᠬᠤ</h3>
+				<ul class="footer_list">
+					<li><a href="#">-  PRIOR LEARNING ASSESSMENT </a></li>
+					<li><a href="#">-  INTERNATIONAL STUDENTS</a></li>
+					<li><a href="#">-  CAREER OPPORTUNITIES</a></li>
+					<li><a href="#">-   NEW STUDENT ORIENTATION</a></li>
+					<li><a href="#">-   NEW CLASSROOM TECHNOLOGY</a></li>
+				</ul>
+			</div>
+			<div class="col-md-3 grid_4">
+				<h3>ᠮᠠᠨ ᠲᠠᠢ ᠬᠠᠷᠢᠯᠴᠠᠭᠠᠷᠠᠢ</h3>
+				<address>
+					<strong>网站访问情况</strong>
+					<br>
+					<span>1 正在访问</span>
+					<br><br>
+					<span>累计访问人数 , 15089</span>
+					<br>
+					<abbr>邮箱 : </abbr> <a href="mailto@example.com">contact@imudges.com</a>
+				</address>
+			</div>
+			<div class="col-md-3 grid_4">
+				<h3>ᠠᠵᠢᠯᠯᠠᠬᠤ ᠴᠠᠭ ᠤᠨ ᠬᠦᠰᠦᠨᠦᠭᠲᠦ</h3>
+				<table class="table_working_hours">
+					<tbody>
+					<tr class="opened_1">
+						<td class="day_label">星期一</td>
+						<td class="day_value">9:30 am - 6.00 pm</td>
+					</tr>
+					<tr class="opened">
+						<td class="day_label">星期二</td>
+						<td class="day_value">9:30 am - 6.00 pm</td>
+					</tr>
+					<tr class="opened">
+						<td class="day_label">星期三</td>
+						<td class="day_value">9:30 am - 6.00 pm</td>
+					</tr>
+					<tr class="opened">
+						<td class="day_label">星期四</td>
+						<td class="day_value">9:30 am - 6.00 pm</td>
+					</tr>
+					<tr class="opened">
+						<td class="day_label">星期五</td>
+						<td class="day_value">9:30 am - 3.00 pm</td>
+					</tr>
+					<tr class="closed">
+						<td class="day_label">星期六</td>
+						<td class="day_value closed"><span>9:30 am - 6.00 pm</span></td>
+					</tr>
+					<tr class="closed">
+						<td class="day_label">星期日</td>
+						<td class="day_value closed"><span>9:30 am - 6.00 pm</span></td>
+					</tr>
+					</tbody>
 				</table>
-            </div>
+			</div>
     		<div class="clearfix"> </div>
     		<!--<div class="copy">-->
 		       <!--<p>Copyright &copy; 2015.Company name All rights reserved.<a target="_blank" href="http://www.cssmoban.com/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>-->

@@ -59,14 +59,15 @@ $(document).ready(function (){
             var lessonName=json.lessonsinformationEntity.lname;
             var pictureurl = json.pictureEntity.url;
             var tname = json.lessonsinformationEntity.tname;
-            $(".col-md-9").prepend('<h3>&nbsp;'+lessonName+'</h3>'+'<video width="1080" height="540" controls="controls">'+
+            $(".col-md-1").prepend('<h3>&nbsp;'+lessonName+'</h3>');
+            $(".col-md-8").prepend('<video width="1080" height="540" controls="controls">'+
                 '<source src="'+url+'" type="video/mp4" /> </video>');
 
             $("#personBox").prepend(' <div class="personBox_1"> ' +
                 '<div class="person_image">' +
                 ' <img src="'+pictureurl+
                  '" class="img-responsive" alt=""/> </div> <div class="person_image_desc"> <h1>' +
-                 tname+'</h1> <p>北京 全栈工程师</p> </div> <div class="clearfix"> </div> </div>')
+                 tname+'</h1> <p>内蒙古 全栈工程师</p> </div> <div class="clearfix"> </div> </div>')
         }
     });
 

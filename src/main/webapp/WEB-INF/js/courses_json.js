@@ -33,7 +33,7 @@ $(document).ready(function (){
                 }
 
                 for(var j=0;j<courses.length;j++){
-                    $(".posts").append('<h3>最新课程</h3> <li>'
+                    $(".posts").append('<h3>ᠬᠠᠮᠤᠭ ᠰᠢᠨ᠎ᠡ ᠬᠡᠴᠢᠶᠡᠯ</h3> <li>'
                         +'<article class="entry-item">'
                         +'<div class="entry-thumb pull-left">'
                         +'<img src='+courses[j].pictureEntity.url+' class="img-responsive" alt=""/>'
@@ -44,7 +44,7 @@ $(document).ready(function (){
                         '</a></h6>'
                         +'<p><a href="#">'
                         +courses[j].courseEntity.type
-                        + '</a> &nbsp;/&nbsp; 30 Dec 2015</p>'
+                        + '</a> &nbsp;/&nbsp; 19 07 2017</p>'
                     +'</div>'
                     +'<div class="clearfix"> </div>'
                      +'</article> </li>'
