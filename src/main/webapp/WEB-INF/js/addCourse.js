@@ -24,7 +24,7 @@ $(document).ready(function (){
         formData.append("cname", document.getElementById("cname").value);
         var text = $('#coursetpye option:selected').text()
         formData.append("type", text);
-        alert(document.getElementById("description").value);
+        //alert(document.getElementById("description").value);
         formData.append("description", document.getElementById("description").value);
         $.ajax({
             // url:'http://localhost:8080/userLogin',
