@@ -249,6 +249,34 @@ public class OrganizationController {
     }
 
     @ResponseBody
+    @RequestMapping(value = "/addLesson")
+    public BaseEntity addLesson(String cookie,String lname,int cid,int teacher,int time,MultipartFile video,HttpServletRequest request)throws IOException{
+        BaseEntity baseEntity = new BaseEntity();
+        LessonsEntity lessonsEntity = new LessonsEntity();
+        OrganizationEntity organizationEntity = organizationRepository.findByCookie(cookie);
+        if(organizationEntity!=null){
+            lessonsEntity.setTeacherid(teacher);
+            lessonsEntity.setName(lname);
+            lessonsEntity.setCourseId(cid);
+            lessonsEntity.setTime(time);
+            String filePath3 = uploadFile(video, request);
+            Upload upload  = new Upload();
+            File file= new File(filePath3);
+            String url = upload.upload(file);
+            VideoEntity videoEntity = new VideoEntity();
+            videoEntity.setUrl(url);
+            videoRepository.saveAndFlush(videoEntity);
+            videoEntity=videoRepository.findByUrl(url);
+            lessonsEntity.setVideoId(videoEntity.getId());
+            lessonsRepository.saveAndFlush(lessonsEntity);
+            baseEntity.setStatus(0);
+        }
+
+        return baseEntity;
+
+    }
+
+    @ResponseBody
     @RequestMapping(value = "/addCourse")
     public BaseEntity addCourse(String cookie,String cname,String type,String description,MultipartFile picture,HttpServletRequest request) throws IOException{
         BaseEntity baseEntity = new BaseEntity();
