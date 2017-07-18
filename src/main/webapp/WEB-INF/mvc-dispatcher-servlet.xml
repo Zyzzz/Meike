@@ -19,6 +19,15 @@
     <mvc:resources location="WEB-INF/lib/" mapping="lib/**"/>
     <mvc:resources location="WEB-INF/fonts/" mapping="fonts/**"/>
     <mvc:resources location="WEB-INF/stylesheets/" mapping="stylesheets/**"/>
+    <mvc:resources location="WEB-INF/pages/statics/images" mapping="statics/images/**"/>
+    <mvc:resources location="WEB-INF/pages/statics/js/" mapping="statics/js/**"/>
+    <mvc:resources location="WEB-INF/pages/statics/css/" mapping="statics/css/**"/>
+    <mvc:resources location="WEB-INF/pages/statics/mglindex/" mapping="statics/mglindex/**"/>
+    <mvc:resources location="WEB-INF/pages/statics/mglv/" mapping="/statics/mglv/**"/>
+
+    <mvc:resources location="WEB-INF/pages/statics/mnplayer/" mapping="statics/mnplayer/**"/>
+    <mvc:resources location="WEB-INF/pages/statics/script/" mapping="statics/script/**"/>
+    <mvc:resources location="WEB-INF/pages/statics/style/" mapping="statics/style/**"/>
     <!-- 开启注解 -->
     <mvc:annotation-driven/>
     <context:annotation-config />

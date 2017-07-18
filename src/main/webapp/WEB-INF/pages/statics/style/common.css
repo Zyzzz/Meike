@@ -1,0 +1,140 @@
+body {
+    font-size: 18px;
+    text-align: center;
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, blockquote {
+    margin: 0;
+    padding: 0;
+    
+}
+
+table, td, tr, th {
+    font-size: 18px;
+}
+li {
+    list-style-type: none;
+}
+table {
+    margin: 0 auto;
+}
+img {
+    border: 0 none;
+    vertical-align: top;
+}
+ol, ul {
+    list-style: none outside none;
+}
+caption, th {
+    text-align: left;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 18px;
+    font-weight: normal;
+}
+q:before, q:after {
+    content: "";
+}
+abbr, acronym {
+    border: 0 none;
+}
+address, caption, cite, code, dfn, em, th, var {
+    font-style: normal;
+    font-weight: normal;
+}
+strong {
+    font-weight: normal;
+}
+a {
+    color: #436372;
+    text-decoration: none;
+}
+a:visited {
+    color: #436372;
+    text-decoration: none;
+}
+a:hover {
+    color: #BA2636;
+    text-decoration: none;
+}
+a:active {
+    color: #BA2636;
+}
+.cWhite, .cWhite:visited, .cWhite a {
+    color: #FFFFFF;
+}
+.cYellow, .cYellow:visited {
+    color: #FFFF00;
+}
+.cGreen, .cGreen:visited {
+    color: #008000;
+}
+.cGray, .cGray:visited, .cGray a {
+    color: #333333;
+}
+.cDGray, .cDGray:visited, .cDGray a {
+    color: #727171;
+}
+.cBlack, .cBlack:visited, .cBlack a {
+    color: #000000;
+}
+.cBlue, .cBlue:visited, .cBlue a {
+    color: #1E50A2;
+}
+.cRed, .cRed:visited, .cRed a {
+    color: Red;
+}
+.cDRed, .cDRed:visited, .cDRed a {
+    color: #BA2636;
+}
+.cRed a:hover, a.cRed:hover, .cBlue a:hover, a.cBlue:hover, .cDRed a:hover, a.cDRed:hover, .cGray a:hover, a.cGray:hover, .cDGray a:hover, a.cDGray:hover, .cWhite a:hover, a.cWhite:hover, .cBlack a:hover, a.cBlack:hover, .cGreen a:hover, a.cGreen:hover, .cYellow a:hover, a.cYellow:hover {
+    color: #BA2636;
+}
+.fB {
+    font-weight: bold;
+}
+.fI {
+    font-style: italic;
+}
+.f18px {
+    font-size: 18px;
+}
+.f24px {
+    font-size: 24px;
+}
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+.hidden {
+    display: none;
+}
+.unLine, .unLine a {
+    text-decoration: none;
+}
+.noBorder {
+    border: medium none;
+}
+
+.foot {
+    clear: both;
+    color: #4D4D4D;
+    line-height: 21px;
+    margin: 0 auto;
+    width: 960px;
+}
+.foot .text {
+    border-bottom: 1px solid #4D4D4D;
+    margin: 0 0 5px;
+    padding: 4px 0 5px;
+}
+.foot a, .foot a:visited {
+    color: #4D4D4D;
+}
+.foot a:hover {
+    color: #BA2636;
+}
+
+
+

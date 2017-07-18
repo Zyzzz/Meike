@@ -1,0 +1,371 @@
+@font-face {
+	font-family: chagaan;
+        /*src:url('font/mchagaan.eot');*/
+	src: url("font/mchagaan.woff") format("woff");
+        src: url("font/mchagaan.woff") format("woff"),
+             url("font/MenkQagan_S.ttf") format("truetype"),
+			 url("font/MenkQaganAAT_S.ttf") format("truetype");
+        /*url('font/mchagaan.eot?#iefix') format('embedded-opentype');*/
+}
+@font-face {
+	font-family: iechagaan;
+        /*src:url('font/mchagaan.eot');*/
+}
+@font-face {
+     font-family: 'ieinputchagaan';
+     /*src: url('font/mchagaan.eot');*/
+     /*src: url('font/mchagaan.eot?#iefix') format('embedded-opentype'),*/
+     url('font/mchagaan.woff') format('woff')
+}
+/*@font-face {
+    font-family: 'chagaan';
+    src: url('font/mchagaan.eot');
+    src: url('font/mchagaan.eot?#iefix') format('embedded-opentype'),
+         url('font/mchagaan.woff') format('woff'),
+         url('font/mchagaan.ttf') format('truetype'),
+         url('font/mchagaan.svg#AlluraRegular') format('svg');
+}*/
+body {
+	overflow-y: hidden;
+	padding:0px;
+	margin:0px;
+	zoom:100%;
+	font-size:18px;
+	font-family:chagaan;
+}
+
+html {
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+.ff html,.ie10 html,.ie9 html,.ie11 html{overflow-y: hidden;}
+textarea {
+	unicode-bidi: bidi-override;
+	direction: rtl;
+	font-family: chagaan,BagaChagan;
+}
+
+input {
+	unicode-bidi: bidi-override;
+	direction: rtl;
+	font-family: chagaan,BagaChagan;
+}
+
+select {
+	unicode-bidi: bidi-override;
+	direction: rtl;
+	font-family: chagaan;
+}
+
+#main {
+	padding:0px;
+	margin:0px;
+	width:100%;
+	height:100%;
+/*        position: absolute;*/
+	-ms-transform-origin:right top;
+	-ms-transform:translate(-100%, 0px) rotate(270deg);
+	-moz-transform-origin: right top;
+	-moz-transform:translate(-100%, 0px) rotate(270deg);
+	-o-transform-orign:right top;
+	-o-transform: translate(-100%, 0px) rotate(270deg);
+	-webkit-transform-origin: right top;
+	-webkit-transform: translate(-100%, 0px) rotate(270deg);
+}
+.ff #main,.ie9 #main,.ie10 #main,.ie11 #main{position: absolute;}
+.ie8 #main{
+        padding:0px;
+	margin:0px;
+	width:100%;
+	height:100%;
+        writing-mode: tb-lr;
+/*        position: relative;*/
+}
+.ie8 #main *{
+    direction: ltr;
+    word-break: keep-all;
+    font-family: iechagaan;
+    unicode-bidi: normal;
+    letter-spacing:-0.015em;
+}
+
+#main * {
+	unicode-bidi: bidi-override;
+	direction: rtl;
+	word-break:keep-all;
+	letter-spacing:-0.015em;
+	font-family:chagaan;
+        /*font-size:18px;*/
+        /*text-align: right;*/
+}
+
+#main .vimg {
+	-ms-transform-origin:left top;
+	-ms-transform:translate(100%, 0px) rotate(90deg) translate(0px, 0px);
+	-moz-transform-origin: left top;
+	-moz-transform:translate(100%, 0px) rotate(90deg) translate(0px, 0px);
+	-o-transform-orign:left top;
+	-o-transform: translate(100%, 0px) rotate(90deg) translate(0px, 0px);
+	-webkit-transform-origin: left top;
+	-webkit-transform: translate(100%, 0px) rotate(90deg) translate(0px, 0px);
+}
+
+#main .vvideo {
+	-ms-transform-origin:left top;
+	-ms-transform:translate(100%, 0px) rotate(90deg) translate(0px, -28px);
+	-moz-transform-origin: left top;
+	-moz-transform:translate(100%, 0px) rotate(90deg) translate(-250px, 0px);
+	-o-transform-orign:left top;
+	-o-transform: translate(100%, 0px) rotate(90deg) translate(0px, -28px);
+	-webkit-transform-origin: left top;
+	-webkit-transform: translate(100%, 0px) rotate(90deg) translate(-250px, 0px);
+}
+
+.ie-input {
+	font-size:18px;
+	writing-mode:tb-rl;
+	white-space:nowrap;
+	font-family:menk-ie;
+	unicode-bidi:normal;
+}
+
+/*后加的下拉框改变CSS*/
+.ftid a {
+        writing-mode:tb-rl;
+        white-space:nowrap;
+        width:18px;
+        vertical-align: top;
+        text-align: left;
+}
+
+.ftid {
+        height:100px;
+}
+
+.sltm {
+        background-color: #FFFFFF;
+        border: 1px solid #DDDDDD;
+        padding: 6px;
+        text-align: left;
+}
+
+.sltm li {
+        white-space:nowrap;
+        font-size:18px;
+        cursor:pointer;
+        line-height: 18px;
+    }
+
+
+.sltm li:hover { color:#FF0000 }
+.sltm li.current { color:#FF0000 }
+
+/*后加的弹出框旋转*/
+.transbox{
+        unicode-bidi: bidi-override;
+        direction: rtl;
+    	-ms-transform-origin:right top;
+	-ms-transform:translate(-100%, 0px) rotate(270deg);
+	-moz-transform-origin: right top;
+	-moz-transform:translate(-100%, 0px) rotate(270deg);
+	-o-transform-orign:right top;
+	-o-transform: translate(-100%, 0px) rotate(270deg);
+	-webkit-transform-origin: right top;
+	-webkit-transform: translate(-100%, 0px) rotate(270deg);
+}
+.ie8 .transbox{
+    writing-mode: tb-lr;
+    direction: ltr;
+    font-family: iechagaan;
+    letter-spacing:-0.015em;
+}
+.ie8 .transbox * {
+    direction: ltr;
+    font-family: iechagaan;
+    writing-mode: tb-lr;
+    unicode-bidi: normal;
+    letter-spacing:-0.015em;
+}
+.transbox *{
+        unicode-bidi: bidi-override;
+        direction: rtl;
+        font-family: chagaan;
+        letter-spacing:-0.015em;
+}
+.transbox90{
+        unicode-bidi: bidi-override;
+        direction: rtl;
+    	-ms-transform-origin:right top;
+	-ms-transform:translate(-100%, 0px) rotate(90deg);
+	-moz-transform-origin: right top;
+	-moz-transform:translate(-100%, 0px) rotate(90deg);
+	-o-transform-orign:right top;
+	-o-transform: translate(-100%, 0px) rotate(90deg);
+	-webkit-transform-origin: right top;
+	-webkit-transform: translate(-100%, 0px) rotate(90deg);
+}
+.transbox90 *{
+        unicode-bidi: bidi-override;
+        direction: rtl;
+        font-family: chagaan;
+}
+.trans90{
+	-ms-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+}
+.imgradius {border-radius: 5px;}
+.saqoowidth{width: 333px;}
+.ie8 .saqoowidth{height: 333px;width: auto;}
+.fs20{font-size: 20px;}
+.fs22{font-size: 22px;}
+.fs24{font-size: 24px;}
+
+
+/* Select Box */
+
+.sbHolder{
+	background-color: #FFFFFF;
+	border: solid 1px #CCCCCC;
+        border-radius: 4px;
+	height: 30px;
+	position: absolute;
+
+}
+.ie8 .sbHolder{width: 30px;height: auto;}
+.sbHolder:focus .sbSelector{
+
+}
+.sbSelector{
+	display: block;
+	height: 30px;
+	right: 0;
+	line-height: 30px;
+	outline: none;
+	overflow: hidden;
+	text-indent: 10px;
+	top: 0;
+	padding-left: 35px;
+	min-width: 100px;
+}
+.ie8 .sbSelector{width: 30px;height:auto;top: 0;right: auto;left: 0;padding-bottom: 35px;padding-left: inherit;min-height: 100px;min-width: inherit;}
+.sbSelector:link, .sbSelector:visited, .sbSelector:hover{
+	color: #333333;
+	outline: none;
+	text-decoration: none;
+}
+.sbToggle{
+	outline: none;
+	position: absolute;
+	left: 10px;
+	top: 14px;
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-left: 2px;
+        vertical-align: middle;
+        border-top: 4px solid #000000;
+        border-right: 4px solid transparent;
+        border-left: 4px solid transparent;
+        border-bottom: 0 dotted;
+        content: "";
+}
+.ie8 .sbToggle{bottom: 10px;left: 14px;top: auto;margin-bottom: 2px;margin-left: auto;border-left: 4px solid #000000;border-top:4px solid transparent;border-bottom: 4px solid transparent;border-right: 0 dotted;}
+.sbToggle:hover{
+
+}
+.sbToggleOpen{
+
+}
+.sbToggleOpen:hover{
+
+}
+.sbHolderDisabled{
+	background-color: #3C3C3C;
+	border: solid 1px #515151;
+}
+.sbHolderDisabled .sbHolder{
+
+}
+.sbHolderDisabled .sbToggle{
+
+}
+.sbOptions{
+	overflow-y: auto;
+        position: absolute;
+        top: 100%;
+        right: -3px;
+        z-index: 1000;
+        display: none;
+        float: left;
+        min-width: 160px;
+        padding: 5px 0;
+        margin: 2px 0 0;
+        list-style: none;
+        font-size: 18px;
+        background-color: #ffffff;
+        border: 1px solid #cccccc;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        border-radius: 4px;
+        -webkit-box-shadow: -6px 3px 12px rgba(0, 0, 0, 0.175);
+        box-shadow: -6px 3px 12px rgba(0, 0, 0, 0.175);
+        background-clip: padding-box;
+}
+.ie8 .sbOptions{display: block; left: 100%;top: -3px;float: right;min-height: 160px;min-width: auto;padding: 0 5px;margin: 0 0 0 2px;right: auto;overflow-y:hidden;overflow-x:auto;}
+.sbOptions a{
+display:block;padding:3px 20px;clear:both;font-weight:normal;line-height:1.428571429;color:#333333;white-space:nowrap;
+}
+.ie8 .sbOptions a{padding: 20px 3px;}
+.sbOptions a:link, .sbOptions a:visited{
+	color: #333333;
+	text-decoration: none;
+}
+.sbOptions a:hover,
+.sbOptions a:focus,
+.sbOptions a.sbFocus{
+	text-decoration:none;color:#ffffff;background-color:#428bca;
+}
+.sbOptions li.last a{
+	border-bottom: none;
+}
+.sbOptions .sbDisabled{
+	border-bottom: dotted 1px #515151;
+	color: #999;
+	display: block;
+	padding: 7px 0 7px 3px;
+}
+.ie8 .sbOptions .sbDisabled{padding: 0 7px 3px 7px;}
+.sbOptions .sbGroup{
+	border-bottom: dotted 1px #515151;
+	color: #EBB52D;
+	display: block;
+	padding: 7px 0 7px 3px;
+}
+.ie8 .sbOptions .sbGroup{padding: 0 7px 3px 7px;}
+.sbOptions .sbSub{
+	padding-right: 17px;
+}
+.ie8 .sbOptions .sbSub{padding-top: 17px;padding-right: auto;}
+.bleditor{
+        position: relative;
+        border: 1px solid #d4d4d4;
+        box-shadow: 2px 2px 5px #d3d6da;
+        background-color: #fff;
+        overflow-y:hidden;
+        overflow-x:auto;
+}
+.bleditor-body{background-color:#FFFFFF;}
+.bleditor-container{
+        border:0;
+        outline:none;
+        cursor:text;
+        padding:9px;
+        overflow:auto;
+        display:block;
+        word-wrap:break-word;
+        font-size:18px;
+        font-family:iechagaan;
+}
+.mswr{-ms-writing-mode: tb-lr;}
