@@ -5,14 +5,14 @@
 <title>美课网</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Learn Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+<meta name="keywords" content="Learn Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
 	<!--&lt;!&ndash;引入公共的变量&ndash;&gt;-->
 	<!--<script type="text/javascript" src="js/All_var.js"></script>-->
 
-<link href="css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css' />
+<link href="css/bootstrap-3.1.1.min.css" rel="stylesheet" type='text/css' />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
@@ -23,8 +23,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
 <!----font-Awesome----->
-<link href="css/font-awesome.css" rel="stylesheet"> 
+<link href="css/font-awesome.css" rel="stylesheet">
 <!----font-Awesome----->
+<link rel="stylesheet" href="css/patch.css">
 
 <script>
 $(document).ready(function(){
@@ -91,7 +92,7 @@ $(document).ready(function(){
 		            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-search"></i><span>搜&nbsp;索</span></a>
 		            <ul class="dropdown-menu search-form">
 			           <form >
-                            <input type="text" class="search-text" name="s" placeholder="Search...">    
+                            <input type="text" class="search-text" name="s" placeholder="Search...">
                             <button type="button" class="search-submit" onclick="doSearch()"><i class="fa fa-search"></i></button>
                        </form>
 			        </ul>
@@ -122,58 +123,16 @@ $(document).ready(function(){
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="#"></a>
-   </div> 
+   </div>
    <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
-        <ul class="nav navbar-nav nav_1">
-            <li><a href="index.html">首&nbsp;页</a></li>
-            <li><a href="about.html">关于我们</a></li>
-    		<!--<li class="dropdown mega-dropdown active">-->
-			    <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">Admissions<span class="caret"></span></a>				-->
-				<!--<div class="dropdown-menu mega-dropdown-menu">-->
-                    <!--<div class="container-fluid">-->
-    				    <!--&lt;!&ndash; Tab panes &ndash;&gt;-->
-                        <!--<div class="tab-content">-->
-                          <!--<div class="tab-pane active" id="men">-->
-                            <!--<ul class="nav-list list-inline">-->
-                                <!--<li><a href="admission.html"><img src="images/t7.jpg" class="img-responsive" alt=""/></a></li>-->
-                                <!--<li><a href="admission.html"><img src="images/t8.jpg" class="img-responsive" alt=""/></a></li>-->
-                                <!--<li><a href="admission.html"><img src="images/t9.jpg" class="img-responsive" alt=""/></a></li>-->
-                                <!--<li><a href="admission.html"><img src="images/t1.jpg" class="img-responsive" alt=""/></a></li>-->
-                            <!--</ul>-->
-                          <!--</div>-->
-                          <!--<div class="tab-pane" id="women">-->
-                            <!--<ul class="nav-list list-inline">-->
-                                <!--<li><a href="admission.html"><img src="images/t1.jpg" class="img-responsive" alt=""/></a></li>-->
-                                <!--<li><a href="admission.html"><img src="images/t2.jpg" class="img-responsive" alt=""/></a></li>-->
-                                <!--<li><a href="admission.html"><img src="images/t3.jpg" class="img-responsive" alt=""/></a></li>-->
-                                <!--<li><a href="admission.html"><img src="images/t4.jpg" class="img-responsive" alt=""/></a></li>-->
-                                <!--<li><a href="admission.html"><img src="images/t5.jpg" class="img-responsive" alt=""/></a></li>-->
-                                <!--<li><a href="admission.html"><img src="images/t6.jpg" class="img-responsive" alt=""/></a></li>-->
-                            <!--</ul>-->
-                         <!--</div>-->
-                       <!--</div>-->
-                    <!--</div>-->
-                    <!--&lt;!&ndash; Nav tabs &ndash;&gt;-->
-                    <!--<ul class="nav nav-tabs" role="tablist">-->
-                       <!--<li class="active"><a href="#men" role="tab" data-toggle="tab">School</a></li>-->
-                       <!--<li><a href="#women" role="tab" data-toggle="tab">College</a></li>-->
-                   <!--</ul>                    -->
-				<!--</div>				-->
-			<!--</li>-->
-			<!--<li><a href="faculty.html">Faculty</a></li>-->
-            <!--<li class="dropdown">-->
-              <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">Programs<span class="caret"></span></a>-->
-              <!--<ul class="dropdown-menu" role="menu">-->
-                <!--<li><a href="terms.html">Terms of use</a></li>-->
-                <!--<li><a href="shortcodes.html">Shortcodes</a></li>-->
-                <!--<li><a href="faq.html">Faq</a></li>-->
-              <!--</ul>-->
-            <!--</li>-->
-            <li><a href="services.html">服&nbsp;务</a></li>
-            <li><a href="features.html">合作伙伴</a></li>
-            <li><a href="blog.html">论&nbsp;坛</a></li>
-            <li class="last"><a href="contact.html">联系我们</a></li>
+        <ul class="nav navbar-nav nav_1 ">
+            <li class="text-vertical"><a href="index.html">首&nbsp;页</a></li>
+            <li class="text-vertical"><a href="about.html">关于我们</a></li>
+            <li class="text-vertical"><a href="services.html">服&nbsp;务</a></li>
+            <li class="text-vertical"><a href="features.html">合作伙伴</a></li>
+            <li class="text-vertical"><a href="blog.html">论&nbsp;坛</a></li>
+            <li class="last text-vertical"><a href="contact.html">联系我们</a></li>
         </ul>
      </div><!-- /.navbar-collapse -->
    </div>
@@ -199,7 +158,7 @@ $(document).ready(function(){
 							  $('.events').append("<li>after event fired.</li>");
 							}
 						  });
-					
+
 						});
 					  </script>
 					<!--//End-slider-script -->
@@ -265,7 +224,7 @@ $(document).ready(function(){
 									</div>
 								</div>
 							</li>
-							
+
 						</ul>
 		          </div>
 	</div>
@@ -273,22 +232,22 @@ $(document).ready(function(){
     <div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >手机网站模板</a></div>
 	<div class="details">
        <div class="container">
-		 <div class="col-sm-10 dropdown-buttons">   
-			<div class="col-sm-3 dropdown-button">           			
+		 <div class="col-sm-10 dropdown-buttons">
+			<div class="col-sm-3 dropdown-button">
     		  <div class="input-group">
                 <input class="form-control has-dark-background" name="slider-name" id="slider-name" placeholder="Name" type="text" required="">
               </div>
 			</div>
-			<div class="col-sm-3 dropdown-button">           			
+			<div class="col-sm-3 dropdown-button">
     		  <div class="input-group">
                 <input class="form-control has-dark-background" name="slider-name" id="slider-name" placeholder="Email" type="text" required="">
               </div>
 			</div>
-    	   <div class="col-sm-3 dropdown-button">           			
+    	   <div class="col-sm-3 dropdown-button">
     		  <div class="section_1">
 				 <select id="country" onChange="change_country(this.value)" class="frm-field required">
 					<option value="null">Learn Level</option>
-					<option value="null">Bignner</option>         
+					<option value="null">Bignner</option>
 					<option value="AX">Advanced</option>
 					<option value="AX">Intermediate</option>
 				 </select>
@@ -298,15 +257,15 @@ $(document).ready(function(){
 			  <div class="section_1">
 				 <select id="country" onChange="change_country(this.value)" class="frm-field required">
 					<option value="null">Courses</option>
-					<option value="null">Finance</option>         
+					<option value="null">Finance</option>
 					<option value="AX">Marketing</option>
 					<option value="AX">Science</option>
 				 </select>
 			  </div>
 			 </div>
 			 <div class="clearfix"> </div>
-		  </div> 
-		  <div class="col-sm-2 submit_button"> 
+		  </div>
+		  <div class="col-sm-2 submit_button">
 		   	  <form>
 		   	     <input type="submit" value="Search">
 		   	  </form>
@@ -316,176 +275,178 @@ $(document).ready(function(){
      </div>
      <div class="grid_1">
      	<div class="container">
-     		<div class="col-md-4">
-                <div class="news">
-                    <h1>最新公告</h1>
-                    <div class="section-content">
-                        <article>
-                            <figure class="date"><i class="fa fa-file-o"></i>03-01-2017</figure>
-                            <a href="#">一条大新闻1</a>
-                        </article>
-                        <article>
-                            <figure class="date"><i class="fa fa-file-o"></i>02-28-2017</figure>
-                            <a href="#">一条大新闻2</a>
-                        </article>
-                        <article>
-                            <figure class="date"><i class="fa fa-file-o"></i>02-27-2017</figure>
-                            <a href="#">一条大新闻3</a>
-                        </article>
-                        <article>
-                            <figure class="date"><i class="fa fa-file-o"></i>02-26-2017</figure>
-                            <a href="#">一条大新闻4</a>
-                        </article>
-                        
-                    </div><!-- /.section-content -->
-                    <a href="#" class="read-more">查看更多新闻</a>
+     		<div class="col-md-4" style="height: 100%;">
+                <div class="news text-vertical">
+					<div class="news-title">
+						最新公告
+					</div>
+					<div class="news-item">
+						<p>零基础入门Android语法与界面<span>03-01-2017</span></p>
+					</div>
+					<div class="news-item">
+						<p>Android进阶：网络与数据存储<span>03-01-2017</span></p>
+					</div>
+					<div class="news-item">
+						<p>自动化测试之selenium工具使用<span>03-01-2017</span></p>
+					</div>
+					<div class="news-item">
+						<p>Linux Bind负载均衡<span>03-01-2017</span></p>
+					</div>
+					<div class="news-item">
+						<p>Shell典型应用之应用日志分析<span>09-01-2017</span></p>
+					</div>
                 </div><!-- /.news-small -->
             </div>
             <div class="col-md-8 grid_1_right">
-              <h2>课程提醒</h2>
-		      <div class="but_list">
-		       <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
-				<ul id="myTab" class="nav nav-tabs nav-tabs1" role="tablist">
-				  <li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">星期四&nbsp;&nbsp;&nbsp;16-03-2017</a></li>
-				  <li role="presentation"><a href="#profile" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">星期六&nbsp;&nbsp;&nbsp;18-03-2017</a></li>
-				  <li role="presentation"><a href="#profile1" role="tab" id="profile-tab1" data-toggle="tab" aria-controls="profile1">星期日&nbsp;&nbsp;&nbsp;19-03-2017</a></li>
-				</ul>
-			<div id="myTabContent" class="tab-content">
-			  <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
-			    <div class="events_box">
-			    	<div class="event_left"><div class="event_left-item">
-			    		<div class="icon_2"><i class="fa fa-clock-o"></i>09:00 - 10:30</div>
-			    		<div class="icon_2"><i class="fa fa-location-arrow"></i>直播间 A</div>
-			    		<div class="icon_2">
-			    		  <div class="speaker">
-			    			  <i class="fa fa-user"></i>
-			    			  <div class="speaker_item">
-			    			     <a href="#">主讲人1</a>
-			    			  </div>
-			    			  <div class="clearfix"></div></div>
-			    		  </div>
-			    		</div>
-			    	</div>
-			    	<div class="event_right">
-			    		  <h3><a href="#">课程名</a></h3>
-						  <p>课程梗概<a href="#">更多信息</a></p>
-						  <img src="images/t9.jpg" class="img-responsive" alt=""/>	
-		    	    </div>
-		    	    <div class="clearfix"></div>
-			   </div>
-			   <div class="events_box">
-			    	<div class="event_left"><div class="event_left-item">
-			    		<div class="icon_2"><i class="fa fa-clock-o"></i>09:00 - 10:30</div>
-			    		<div class="icon_2"><i class="fa fa-location-arrow"></i>直播间 A</div>
-			    		<div class="icon_2">
-			    		  <div class="speaker">
-			    			  <i class="fa fa-user"></i>
-			    			  <div class="speaker_item">
-			    			     <a href="#">主讲人</a>
-			    			  </div>
-			    			  <div class="clearfix"></div></div>
-			    		  </div>
-			    		</div>
-			    	</div>
-			    	<div class="event_right">
-			    		  <h3><a href="#">课程名</a></h3>
-						  <p>课程梗概 <a href="#">更多信息</a></p>
-						  <img src="images/t5.jpg" class="img-responsive" alt=""/>	
-		    	    </div>
-		    	    <div class="clearfix"></div>
-			   </div>
-			  </div>
-			  <div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">
-			    <div class="events_box">
-			    	<div class="event_left"><div class="event_left-item">
-			    		<div class="icon_2"><i class="fa fa-clock-o"></i>09:00 - 10:30</div>
-			    		<div class="icon_2"><i class="fa fa-location-arrow"></i>直播间 A</div>
-			    		<div class="icon_2">
-			    		  <div class="speaker">
-			    			  <i class="fa fa-user"></i>
-			    			  <div class="speaker_item">
-			    			     <a href="#">主讲人</a>
-			    			  </div>
-			    			  <div class="clearfix"></div></div>
-			    		  </div>
-			    		</div>
-			    	</div>
-			    	<div class="event_right">
-			    		  <h3><a href="#">课程名</a></h3>
-						  <p>课程梗概<a href="#">更多信息</a></p>
-						  <img src="images/t8.jpg" class="img-responsive" alt=""/>	
-		    	    </div>
-		    	    <div class="clearfix"></div>
-			   </div>
-			   <div class="events_box">
-			    	<div class="event_left"><div class="event_left-item">
-			    		<div class="icon_2"><i class="fa fa-clock-o"></i>09:00 - 10:30</div>
-			    		<div class="icon_2"><i class="fa fa-location-arrow"></i>直播间 A</div>
-			    		<div class="icon_2">
-			    		  <div class="speaker">
-			    			  <i class="fa fa-user"></i>
-			    			  <div class="speaker_item">
-			    			     <a href="#">主讲人</a>
-			    			  </div>
-			    			  <div class="clearfix"></div></div>
-			    		  </div>
-			    		</div>
-			    	</div>
-			    	<div class="event_right">
-			    		  <h3><a href="#">课程名</a></h3>
-						  <p>课程梗概<a href="#">更多信息</a></p>
-						  <img src="images/t2.jpg" class="img-responsive" alt=""/>	
-		    	    </div>
-		    	    <div class="clearfix"></div>
-			   </div>
-			</div>
-			<div role="tabpanel" class="tab-pane fade" id="profile1" aria-labelledby="profile-tab1">
-			    <div class="events_box">
-			    	<div class="event_left"><div class="event_left-item">
-			    		<div class="icon_2"><i class="fa fa-clock-o"></i>09:00 - 10:30</div>
-			    		<div class="icon_2"><i class="fa fa-location-arrow"></i>直播间 A</div>
-			    		<div class="icon_2">
-			    		  <div class="speaker">
-			    			  <i class="fa fa-user"></i>
-			    			  <div class="speaker_item">
-			    			     <a href="#">主讲人</a>
-			    			  </div>
-			    			  <div class="clearfix"></div></div>
-			    		  </div>
-			    		</div>
-			    	</div>
-			    	<div class="event_right">
-			    		  <h3><a href="#">课程名</a></h3>
-						  <p>课程梗概<a href="#">更多信息</a></p>
-						  <img src="images/t7.jpg" class="img-responsive" alt=""/>	
-		    	    </div>
-		    	    <div class="clearfix"></div>
-			   </div>
-			   <div class="events_box">
-			    	<div class="event_left"><div class="event_left-item">
-			    		<div class="icon_2"><i class="fa fa-clock-o"></i>09:00 - 10:30</div>
-			    		<div class="icon_2"><i class="fa fa-location-arrow"></i>直播间 A</div>
-			    		<div class="icon_2">
-			    		  <div class="speaker">
-			    			  <i class="fa fa-user"></i>
-			    			  <div class="speaker_item">
-			    			     <a href="#">主讲人</a>
-			    			  </div>
-			    			  <div class="clearfix"></div></div>
-			    		  </div>
-			    		</div>
-			    	</div>
-			    	<div class="event_right">
-			    		  <h3><a href="#">课程名</a></h3>
-						  <p>课程简介 <a href="#">更多信息</a></p>
-						  <img src="images/t4.jpg" class="img-responsive" alt=""/>	
-		    	    </div>
-		    	    <div class="clearfix"></div>
-			    </div>
-			   </div>
-		     </div>
-		    </div>
-		   </div>
+				<div class="news text-vertical">
+					<div class="news-title">
+						课程提醒
+					</div>
+					<div class="but_list">
+	  		       <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+	  				<ul id="myTab" class="nav nav-tabs nav-tabs1" role="tablist">
+	  				  <li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">星期四&nbsp;&nbsp;&nbsp;16-03-2017</a></li>
+	  				  <li role="presentation"><a href="#profile" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">星期六&nbsp;&nbsp;&nbsp;18-03-2017</a></li>
+	  				  <li role="presentation"><a href="#profile1" role="tab" id="profile-tab1" data-toggle="tab" aria-controls="profile1">星期日&nbsp;&nbsp;&nbsp;19-03-2017</a></li>
+	  				</ul>
+	  			<div id="myTabContent" class="tab-content">
+	  			  <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
+	  			    <div class="events_box">
+	  			    	<div class="event_left"><div class="event_left-item">
+	  			    		<div class="icon_2"><i class="fa fa-clock-o"></i>09:00 - 10:30</div>
+	  			    		<div class="icon_2"><i class="fa fa-location-arrow"></i>直播间 A</div>
+	  			    		<div class="icon_2">
+	  			    		  <div class="speaker">
+	  			    			  <i class="fa fa-user"></i>
+	  			    			  <div class="speaker_item">
+	  			    			     <a href="#">主讲人1</a>
+	  			    			  </div>
+	  			    			  <div class="clearfix"></div></div>
+	  			    		  </div>
+	  			    		</div>
+	  			    	</div>
+	  			    	<div class="event_right">
+	  			    		  <h3><a href="#">课程名</a></h3>
+	  						  <p>课程梗概<a href="#">更多信息</a></p>
+	  						  <img src="images/t9.jpg" class="img-responsive" alt=""/>
+	  		    	    </div>
+	  		    	    <div class="clearfix"></div>
+	  			   </div>
+	  			   <div class="events_box">
+	  			    	<div class="event_left"><div class="event_left-item">
+	  			    		<div class="icon_2"><i class="fa fa-clock-o"></i>09:00 - 10:30</div>
+	  			    		<div class="icon_2"><i class="fa fa-location-arrow"></i>直播间 A</div>
+	  			    		<div class="icon_2">
+	  			    		  <div class="speaker">
+	  			    			  <i class="fa fa-user"></i>
+	  			    			  <div class="speaker_item">
+	  			    			     <a href="#">主讲人</a>
+	  			    			  </div>
+	  			    			  <div class="clearfix"></div></div>
+	  			    		  </div>
+	  			    		</div>
+	  			    	</div>
+	  			    	<div class="event_right">
+	  			    		  <h3><a href="#">课程名</a></h3>
+	  						  <p>课程梗概 <a href="#">更多信息</a></p>
+	  						  <img src="images/t5.jpg" class="img-responsive" alt=""/>
+	  		    	    </div>
+	  		    	    <div class="clearfix"></div>
+	  			   </div>
+	  			  </div>
+	  			  <div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">
+	  			    <div class="events_box">
+	  			    	<div class="event_left"><div class="event_left-item">
+	  			    		<div class="icon_2"><i class="fa fa-clock-o"></i>09:00 - 10:30</div>
+	  			    		<div class="icon_2"><i class="fa fa-location-arrow"></i>直播间 A</div>
+	  			    		<div class="icon_2">
+	  			    		  <div class="speaker">
+	  			    			  <i class="fa fa-user"></i>
+	  			    			  <div class="speaker_item">
+	  			    			     <a href="#">主讲人</a>
+	  			    			  </div>
+	  			    			  <div class="clearfix"></div></div>
+	  			    		  </div>
+	  			    		</div>
+	  			    	</div>
+	  			    	<div class="event_right">
+	  			    		  <h3><a href="#">课程名</a></h3>
+	  						  <p>课程梗概<a href="#">更多信息</a></p>
+	  						  <img src="images/t8.jpg" class="img-responsive" alt=""/>
+	  		    	    </div>
+	  		    	    <div class="clearfix"></div>
+	  			   </div>
+	  			   <div class="events_box">
+	  			    	<div class="event_left"><div class="event_left-item">
+	  			    		<div class="icon_2"><i class="fa fa-clock-o"></i>09:00 - 10:30</div>
+	  			    		<div class="icon_2"><i class="fa fa-location-arrow"></i>直播间 A</div>
+	  			    		<div class="icon_2">
+	  			    		  <div class="speaker">
+	  			    			  <i class="fa fa-user"></i>
+	  			    			  <div class="speaker_item">
+	  			    			     <a href="#">主讲人</a>
+	  			    			  </div>
+	  			    			  <div class="clearfix"></div></div>
+	  			    		  </div>
+	  			    		</div>
+	  			    	</div>
+	  			    	<div class="event_right">
+	  			    		  <h3><a href="#">课程名</a></h3>
+	  						  <p>课程梗概<a href="#">更多信息</a></p>
+	  						  <img src="images/t2.jpg" class="img-responsive" alt=""/>
+	  		    	    </div>
+	  		    	    <div class="clearfix"></div>
+	  			   </div>
+	  			</div>
+	  			<div role="tabpanel" class="tab-pane fade" id="profile1" aria-labelledby="profile-tab1">
+	  			    <div class="events_box">
+	  			    	<div class="event_left"><div class="event_left-item">
+	  			    		<div class="icon_2"><i class="fa fa-clock-o"></i>09:00 - 10:30</div>
+	  			    		<div class="icon_2"><i class="fa fa-location-arrow"></i>直播间 A</div>
+	  			    		<div class="icon_2">
+	  			    		  <div class="speaker">
+	  			    			  <i class="fa fa-user"></i>
+	  			    			  <div class="speaker_item">
+	  			    			     <a href="#">主讲人</a>
+	  			    			  </div>
+	  			    			  <div class="clearfix"></div></div>
+	  			    		  </div>
+	  			    		</div>
+	  			    	</div>
+	  			    	<div class="event_right">
+	  			    		  <h3><a href="#">课程名</a></h3>
+	  						  <p>课程梗概<a href="#">更多信息</a></p>
+	  						  <img src="images/t7.jpg" class="img-responsive" alt=""/>
+	  		    	    </div>
+	  		    	    <div class="clearfix"></div>
+	  			   </div>
+	  			   <div class="events_box">
+	  			    	<div class="event_left"><div class="event_left-item">
+	  			    		<div class="icon_2"><i class="fa fa-clock-o"></i>09:00 - 10:30</div>
+	  			    		<div class="icon_2"><i class="fa fa-location-arrow"></i>直播间 A</div>
+	  			    		<div class="icon_2">
+	  			    		  <div class="speaker">
+	  			    			  <i class="fa fa-user"></i>
+	  			    			  <div class="speaker_item">
+	  			    			     <a href="#">主讲人</a>
+	  			    			  </div>
+	  			    			  <div class="clearfix"></div></div>
+	  			    		  </div>
+	  			    		</div>
+	  			    	</div>
+	  			    	<div class="event_right">
+	  			    		  <h3><a href="#">课程名</a></h3>
+	  						  <p>课程简介 <a href="#">更多信息</a></p>
+	  						  <img src="images/t4.jpg" class="img-responsive" alt=""/>
+	  		    	    </div>
+	  		    	    <div class="clearfix"></div>
+	  			    </div>
+	  			   </div>
+	  		     </div>
+	  		    </div>
+	  		   </div>
+                </div><!-- /.news-small -->
+
       </div>
       <div class="clearfix"> </div>
      </div>
@@ -724,7 +685,7 @@ $(document).ready(function(){
 
 		console.log(document.cookie);
 	}
-	
+
 	window.onload=function () {
 		var document_cookie=document.cookie;
 
@@ -781,4 +742,4 @@ $(document).ready(function(){
 
 </script>
 </body>
-</html>	
+</html>
