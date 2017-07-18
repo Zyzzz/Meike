@@ -30,7 +30,7 @@ $(document).ready(function (){
                     var status=json.status;
                     if(status=='0'){
                         // window.location.href = "admin/index.action";    //跳转到后台主页
-                        // alert("success");
+                         alert("注册成功");
                         window.opener=null;
                         window.open('login.html','_self');
 
@@ -71,7 +71,6 @@ $(document).ready(function (){
         var repassword = document.getElementById("repsword").value;
         console.log(password);
         console.log(repassword);
-        alert("insertManager");
         if(password == ''){
             alert('密码不能为空');
             return false;

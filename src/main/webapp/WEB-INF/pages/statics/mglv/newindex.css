@@ -8,6 +8,14 @@
         /*url('font/mchagaan.eot?#iefix') format('embedded-opentype');*/
 }
 @font-face {
+	font-family: "LDMONG16100802BT";
+	src: url("font/LD-MONG-BT.ttf") format("ttf");
+	src: url("font/LD-MONG-BT.eot") format("eot");
+	src: url("font/LD-MONG-BT.svg") format("svg");
+	src: url("font/LD-MONG-BT.otf") format("otf");
+	src: url("font/LD-MONG-BT.woff") format("woff");
+}
+@font-face {
 	font-family: iechagaan;
         /*src:url('font/mchagaan.eot');*/
 }
