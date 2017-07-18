@@ -309,6 +309,9 @@ public class OrganizationController {
             if(lessonsEntitie.getCourseId()==organizationEntity.getId()){
                 videoRepository.delete(lessonsEntitie.getVideoId());
                 lessonsRepository.delete(lessonsEntitie);
+                CourseEntity courseEntity= courseRepository.findById(lessonsEntitie.getCourseId());
+                courseEntity.setLessonNumber(courseEntity.getLessonNumber()-1);
+                courseRepository.saveAndFlush(courseEntity);
                 baseEntity.setStatus(0);
                 return baseEntity;
             }
