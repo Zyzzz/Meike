@@ -1,0 +1,60 @@
+@font-face {
+    font-family: "LDMONG16100802BT";
+    src: url("../fonts/LD-MONG-BT.ttf") format("ttf");
+    src: url("../fonts/LD-MONG-BT.eot") format("eot");
+    src: url("../fonts/LD-MONG-BT.svg") format("svg");
+    src: url("../fonts/LD-MONG-BT.otf") format("otf");
+    src: url("../fonts/LD-MONG-BT.woff") format("woff");
+}
+.text-vertical{
+    float:left;
+    color:#4874b6;
+    -webkit-writing-mode: vertical-lr;
+    -o-writing-mode: vertical-lr;
+    -ms-writing-mode: tb-lr;
+    writing-mode: vertical-lr;
+    writing-mode: tb-lr;
+    -moz-writing-mode: vertical-lr;
+    -webkit-text-orientation: sideways-right;
+
+    layout-flow: vertical-ideographic;
+    white-space: nowrap;
+    font-family: 'LDMONG16100802BT';
+    font-size:22px;
+    margin: 0;
+}
+.navbar-brand {
+    height: auto;
+    padding: 0;
+    margin: 10px 0 10px 0;
+    padding-left: 15px;
+    font-size: 45px;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    font-weight: 500;
+    float:left;
+    -webkit-writing-mode: vertical-lr;
+    -o-writing-mode: vertical-lr;
+    -ms-writing-mode: tb-lr;
+    writing-mode: vertical-lr;
+    writing-mode: tb-lr;
+    -moz-writing-mode: vertical-lr;
+    -webkit-text-orientation: sideways-right;
+    layout-flow: vertical-ideographic;
+    white-space: nowrap;
+    font-family: 'LDMONG16100802BT';
+}
+.navbar-default .navbar-brand {
+    color: #fff;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+    color: #fff;
+    background-color: transparent;
+}
+.navbar-nav > li > a {
+    padding: 10px 15px;
+    text-align: center;
+    color: #fff;
+    font-weight: 100;
+    font-size: 15px;
+}
