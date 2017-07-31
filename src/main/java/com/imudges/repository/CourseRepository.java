@@ -12,6 +12,7 @@ import java.util.List;
  */
 @Repository
 public interface CourseRepository extends JpaRepository<CourseEntity,Integer> {
+    CourseEntity findById(int id);
     List<CourseEntity> findByOrganizationid(int organization);
     @Query("select id,name,type,lessonNumber,organizationid,description from CourseEntity where name like ?1")
     List<Object> findByName(String name);
